@@ -1,0 +1,32 @@
+
+// paddings and margins
+=paddings-and-margins($class)
+    @for $size from -1 through 6
+        .p\=#{ $size }
+            @include spacing(padding, $size, l r t b)
+        .px\=#{ $size }
+            @include spacing(padding, $size, l r)
+        .py\=#{ $size }
+            @include spacing(padding, $size, t b)
+        .pt\=#{ $size }
+            @include spacing(padding, $size, t)
+        .pb\=#{ $size }
+            @include spacing(padding, $size, b)
+        .pl\=#{ $size }
+            @include spacing(padding, $size, l)
+        .pr\=#{ $size }
+            @include spacing(padding, $size, r)
+        .m\=#{ $size }
+            @include spacing(margin, $size, l r t b)
+        .mx\=#{ $size }
+            @include spacing(margin, $size, l r)
+        .my\=#{ $size }
+            @include spacing(margin, $size, t b)
+        .mt\=#{ $size }
+            @include spacing(margin, $size, t)
+        .mb\=#{ $size }
+            @include spacing(margin, $size, b)
+        .ml\=#{ $size }
+            @include spacing(margin, $size, l)
+        .mr\=#{ $size }
+            @include spacing(margin, $size, r)

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<title>Bedrock Doc</title>
+<link rel="stylesheet" href="../css/bedrock.css">
+<script src="../js/bedrock.js"></script>
+<body>
+<div style="width: 35em; margin: auto; color: #222;">
+    <a name="start"></a>
+    <h1 class="head-3xl center ">Bedrock CSS</h1>
+    <h2 class="head-l pt=2">Table of Content</h2>
+    <div class="px=2">
+        <a href="#base_unit">Spacing</a><br>
+        <a href="#base_unit">The base unit</a><br>
+        <a href="#margins_and_paddings">Margins and Paddings</a><br>
+        <a href="#font_sizes">Font sizes</a><br>
+        <a href="#tables">Tables</a>
+
+
+    </div>
+    <a name="base_unit"></a> 
+    <h3 class="head-xl center">The base unit</h3>
+    <p>The spacing system is based on the <code>$unit</code> variable. Its length is half of the line height (or the text line height is defined as two units).
+    <p>Vertical distances are a multiple of the unit value.
+    <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
+    <div class="p=2 my=1 b r">
+        <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
+        <div class="mt=1" style="background-color: #333; height: 48px; width: 50px;"></div>        
+        is perceived as more "square" than 
+        <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
+        even if its width is slightly larger than its height.
+        <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
+    </div>
+
+    <a name="margins_and_paddings"></a>
+    <h2 class="head-xl center">Margins and Paddings</h3>
+    <p>Margins and and paddings are set with the utility class
+    <div class="center"><code>.[m/p][side]=size</code>.</div>
+    <p>For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.
+    <p>Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value.
+    <p>Further examples:
+    <figure class="table">
+        <table>
+            <tr>
+                <td><code><&zwj;div class="mt=1">...</code></td>
+                <td>margin top is set to 1 unit</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="px=2">...</code></td>
+                <td>left and right padding is set to 2 units</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="m=5">...</code></td>
+                <td>all margins are 5 units</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="py=3">...</code></td>
+                <td>bottom and top padding is set to 3 units</td>
+            </tr>
+        </table>
+    </figure>
+
+    <a name="borders"></a>
+    <h2 class="head-xl center">Borders</h3>
+    <p>Borders are set with the following utility classes:
+    <figure class="table">
+        <table>
+            <tr>
+                <td><code><&zwj;div class="b">...</code></td>
+                <td>borders on all sides</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="bx">...</code></td>
+                <td>left and right borders</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="by">...</code></td>
+                <td>top and bottom borders borders</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="bt">...</code></td>
+                <td>top border</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="bb">...</code></td>
+                <td>bottom border</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="bl">...</code></td>
+                <td>left border</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="br">...</code></td>
+                <td>right border</td>
+            </tr>
+        </table>
+    </figure>
+    <p class="mt=1">Corners can be rounded with these classes:
+
+    <figure class="table">
+        <table>
+            <tr>
+                <td><code><&zwj;div class="r">...</code></td>
+                <td>rounded on all sides</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="rl">...</code></td>
+                <td>rounded on the left side</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="rr">...</code></td>
+                <td>rounded on the left side</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="rt">...</code></td>
+                <td>rounded on the top side</td>
+            </tr>
+            <tr>
+                <td><code><&zwj;div class="rb">...</code></td>
+                <td>rounded on the bottom side</td>
+            </tr>
+        </table>
+    </figure>
+
+    <p class="mt=1">For example, the button group
+    <pre class="py=1">
+<&zwj;div>
+    <&zwj;button class="px=1 b rl">Foo</button>
+    <&zwj;button class="px=1 b rr">Bar</button>
+<&zwj;/div></pre>
+    <p>looks like this
+    <div class="py=1">
+        <button class="px=1 b rl">Foo</button>
+        <button class="px=1 b rr">Bar</button>
+    </div>
+    The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
+
+    <a name="font_sizes"></a>
+    <h3 class="head-xl center mt=1">Font sizes</h3>
+    There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
+    <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class.
+
+    <p>Complete overview:<br>
+        <code>text-s</code><br>
+        <div class="text-s">Lorum Ipsum</div>
+        <code>text</code><br>
+        <div>Lorum Ipsum</div>
+        <code>head</code><br>
+        <div class="head">Lorum Ipsum</div>
+        <code>head-l</code><br>
+        <div class="head-l">Lorum Ipsum</div>
+        <code>head-xl</code><br>
+        <div class="head-xl">Lorum Ipsum</div>
+        <code>head-xxl</code> or <code>head-2xl</code><br>
+        <div class="head-xxl">Lorum Ipsum</div>
+        <code>head-3xl</code><br>
+        <div class="head-3xl">Lorum Ipsum</div>
+        <code>head-4xl</code><br>
+        <div class="head-4xl">Lorum Ipsum</div>
+        
+
+    <div class="p=2 my=1 b r">
+        <p>Font sizes follow a quadratic progression. The nth size is <code>1 + (0.25 * n * (n-1) / 2 )</code> the size of the base font size.
+        <p>Line heights are snapped to multiples of the unit values, except the footnote size.
+        <p class="mt=1">For reference:
+        <figure class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>size</th>
+                        <th class="numeric">leading</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><code>s</code></td>
+                    <td class="numeric">3/2 units<td>
+                </tr>
+                    <td>-</td>
+                    <td class="numeric">2 units</td>
+                </tr>
+                </tr>
+                    <td>l</td>
+                    <td class="numeric">2 units</td>
+                </tr>
+                </tr>
+                    <td>xl</td>
+                    <td class="numeric">3 units</td>
+                </tr>
+                </tr>
+                    <td>xxl</td>
+                    <td class="numeric">4 units</td>
+                </tr>
+                </tr>
+                    <td>3xl</td>
+                    <td class="numeric">5 units</td>
+                </tr>
+                </tr>
+                    <td>4xl</td>
+                    <td class="numeric">7 units</td>
+                </tr>
+            </table>
+        </figure>
+    </div>
+    <a name="tables"></a>
+    <h2 class="head-xl center">Tables</h2>
+    <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.
+    <pre>
+<&zwj;figure class="table">
+    <&zwj;table>
+      <&zwj;thead>
+        <&zwj;tr>
+          <&zwj;th>Foo<&zwj;/th>
+          <&zwj;th>Bar<&zwj;/th>
+        <&zwj;/tr>
+      <&zwj;/thead>
+      <&zwj;tbody>
+        <&zwj;tr>
+          <&zwj;td>baz<&zwj;/td>
+          <&zwj;td>qux<&zwj;/td>
+        <&zwj;/tr>
+      <&zwj;/tbody>
+    <&zwj;/table>
+<&zwj;/figure></pre>
+renders to
+<figure class="table my=1">
+    <table>
+      <thead>
+        <tr>
+          <th>Foo</th>
+          <th>Bar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>baz</td>
+          <td>qux</td>
+        </tr>
+      </tbody>
+    </table>
+</figure>
+<p>If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.
+<p>Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>.
+<p class="mt=1">Example:
+<pre>
+<&zwj;figure class="table">
+    <&zwj;table>
+      <&zwj;thead>
+        <&zwj;tr>
+          <&zwj;th class="numeric">No<&zwj;/th>
+          <&zwj;th>Name<&zwj;/th>
+          <&zwj;th class="numeric">Weight<&zwj;/th>
+          <&zwj;th>Symbol<&zwj;/th>
+        <&zwj;/tr>
+      <&zwj;/thead>
+      <&zwj;tbody>
+        <&zwj;tr>
+          <&zwj;td class="numeric">1<&zwj;/td>
+          <&zwj;td>Hydrogen<&zwj;/td>
+          <&zwj;td class="numeric">1.<&zwj;span class="dec-pos-align-wide">0079<&zwj;/span><&zwj;/td>
+          <&zwj;td>H<&zwj;/td>
+        <&zwj;/tr>
+        <&zwj;tr>
+          <&zwj;td class="numeric">2<&zwj;/td>
+          <&zwj;td>Helium<&zwj;/td>
+          <&zwj;td class="numeric">4.<&zwj;span class="dec-pos-align-wide">0026<&zwj;/span><&zwj;/td>
+          <&zwj;td>He<&zwj;/td>
+        <&zwj;/tr>
+        <&zwj;tr>
+          <&zwj;td class="numeric">3<&zwj;/td>
+          <&zwj;td>Lithium<&zwj;/td>
+          <&zwj;td class="numeric">6.<&zwj;span class="dec-pos-align-wide">941<&zwj;/span><&zwj;/td>
+          <&zwj;td>Li<&zwj;/td>
+        <&zwj;/tr>
+        <&zwj;tr>
+          <&zwj;td class="numeric">4<&zwj;/td>
+          <&zwj;td>Beryllium<&zwj;/td>
+          <&zwj;td class="numeric">9.<&zwj;span class="dec-pos-align-wide">0122<&zwj;/span><&zwj;/td>
+          <&zwj;td>Be<&zwj;/td>
+        <&zwj;/tr>
+        <&zwj;tr>
+          <&zwj;td class="numeric">5<&zwj;/td>
+          <&zwj;td>Boron<&zwj;/td>
+          <&zwj;td class="numeric">10.<&zwj;span class="dec-pos-align-wide">811<&zwj;/span><&zwj;/td>
+          <&zwj;td>B<&zwj;/td>
+        <&zwj;/tr>
+      <&zwj;/tbody>
+    <&zwj;/table>
+<&zwj;/figure></pre>
+
+    <figure class="table">
+        <table>
+          <thead>
+            <tr>
+              <th class="numeric">No</th>
+              <th>Name</th>
+              <th class="numeric">Weight</th>
+              <th>Symbol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="numeric">1</td>
+              <td>Hydrogen</td>
+              <td class="numeric">1.<span class="dec-pos-align-wide">0079</span></td>
+              <td>H</td>
+            </tr>
+            <tr>
+              <td class="numeric">2</td>
+              <td>Helium</td>
+              <td class="numeric">4.<span class="dec-pos-align-wide">0026</span></td>
+              <td>He</td>
+            </tr>
+            <tr>
+              <td class="numeric">3</td>
+              <td>Lithium</td>
+              <td class="numeric">6.<span class="dec-pos-align-wide">941</span></td>
+              <td>Li</td>
+            </tr>
+            <tr>
+              <td class="numeric">4</td>
+              <td>Beryllium</td>
+              <td class="numeric">9.<span class="dec-pos-align-wide">0122</span></td>
+              <td>Be</td>
+            </tr>
+            <tr>
+              <td class="numeric">5</td>
+              <td>Boron</td>
+              <td class="numeric">10.<span class="dec-pos-align-wide">811</span></td>
+              <td>B</td>
+            </tr>
+          </tbody>
+        </table>
+    </figure>
+    <a name="placehold"></a>
+    <h2 class="head-xl center">Placeholder</h2>
+    <p>This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.
+    <p class="mt=1">Examples:
+    <pre><&zwj;span class="head-l placeholder" wordcount="5"><&zwj;/span></pre>
+    <span class="head-xl placeholder" wordcount="5"></span>
+    <pre><&zwj;span class="placeholder" wordcount="20"><&zwj;/span></pre>
+    <span class="placeholder" wordcount="20"></span>
+
+    <a name="interactive"></a>
+    <h2 class="head-xl center">Interactive Elements</h2>
+    <h3 class="head-l center">Accordion</h3>
+    <div class="accordion m=2">
+        <h3 class="bold"><button aria-expanded="true" id="el1btn" aria-controls="el1" class="accordion-trigger">Click here A</button></h3>
+        <div id="el1" role="region" aria-labelledby="el1btn" class="accordion-panel">test A</div>
+        <h3 class="bold"><button aria-expanded="false" id="el2btn" aria-controls="el2" class="accordion-trigger">Click here B</button></h3>
+        <div hidden id="el2" role="region" aria-labelledby="el2btn" class="accordion-panel">Test B</div>
+
+    </div>
+
+
+
+</div>
+</body>

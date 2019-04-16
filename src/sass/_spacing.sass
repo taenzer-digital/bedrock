@@ -1,0 +1,13 @@
+=spacing($mp, $size, $sides)
+    @each $side in $sides
+        @if $side == 't'
+            #{$mp}-top: $unit * $size
+        @else if $side == 'b'
+            #{$mp}-bottom: $unit * $size
+        @else if $side == 'l'
+            #{$mp}-left: $hunit * $size            
+        @else if $side == 'r'
+            #{$mp}-right: $hunit * $size
+        @else
+            @error('unkown side specifier: #{$side}')
+

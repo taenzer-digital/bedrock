@@ -1,0 +1,45 @@
+{
+  "name": "bedrock",
+  "version": "0.0.1",
+  "homepage": "https://www.taenzer.de/",
+  "author": {},
+  "description": "Internal CSS framework",
+  "main": "bedrock.sass",
+  "unpkg": "css/bedrock.css",
+  "style": "bedrock/css/bulma.min.css",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.1",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/bedrock.css css/bedrock.css",
+    "build-cleancss": "cleancss -o css/bedrock.min.css css/bedrock.css",
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style expanded --source-map true src/bedrock.sass css/bedrock.css",
+    "deploy": "npm run build",
+    "start": "npm run build-sass -- --watch"
+  },
+  "files": [
+    "css",
+    "sass",
+    "bedrock.sass",
+    "LICENSE",
+    "README.md"
+  ]
+}

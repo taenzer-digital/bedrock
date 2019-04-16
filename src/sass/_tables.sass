@@ -1,0 +1,25 @@
+
+.table
+    overflow-x: scroll
+    box-sizing: content-box
+    table
+        text-align: left
+        overflow: visible
+    th
+        font-weight: bold
+        position: relative
+        overflow: visible
+    th:not(:first-child), td:not(:first-child)
+        padding-left: $hunit
+    .dec-pos-align
+        text-align: left
+        width: 1em
+        display: inline-block
+    .dec-pos-align-wide
+        text-align: left
+        width: 2.5em
+        display: inline-block
+    .numeric
+        font-variant-numeric: lining-nums tabular-nums
+        text-align: right
+        white-space: nowrap

@@ -1,0 +1,60 @@
+
+body
+    font-family: $text-font
+    font-size: $text-base-fontsize
+    line-height: 2 * $unit
+
+// type scale follows the formula 1 + (0.25 * n * (n-1) / 2 )
+
+=typography($class)
+    .#{$class}bold
+        font-weight: bold
+
+    .#{$class}text
+        font-family: $text-font
+        font-size: $text-base-fontsize
+        line-height: 2 * $unit
+
+    .#{$class}text-s
+        font: $text-font
+        line-height: 2 * $unit * 0.75
+        font-size: $text-base-fontsize * 0.75
+
+    .#{$class}head-l
+        font: $head-font
+        font-size: $head-base-fontsize * 1.25
+        line-height: $unit * 2
+
+    .#{$class}head
+        font: $head-font
+        font-size: $head-base-fontsize
+        line-height: $unit * 2
+
+    .#{$class}head-l
+        font: $head-font
+        font-size: $head-base-fontsize * 1.25
+        line-height: $unit * 2
+
+    .#{$class}head-xl
+        font: $head-font
+        font-size: $head-base-fontsize * 1.75
+        line-height: $unit * 3
+
+    .#{$class}head-xxl, .#{$class}head-2xl
+        font: $head-font
+        font-size: $head-base-fontsize * 2.5
+        line-height: $unit * 4
+        
+    .#{$class}head-3xl
+        font: $head-font
+        font-size: $head-base-fontsize * 3
+        line-height: $unit * 5
+
+    .#{$class}head-4xl
+        font: $head-font
+        font-size: $head-base-fontsize * 4.75
+        line-height: $unit * 7
+
+.center
+    text-align: center
+
