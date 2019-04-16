@@ -341,12 +341,24 @@ renders to
     <a name="interactive"></a>
     <h2 class="head-xl center">Interactive Elements</h2>
     <h3 class="head-l center">Accordion</h3>
-    <div class="accordion m=2">
-        <h3 class="bold"><button aria-expanded="true" id="el1btn" aria-controls="el1" class="accordion-trigger">Click here A</button></h3>
-        <div id="el1" role="region" aria-labelledby="el1btn" class="accordion-panel">test A</div>
-        <h3 class="bold"><button aria-expanded="false" id="el2btn" aria-controls="el2" class="accordion-trigger">Click here B</button></h3>
-        <div hidden id="el2" role="region" aria-labelledby="el2btn" class="accordion-panel">Test B</div>
 
+    <div class="accordion my=2 b r">
+        <details>
+            <summary>Click here A</summary>
+            <div class="placeholder" wordcount=50></div>
+        </details>
+        <details>
+            <summary>Click here b</summary>
+            <div class="placeholder" wordcount=30></div>
+        </details>
+        <!-- <h3 class="bold p=1">
+            <button aria-expanded="true" id="el1btn" aria-controls="el1" class="accordion-trigger">Click here A</button>
+        </h3>
+        <div id="el1" role="region" aria-labelledby="el1btn" class="accordion-panel px=1 pb=1">test A</div>
+        <h3 class="bold p=1 bt">
+            <button aria-expanded="false" id="el2btn" aria-controls="el2" class="accordion-trigger">Click here B</button>
+        </h3>
+        <div hidden id="el2" role="region" aria-l abelledby="el2btn" class="accordion-panel  px=1 pb=1">Test B</div>-->
     </div>
 
 
