@@ -12,11 +12,20 @@ function fill_placeholder(el) {
 document.addEventListener("DOMContentLoaded", () => {
     // placeholder detection
     [].forEach.call(document.getElementsByClassName('placeholder'), fill_placeholder);
-
     // accordion
     [].slice.call(document.querySelectorAll('.accordion')).forEach((accordion) => {
-        // Create the array of toggle elements for the accordion group
-        var triggers = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-trigger'));
-        var panels = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-panel'));
+        let detail_elems = Array.prototype.slice.call(accordion.querySelectorAll('details'));
+        [].slice.call(detail_elems).forEach( (details) => {
+            details.addEventListener("toggle", (event) => {
+                if (details.open) {
+                    [].slice.call(detail_elems).forEach( (other_details) => {
+                        if (other_details !== details) {
+                            other_details.open = false;
+                        }
+                    } ) 
 
+                }
+            });
+        });
+    });        
 });

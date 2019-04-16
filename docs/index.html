@@ -342,23 +342,31 @@ renders to
     <h2 class="head-xl center">Interactive Elements</h2>
     <h3 class="head-l center">Accordion</h3>
 
+    The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>.
+
+    <p class="pt=1">Example:
+
+    <pre>
+<&zwj;div class="accordion my=2 b r">
+    <&zwj;details>
+        <&zwj;summary class="p=1">Click here A<&zwj;/summary>
+        <&zwj;div class="placeholder px=1 pb=1" wordcount=50><&zwj;/div>
+    <&zwj;/details>
+    <&zwj;details>
+        <&zwj;summary class="p=1 bt">Click here b<&zwj;/summary>
+        <&zwj;div class="placeholder px=1 pb=1" wordcount=30><&zwj;/div>
+    <&zwj;/details>
+<&zwj;/div></pre>
+
     <div class="accordion my=2 b r">
         <details>
-            <summary>Click here A</summary>
-            <div class="placeholder" wordcount=50></div>
+            <summary class="p=1">Click here A</summary>
+            <div class="placeholder px=1 pb=1" wordcount=50></div>
         </details>
         <details>
-            <summary>Click here b</summary>
-            <div class="placeholder" wordcount=30></div>
+            <summary class="p=1 bt">Click here b</summary>
+            <div class="placeholder px=1 pb=1" wordcount=30></div>
         </details>
-        <!-- <h3 class="bold p=1">
-            <button aria-expanded="true" id="el1btn" aria-controls="el1" class="accordion-trigger">Click here A</button>
-        </h3>
-        <div id="el1" role="region" aria-labelledby="el1btn" class="accordion-panel px=1 pb=1">test A</div>
-        <h3 class="bold p=1 bt">
-            <button aria-expanded="false" id="el2btn" aria-controls="el2" class="accordion-trigger">Click here B</button>
-        </h3>
-        <div hidden id="el2" role="region" aria-l abelledby="el2btn" class="accordion-panel  px=1 pb=1">Test B</div>-->
     </div>
 
 
