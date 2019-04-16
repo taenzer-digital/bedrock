@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <title>Bedrock Doc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="../css/bedrock.css">
 <script src="../js/bedrock.js"></script>
 <body>
-<div style="width: 35em; margin: auto; color: #222;">
+<div class="fixed w=full flex center bb flex-wrap c=secondary">
+    <a class="px=1" href="#base_unit">The Base Unit</a>
+    <a class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
+    <a class="px=1"  href="#font_sizes">Font Sizes</a>
+    <a class="px=1"  href="#tables">Tables</a>
+    <a class="px=1"  href="#placeholder">Placeholder</a>
+    <a class="px=1"  href="#interactive">Interactive Elements</a>
+    <a class="px=1"  href="#responsive_design">Responsive Design</a>
+</div>
+
+<div class="pt=6 md:pt=4 lg:pt=2 px=1 pb=2" style="max-width: 35em; margin-left: auto; margin-right: auto">
     <a name="start"></a>
-    <h1 class="head-3xl center ">Bedrock CSS</h1>
-    <h2 class="head-l pt=2">Table of Content</h2>
-    <div class="px=2">
-        <a href="#base_unit">Spacing</a><br>
-        <a href="#base_unit">The base unit</a><br>
-        <a href="#margins_and_paddings">Margins and Paddings</a><br>
-        <a href="#font_sizes">Font sizes</a><br>
-        <a href="#tables">Tables</a>
-
-
-    </div>
+    <h1 class="head-3xl center">Bedrock CSS</h1>
     <a name="base_unit"></a> 
-    <h3 class="head-xl center">The base unit</h3>
+    <h3 class="head-xl center">The Base Unit</h3>
     <p>The spacing system is based on the <code>$unit</code> variable. Its length is half of the line height (or the text line height is defined as two units).
     <p>Vertical distances are a multiple of the unit value.
     <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
@@ -59,7 +60,7 @@
     </figure>
 
     <a name="borders"></a>
-    <h2 class="head-xl center">Borders</h3>
+    <h2 class="head-xl center mt=4">Borders</h3>
     <p>Borders are set with the following utility classes:
     <figure class="table">
         <table>
@@ -134,7 +135,7 @@
     The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
 
     <a name="font_sizes"></a>
-    <h3 class="head-xl center mt=1">Font sizes</h3>
+    <h3 class="head-xl center mt=4">Font Sizes</h3>
     There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
     <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class.
 
@@ -200,7 +201,7 @@
         </figure>
     </div>
     <a name="tables"></a>
-    <h2 class="head-xl center">Tables</h2>
+    <h2 class="head-xl center  mt=4">Tables</h2>
     <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.
     <pre>
 <&zwj;figure class="table">
@@ -329,8 +330,8 @@ renders to
           </tbody>
         </table>
     </figure>
-    <a name="placehold"></a>
-    <h2 class="head-xl center">Placeholder</h2>
+    <a name="placeholder"></a>
+    <h2 class="head-xl center  mt=4">Placeholder</h2>
     <p>This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.
     <p class="mt=1">Examples:
     <pre><&zwj;span class="head-l placeholder" wordcount="5"><&zwj;/span></pre>
@@ -339,7 +340,7 @@ renders to
     <span class="placeholder" wordcount="20"></span>
 
     <a name="interactive"></a>
-    <h2 class="head-xl center">Interactive Elements</h2>
+    <h2 class="head-xl center mt=2">Interactive Elements</h2>
     <h3 class="head-l center">Accordion</h3>
 
     The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>.
@@ -349,8 +350,8 @@ renders to
     <pre>
 <&zwj;div class="accordion my=2 b r">
     <&zwj;details>
-        <&zwj;summary class="p=1">Click here A<&zwj;/summary>
-        <&zwj;div class="placeholder px=1 pb=1" wordcount=50><&zwj;/div>
+        <&zwj; class="placeholder p=1" wordcount=4><&zwj;/summary>
+        <&zwj; class="placeholder p=1" wordcount=4><&zwj;/div>
     <&zwj;/details>
     <&zwj;details>
         <&zwj;summary class="p=1 bt">Click here b<&zwj;/summary>
@@ -360,15 +361,22 @@ renders to
 
     <div class="accordion my=2 b r">
         <details>
-            <summary class="p=1">Click here A</summary>
+            <summary class="placeholder p=1" wordcount=4></summary>
             <div class="placeholder px=1 pb=1" wordcount=50></div>
         </details>
         <details>
-            <summary class="p=1 bt">Click here b</summary>
+            <summary class="placeholder p=1 bt" wordcount=3></summary>
             <div class="placeholder px=1 pb=1" wordcount=30></div>
         </details>
     </div>
 
+    <a name="responsive_design"></a>
+    <h2 class="head-xl center mt=4">Responsive Design</h2>
+    <p>Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).
+    Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).
+
+    <p class="pt=1">For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.
+    <div class="mt=1 lg:mt=2 xl:mt=3 p=1 b r">Resize the browser window to try it out yourself!</div> 
 
 
 </div>

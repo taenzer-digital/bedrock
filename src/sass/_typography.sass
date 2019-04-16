@@ -6,10 +6,10 @@ body
 
 // type scale follows the formula 1 + (0.25 * n * (n-1) / 2 )
 
-=typography($class)
-    .#{$class}bold
-        font-weight: bold
+.bold
+    font-weight: bold
 
+=typography($class)
     .#{$class}text
         font-family: $text-font
         font-size: $text-base-fontsize
@@ -54,7 +54,3 @@ body
         font: $head-font
         font-size: $head-base-fontsize * 4.75
         line-height: $unit * 7
-
-.center
-    text-align: center
-

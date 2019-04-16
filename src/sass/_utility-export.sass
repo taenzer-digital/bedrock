@@ -2,31 +2,32 @@
 // paddings and margins
 =paddings-and-margins($class)
     @for $size from -1 through 6
-        .p\=#{ $size }
+        .#{ $class }p\=#{ $size }
             @include spacing(padding, $size, l r t b)
-        .px\=#{ $size }
+        .#{ $class }px\=#{ $size }
             @include spacing(padding, $size, l r)
-        .py\=#{ $size }
+        .#{ $class }py\=#{ $size }
             @include spacing(padding, $size, t b)
-        .pt\=#{ $size }
+        .#{ $class }pt\=#{ $size }
             @include spacing(padding, $size, t)
-        .pb\=#{ $size }
+        .#{ $class }pb\=#{ $size }
             @include spacing(padding, $size, b)
-        .pl\=#{ $size }
+        .#{ $class }pl\=#{ $size }
             @include spacing(padding, $size, l)
-        .pr\=#{ $size }
+        .#{ $class }pr\=#{ $size }
             @include spacing(padding, $size, r)
-        .m\=#{ $size }
+        .#{ $class }m\=#{ $size }
             @include spacing(margin, $size, l r t b)
-        .mx\=#{ $size }
+        .#{ $class }mx\=#{ $size }
             @include spacing(margin, $size, l r)
-        .my\=#{ $size }
+        .#{ $class }my\=#{ $size }
             @include spacing(margin, $size, t b)
-        .mt\=#{ $size }
+        .#{ $class }mt\=#{ $size }
             @include spacing(margin, $size, t)
-        .mb\=#{ $size }
+        .#{ $class }mb\=#{ $size }
             @include spacing(margin, $size, b)
-        .ml\=#{ $size }
+        .#{ $class }ml\=#{ $size }
             @include spacing(margin, $size, l)
-        .mr\=#{ $size }
+        .#{ $class }mr\=#{ $size }
             @include spacing(margin, $size, r)
+
