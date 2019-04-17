@@ -19,9 +19,10 @@
     <h1 class="head-3xl center">Bedrock CSS</h1>
     <a name="base_unit"></a> 
     <h3 class="head-xl center">The Base Unit</h3>
-    <p>The spacing system is based on the <code>$unit</code> variable. Its length is half of the line height (or the text line height is defined as two units).
+    <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
     <p>Vertical distances are a multiple of the unit value.
     <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
+    <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
     <div class="p=2 my=1 b r">
         <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
         <div class="mt=1" style="background-color: #333; height: 48px; width: 50px;"></div>        
