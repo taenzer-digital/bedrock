@@ -20,7 +20,6 @@
 
 .center
     justify-content: center
-    text-align: center
 
 .space-between
     justify-content: space-between
@@ -34,3 +33,9 @@
 // widths
 .w\=full
     width: 100%
+
+// widths
+@for $denom from 2 through 12
+    .w\=1\/#{ $denom }
+        width: 100% / $denom
+

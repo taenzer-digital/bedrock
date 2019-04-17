@@ -1,13 +1,13 @@
 =spacing($mp, $size, $sides)
     @each $side in $sides
         @if $side == 't'
-            #{$mp}-top: $unit * $size
+            #{$mp}-top: calc(#{$unit} * #{$size})
         @else if $side == 'b'
-            #{$mp}-bottom: $unit * $size
+            #{$mp}-bottom: calc(#{$unit} * #{$size})
         @else if $side == 'l'
-            #{$mp}-left: $hunit * $size            
+            #{$mp}-left: calc(#{$hunit} * #{$size})          
         @else if $side == 'r'
-            #{$mp}-right: $hunit * $size
+            #{$mp}-right: calc(#{$hunit} * #{$size})
         @else
             @error('unkown side specifier: #{$side}')
 

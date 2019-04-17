@@ -12,6 +12,20 @@
 @include typography('')
 @include paddings-and-margins('')
 
+// set root rem
+$slope: ($text-size-upper-bound-px - $text-size-lower-bound-px) / ($rem-grow-end-px - $rem-grow-start-px)
+
+html
+    font-size: #{$text-size-lower-bound-px}px
+
+@media (min-width: #{$rem-grow-start-px}px)
+    html
+        font-size: calc(#{$slope} * 100vw + #{$text-size-lower-bound-px}px - #{$slope * $rem-grow-start-px}px)
+
+@media (min-width: #{$rem-grow-end-px}px)
+    html
+        font-size: #{$text-size-upper-bound-px}px
+
 @media (min-width: $phone2tablet)
     @include typography('md\\:')
     @include paddings-and-margins('md\\:')
@@ -20,7 +34,7 @@
     @include paddings-and-margins('lg\\:')
 @media (min-width: $laptop2desktop)
     @include typography('xl\\:')
-    @include paddings-and-margins('desktop\:')
+    @include paddings-and-margins('xl\:')
 
 
 // remove when color system is compelte
