@@ -9,6 +9,15 @@ function fill_placeholder(el) {
     el.innerHTML = buffer;
 }
 
+function update_prototype(el, target) {
+    el.style.height = "";
+    el.style.height = el.scrollHeight + "px";
+    el.style.width = "";
+    el.style.width = el.scrollWidth + "px";
+
+    target.innerHTML = el.value;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // placeholder detection
     [].forEach.call(document.getElementsByClassName('placeholder'), fill_placeholder);
@@ -27,5 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-    });        
+    });    
+    // prototype
+    [].forEach.call(document.getElementsByClassName('prototype'), (el) => {
+        const target_id = el.getAttribute('data-target');
+        const target = document.getElementById(target_id);
+        if (target) {
+            update_prototype(el, target)
+            el.addEventListener('input', _ => update_prototype(el, target));
+        }
+    });
+
 });
