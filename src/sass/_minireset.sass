@@ -25,14 +25,19 @@ h2,
 h3,
 h4,
 h5,
-h6
+h6,
+details,
+summary
   margin: 0
   padding: 0
   // std-color
-  color: $text-fg
+  color: map-get($text-color, 'fg')
+  border-color: darken(map-get($text-color, 'bg'), $border-darken)
 
 a
   text-decoration: none
+  color: map-get($text-color, 'accent')
+  border-color: darken(map-get($text-color, 'bg'), $border-darken)
 
 // Headings
 h1,

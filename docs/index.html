@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../css/bedrock.css">
 <script src="../js/bedrock.js"></script>
 <body>
-<div class="fixed w=full flex center bb flex-wrap c=secondary">
+<div class="fixed w=full flex center bb flex-wrap c=sec">
     <a class="px=1" href="#base_unit">The Base Unit</a>
     <a class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
     <a class="px=1"  href="#font_sizes">Font Sizes</a>
@@ -16,9 +16,9 @@
 
 <div class="pt=6 md:pt=4 lg:pt=2 px=1 pb=2" style="max-width: 35em; margin-left: auto; margin-right: auto">
     <a name="start"></a>
-    <h1 class="head-3xl center">Bedrock CSS</h1>
+    <h1 class="head-3xl text-align-center">Bedrock CSS</h1>
     <a name="base_unit"></a> 
-    <h3 class="head-xl center">The Base Unit</h3>
+    <h3 class="head-xl text-align-center">The Base Unit</h3>
     <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
     <p>Vertical distances are a multiple of the unit value.
     <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
@@ -61,7 +61,7 @@
     </figure>
 
     <a name="borders"></a>
-    <h2 class="head-xl center mt=4">Borders</h3>
+    <h2 class="head-xl text-align-center mt=4">Borders</h3>
     <p>Borders are set with the following utility classes:
     <figure class="table">
         <table>
@@ -122,21 +122,18 @@
         </table>
     </figure>
 
-    <p class="mt=1">For example, the button group
-    <pre class="py=1">
-<&zwj;div>
-    <&zwj;button class="px=1 b rl">Foo</button>
-    <&zwj;button class="px=1 b rr">Bar</button>
-<&zwj;/div></pre>
+    <p class="mt=1">For example, the button group</p>
+    <textarea data-target="button-group-example" class="py=1 prototype px=1 mx=-1" rows="4"><div>
+    <button class="px=1 b rl">Foo</button>
+    <button class="px=1 b rr">Bar</button>
+</div></textarea>
     <p>looks like this
-    <div class="py=1">
-        <button class="px=1 b rl">Foo</button>
-        <button class="px=1 b rr">Bar</button>
-    </div>
+    <div class="py=1" id="button-group-example"></div>
+
     The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
 
     <a name="font_sizes"></a>
-    <h2 class="head-xl center mt=4">Font Sizes</h2>
+    <h2 class="head-xl text-align-center mt=4">Font Sizes</h2>
     There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
     <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class.
 
@@ -202,153 +199,99 @@
         </figure>
     </div>
     <a name="tables"></a>
-    <h2 class="head-xl center  mt=4">Tables</h2>
+    <h2 class="head-xl text-align-center  mt=4">Tables</h2>
     <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.
-    <pre>
-<&zwj;figure class="table">
-    <&zwj;table>
-      <&zwj;thead>
-        <&zwj;tr>
-          <&zwj;th>Foo<&zwj;/th>
-          <&zwj;th>Bar<&zwj;/th>
-        <&zwj;/tr>
-      <&zwj;/thead>
-      <&zwj;tbody>
-        <&zwj;tr>
-          <&zwj;td>baz<&zwj;/td>
-          <&zwj;td>qux<&zwj;/td>
-        <&zwj;/tr>
-      <&zwj;/tbody>
-    <&zwj;/table>
-<&zwj;/figure></pre>
+    <p>For example,
+    <textarea data-target="table-example-1" class="py=1 prototype p=1">
+<figure class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Foo</th>
+        <th>Bar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>baz</td>
+        <td>qux</td>
+      </tr>
+    </tbody>
+  </table>
+</figure></textarea>
 renders to
-<figure class="table my=1">
-    <table>
-      <thead>
-        <tr>
-          <th>Foo</th>
-          <th>Bar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>baz</td>
-          <td>qux</td>
-        </tr>
-      </tbody>
-    </table>
-</figure>
+  <div id="table-example-1" class=" my=1"></div>
+
 <p>If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.
 <p>Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>.
 <p class="mt=1">Example:
-<pre>
-<&zwj;figure class="table">
-    <&zwj;table>
-      <&zwj;thead>
-        <&zwj;tr>
-          <&zwj;th class="numeric">No<&zwj;/th>
-          <&zwj;th>Name<&zwj;/th>
-          <&zwj;th class="numeric">Weight<&zwj;/th>
-          <&zwj;th>Symbol<&zwj;/th>
-        <&zwj;/tr>
-      <&zwj;/thead>
-      <&zwj;tbody>
-        <&zwj;tr>
-          <&zwj;td class="numeric">1<&zwj;/td>
-          <&zwj;td>Hydrogen<&zwj;/td>
-          <&zwj;td class="numeric">1.<&zwj;span class="dec-pos-align-wide">0079<&zwj;/span><&zwj;/td>
-          <&zwj;td>H<&zwj;/td>
-        <&zwj;/tr>
-        <&zwj;tr>
-          <&zwj;td class="numeric">2<&zwj;/td>
-          <&zwj;td>Helium<&zwj;/td>
-          <&zwj;td class="numeric">4.<&zwj;span class="dec-pos-align-wide">0026<&zwj;/span><&zwj;/td>
-          <&zwj;td>He<&zwj;/td>
-        <&zwj;/tr>
-        <&zwj;tr>
-          <&zwj;td class="numeric">3<&zwj;/td>
-          <&zwj;td>Lithium<&zwj;/td>
-          <&zwj;td class="numeric">6.<&zwj;span class="dec-pos-align-wide">941<&zwj;/span><&zwj;/td>
-          <&zwj;td>Li<&zwj;/td>
-        <&zwj;/tr>
-        <&zwj;tr>
-          <&zwj;td class="numeric">4<&zwj;/td>
-          <&zwj;td>Beryllium<&zwj;/td>
-          <&zwj;td class="numeric">9.<&zwj;span class="dec-pos-align-wide">0122<&zwj;/span><&zwj;/td>
-          <&zwj;td>Be<&zwj;/td>
-        <&zwj;/tr>
-        <&zwj;tr>
-          <&zwj;td class="numeric">5<&zwj;/td>
-          <&zwj;td>Boron<&zwj;/td>
-          <&zwj;td class="numeric">10.<&zwj;span class="dec-pos-align-wide">811<&zwj;/span><&zwj;/td>
-          <&zwj;td>B<&zwj;/td>
-        <&zwj;/tr>
-      <&zwj;/tbody>
-    <&zwj;/table>
-<&zwj;/figure></pre>
+    <textarea data-target="table-example-2" class="py=1 prototype p=1">
+<figure class="table">
+  <table>
+    <thead>
+      <tr>
+        <th class="numeric">No</th>
+        <th>Name</th>
+        <th class="numeric">Weight</th>
+        <th>Symbol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="numeric">1</td>
+        <td>Hydrogen</td>
+        <td class="numeric">1.<span class="dec-pos-align-wide">0079</span></td>
+        <td>H</td>
+      </tr>
+      <tr>
+        <td class="numeric">2</td>
+        <td>Helium</td>
+        <td class="numeric">4.<span class="dec-pos-align-wide">0026</span></td>
+        <td>He</td>
+      </tr>
+      <tr>
+        <td class="numeric">3</td>
+        <td>Lithium</td>
+        <td class="numeric">6.<span class="dec-pos-align-wide">941</span></td>
+        <td>Li</td>
+      </tr>
+      <tr>
+        <td class="numeric">4</td>
+        <td>Beryllium</td>
+        <td class="numeric">9.<span class="dec-pos-align-wide">0122</span></td>
+        <td>Be</td>
+      </tr>
+      <tr>
+        <td class="numeric">5</td>
+        <td>Boron</td>
+        <td class="numeric">10.<span class="dec-pos-align-wide">811</span></td>
+        <td>B</td>
+      </tr>
+    </tbody>
+  </table>
+</figure></textarea>
 
-    <figure class="table">
-        <table>
-          <thead>
-            <tr>
-              <th class="numeric">No</th>
-              <th>Name</th>
-              <th class="numeric">Weight</th>
-              <th>Symbol</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="numeric">1</td>
-              <td>Hydrogen</td>
-              <td class="numeric">1.<span class="dec-pos-align-wide">0079</span></td>
-              <td>H</td>
-            </tr>
-            <tr>
-              <td class="numeric">2</td>
-              <td>Helium</td>
-              <td class="numeric">4.<span class="dec-pos-align-wide">0026</span></td>
-              <td>He</td>
-            </tr>
-            <tr>
-              <td class="numeric">3</td>
-              <td>Lithium</td>
-              <td class="numeric">6.<span class="dec-pos-align-wide">941</span></td>
-              <td>Li</td>
-            </tr>
-            <tr>
-              <td class="numeric">4</td>
-              <td>Beryllium</td>
-              <td class="numeric">9.<span class="dec-pos-align-wide">0122</span></td>
-              <td>Be</td>
-            </tr>
-            <tr>
-              <td class="numeric">5</td>
-              <td>Boron</td>
-              <td class="numeric">10.<span class="dec-pos-align-wide">811</span></td>
-              <td>B</td>
-            </tr>
-          </tbody>
-        </table>
-    </figure>
+    <div class="py=1" id="table-example-2"></div>
+
     <a name="placeholder"></a>
-    <h2 class="head-xl center  mt=4">Placeholder</h2>
+    <h2 class="head-xl text-align-center  mt=4">Placeholder</h2>
     <p>This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.
     <p class="mt=1">Examples:
-    <pre><&zwj;span class="head-l placeholder" wordcount="5"><&zwj;/span></pre>
+    <figure class="code"><pre><&zwj;span class="head-l placeholder" wordcount="5"><&zwj;/span></pre></figure>
     <span class="head-xl placeholder" wordcount="5"></span>
-    <pre><&zwj;span class="placeholder" wordcount="20"><&zwj;/span></pre>
+    <figure class="code"><pre><&zwj;span class="placeholder" wordcount="20"><&zwj;/span></pre></figure>
     <span class="placeholder" wordcount="20"></span>
 
     <a name="interactive"></a>
-    <h2 class="head-xl center mt=2">Interactive Elements</h2>
-    <h3 class="head-l center">Accordion</h3>
+    <h2 class="head-xl text-align-center mt=2">Interactive Elements</h2>
+    <h3 class="head-l text-align-center">Accordion</h3>
 
     The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>.
 
     <p class="pt=1">Example:
 
-    <pre>
+    <figure class="code">
+      <pre>
 <&zwj;div class="accordion my=2 b r">
     <&zwj;details>
         <&zwj; class="placeholder p=1" wordcount=4><&zwj;/summary>
@@ -359,20 +302,21 @@ renders to
         <&zwj;div class="placeholder px=1 pb=1" wordcount=30><&zwj;/div>
     <&zwj;/details>
 <&zwj;/div></pre>
+    </figure>
 
-    <div class="accordion my=2 b r">
-        <details>
+    <div class="accordion my=2">
+        <details class="b rt">
             <summary class="placeholder p=1" wordcount=4></summary>
             <div class="placeholder px=1 pb=1" wordcount=50></div>
         </details>
-        <details>
-            <summary class="placeholder p=1 bt" wordcount=3></summary>
+        <details class="bb bx rb">
+            <summary class="placeholder p=1" wordcount=3></summary>
             <div class="placeholder px=1 pb=1" wordcount=30></div>
         </details>
     </div>
 
     <a name="responsive_design"></a>
-    <h2 class="head-xl center mt=4">Responsive Design</h2>
+    <h2 class="head-xl text-align-center mt=4">Responsive Design</h2>
     <p>Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).
     Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).
 

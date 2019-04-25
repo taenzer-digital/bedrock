@@ -2,11 +2,13 @@
 
 @import sass/_defaults
 @import sass/_minireset
+@import sass/_colors
 @import sass/_typography
 @import sass/_spacing
 @import sass/_tables
 @import sass/_borders
 @import sass/_layout
+@import sass/_code
 @import sass/_utility-export
 
 @include typography('')
@@ -35,11 +37,3 @@ html
 @media (min-width: $laptop2desktop)
     @include typography('xl\\:')
     @include paddings-and-margins('xl\:')
-
-
-// remove when color system is compelte
-.c\=secondary
-    color: $text-bg
-    background-color: $text-fg
-    a
-        color: $text-bg

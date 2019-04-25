@@ -17,16 +17,23 @@ $optical-compensation: 25/24 !default
 $hunit: $optical-compensation * $unit
 
 // colors
-$text-fg: #333
-$text-bg: #fff
+// there are multiple colors sets. Every color set consists of foreground, 
+// background and accent. variants are generated on the fly
 
+$text-color: ( 'fg': #444, 'bg': #fff, 'accent': #555) !default
+$primary-color: ( 'fg': #fff, 'bg': #00635a, 'accent': #fff) !default
+$secondary-color: ( 'fg': #fff, 'bg': #3d6dae, 'accent': #fff) !default
+$error-color: ( 'fg': #fff, 'bg': #B03040, 'accent': #fff) !default
+$border-darken: 20%
 
 // borders
 $border-radius: $unit / 2 !default
 $border-width: 1px !default
-$border-color: #555 !default
 
 $paragraph-length: 35em !default
+
+// shadows
+$elevated-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3)
 
 $breadcrumbs-spacer: '/' !default
 
