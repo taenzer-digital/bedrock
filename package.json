@@ -31,7 +31,7 @@
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/bedrock.css css/bedrock.css",
     "build-cleancss": "cleancss -o css/bedrock.min.css css/bedrock.css",
     "build-clean": "rimraf css",
-    "build-sass": "node-sass --output-style expanded --source-map true src/bedrock.sass css/bedrock.css",
+    "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
     "deploy": "npm run build",
     "start": "npm run build-sass -- --watch"
   },
