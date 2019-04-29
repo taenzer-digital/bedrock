@@ -27,11 +27,18 @@ h4,
 h5,
 h6,
 details,
-summary
+summary,
+button,
+input,
+select,
+textarea
   margin: 0
   padding: 0
+  font-family: $text-font
   // std-color
   color: map-get($text-color, 'fg')
+  font-size: $text-base-fontsize
+  line-height: 2 * $unit
   border-color: darken(map-get($text-color, 'bg'), $border-darken)
 
 a
@@ -51,13 +58,6 @@ h6
 // List
 ul
   list-style: none
-
-// Form
-button,
-input,
-select,
-textarea
-  margin: 0
 
 // Box sizing
 html
@@ -94,9 +94,3 @@ td,
 th
   padding: 0
   text-align: left
-
-button
-  font-size: 100%
-  font-family: inherit
-  border: 0
-  padding: 0
