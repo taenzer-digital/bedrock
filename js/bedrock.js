@@ -1,3 +1,5 @@
+import Menubar from './Menubar/MenubarLinks';
+
 function fill_placeholder(el) {
     let wordcount = parseInt(el.getAttribute('wordcount')) || 15;
     var buffer = '';
@@ -47,4 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+
+    var menubar = new Menubar(document.getElementById('menubar'));
+    menubar.init();
 });
+
