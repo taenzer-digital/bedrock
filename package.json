@@ -1,6 +1,6 @@
 {
-  "name": "bedrock",
-  "version": "0.0.1",
+  "name": "@taenzer-digital/bedrock",
+  "version": "0.0.2",
   "homepage": "https://www.taenzer.de/",
   "author": {},
   "description": "Internal CSS framework",
@@ -35,12 +35,13 @@
     "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
     "build-js": "rollup --config",
     "deploy": "npm run build",
+    "prepublishOnly": "npm run build",
     "start": "npm run build-sass -- --watch"
   },
   "files": [
     "css",
-    "sass",
-    "bedrock.sass",
+    "js",
+    "src",
     "LICENSE",
     "README.md"
   ]
