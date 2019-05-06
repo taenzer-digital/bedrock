@@ -53,4 +53,3 @@ document.addEventListener("DOMContentLoaded", () => {
     var menubar = new Menubar(document.getElementById('menubar'));
     menubar.init();
 });
-

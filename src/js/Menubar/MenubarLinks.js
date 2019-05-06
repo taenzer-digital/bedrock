@@ -53,10 +53,11 @@ var Menubar = function (domNode) {
 Menubar.prototype.init = function () {
   var menubarItem, childElement, menuElement, textContent, numItems;
 
-
   // Traverse the element children of menubarNode: configure each with
   // menuitem role behavior and store reference in menuitems array.
   var elem = this.domNode.firstElementChild;
+
+
 
   while (elem) {
     var menuElement = elem.firstElementChild;
@@ -84,6 +85,7 @@ Menubar.prototype.init = function () {
 /* FOCUS MANAGEMENT METHODS */
 
 Menubar.prototype.setFocusToItem = function (newItem) {
+
 
   var flag = false;
 
@@ -117,7 +119,7 @@ Menubar.prototype.setFocusToLastItem = function (flag) {
 };
 
 Menubar.prototype.setFocusToPreviousItem = function (currentItem) {
-  var index;
+  var index, newItem;
 
   if (currentItem === this.firstItem) {
     newItem = this.lastItem;
@@ -132,7 +134,7 @@ Menubar.prototype.setFocusToPreviousItem = function (currentItem) {
 };
 
 Menubar.prototype.setFocusToNextItem = function (currentItem) {
-  var index;
+  var index, newItem;
 
   if (currentItem === this.lastItem) {
     newItem = this.firstItem;
