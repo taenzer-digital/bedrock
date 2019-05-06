@@ -24,14 +24,16 @@
     "clean-css-cli": "^4.2.1",
     "node-sass": "^4.11.0",
     "postcss-cli": "^6.1.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "rollup": "^1.11.3"
   },
   "scripts": {
-    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss && npm run build-js",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/bedrock.css css/bedrock.css",
     "build-cleancss": "cleancss -o css/bedrock.min.css css/bedrock.css",
     "build-clean": "rimraf css",
     "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
+    "build-js": "rollup --config",
     "deploy": "npm run build",
     "start": "npm run build-sass -- --watch"
   },
