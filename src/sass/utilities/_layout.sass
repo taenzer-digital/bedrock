@@ -1,72 +1,73 @@
+=layout($class)
+    .#{$class}fixed
+        position: fixed
 
-.fixed
-    position: fixed
+    .#{$class}flex
+        display: flex
 
-.flex
-    display: flex
+    .#{$class}flex-wrap
+        flex-wrap: wrap
 
-.flex-wrap
-    flex-wrap: wrap
+    .#{$class}flex-wrap-reverse
+        flex-wrap: wrap-reverse
 
-.flex-wrap-reverse
-    flex-wrap: wrap-reverse
+    .#{$class}flex-start
+        justify-content: flex-start
+        align-items: flex-start
+    .#{$class}flex-start-x
+        justify-content: flex-start
+    .#{$class}flex-start-y
+        align-items: flex-start
 
-
-.flex-start
-    justify-content: flex-start
-    align-items: flex-start
-.flex-start-x
-    justify-content: flex-start
-.flex-start-y
-    align-items: flex-start
-
-.flex-end
-    justify-content: flex-end
-    align-items: flex-end
-.flex-end-x
-    justify-content: flex-end
-.flex-end-y
-    align-items: flex-end
-
-
-.center
-    justify-content: center
-    align-items: center
-.center-x
-    justify-content: center
-.center-y
-    align-items: center
+    .#{$class}flex-end
+        justify-content: flex-end
+        align-items: flex-end
+    .#{$class}flex-end-x
+        justify-content: flex-end
+    .#{$class}flex-end-y
+        align-items: flex-end
 
 
-.space-between
-    justify-content: space-between
-.space-around
-    justify-content: space-around
-.space-evenly
-    justify-content: space-evenly
-
-.baseline
-    align-items: baseline
-.stretch
-    align-items: stretch
-
-// widths
-.w\=full
-    width: 100%
-
-.w\=site
-    max-width: $site-width
-    margin-left: auto
-    margin-right: auto
-
-.w\=viewport
-    width: 100vw
-    margin-left: 50%
-    transform: translateX(-50%)
+    .#{$class}center
+        justify-content: center
+        align-items: center
+    .#{$class}center-x
+        justify-content: center
+    .#{$class}center-y
+        align-items: center
 
 
-// widths
-@for $denom from 2 through 12
-    .w\=1\/#{ $denom }
-        width: 100% / $denom
+    .#{$class}space-between
+        justify-content: space-between
+    .#{$class}space-around
+        justify-content: space-around
+    .#{$class}space-evenly
+        justify-content: space-evenly
 
+    .#{$class}baseline
+        align-items: baseline
+    .#{$class}stretch
+        align-items: stretch
+
+    // widths
+    .#{$class}w\=full
+        width: 100%
+
+    .#{$class}w\=site
+        max-width: $site-width
+        margin-left: auto
+        margin-right: auto
+
+    .#{$class}w\=viewport
+        width: 100vw
+        margin-left: 50%
+        transform: translateX(-50%)
+
+    // widths
+    @for $denom from 2 through 12
+        .w\=1\/#{ $denom }
+            width: 100% / $denom
+
+    @for $order from 1 to 9
+        .ordir\=#{ $order }
+            order: $order

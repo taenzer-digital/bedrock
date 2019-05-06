@@ -16,6 +16,7 @@
 
 @include typography('')
 @include paddings-and-margins('')
+@include layout('')
 
 // set root rem
 $slope: ($text-size-upper-bound-px - $text-size-lower-bound-px) / ($rem-grow-end-px - $rem-grow-start-px)
@@ -32,11 +33,11 @@ html
         font-size: #{$text-size-upper-bound-px}px
 
 @media (min-width: $phone2tablet)
-    @include typography('md\\:')
     @include paddings-and-margins('md\\:')
+    @include layout('md\\:')
 @media (min-width: $tablet2laptop)
-    @include typography('lg\\:')
     @include paddings-and-margins('lg\\:')
+    @include layout('lg\\:')
 @media (min-width: $laptop2desktop)
-    @include typography('xl\\:')
     @include paddings-and-margins('xl\:')
+    @include layout('xl\\:')
