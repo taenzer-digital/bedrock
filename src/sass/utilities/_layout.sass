@@ -1,41 +1,59 @@
+// grid system
+.flex-grid
+    display: flex
+    flex-wrap: wrap
+    width: calc(100% + #{2 * $grid-gap})
+    justify-content: space-between
+
 =layout($class)
     .#{$class}fixed
         position: fixed
 
+    // displays
+    .#{$class}block
+        display: block
+    .#{$class}inline-block
+        display: inline-block
+    .#{$class}inline
+        display: inline
     .#{$class}flex
         display: flex
+    .#{$class}inline-flex
+        display: inline-flex
 
-    .#{$class}flex-wrap
+    // flex directions
+    .#{$class}row
+        flex-direction: row
+    .#{$class}column
+        flex-direction: column
+    .#{$class}row-reverse
+        flex-direction: row-reverse
+    .#{$class}column-reverse
+        flex-direction: column-reverse
+
+    // flex wraps
+    .#{$class}wrap
         flex-wrap: wrap
-
-    .#{$class}flex-wrap-reverse
+    .#{$class}no-wrap
+        flex-wrap: no-wrap
+    .#{$class}wrap-reverse
         flex-wrap: wrap-reverse
 
-    .#{$class}flex-start
+
+    .#{$class}justify-start
         justify-content: flex-start
-        align-items: flex-start
-    .#{$class}flex-start-x
-        justify-content: flex-start
-    .#{$class}flex-start-y
+    .#{$class}align-start
         align-items: flex-start
 
-    .#{$class}flex-end
+    .#{$class}justify-end
         justify-content: flex-end
-        align-items: flex-end
-    .#{$class}flex-end-x
-        justify-content: flex-end
-    .#{$class}flex-end-y
+    .#{$class}align-end
         align-items: flex-end
 
-
-    .#{$class}center
+    .#{$class}justify-center
         justify-content: center
+    .#{$class}align-center
         align-items: center
-    .#{$class}center-x
-        justify-content: center
-    .#{$class}center-y
-        align-items: center
-
 
     .#{$class}space-between
         justify-content: space-between
@@ -44,14 +62,25 @@
     .#{$class}space-evenly
         justify-content: space-evenly
 
-    .#{$class}baseline
+    .#{$class}align-baseline
         align-items: baseline
-    .#{$class}stretch
+    .#{$class}align-stretch
         align-items: stretch
 
-    // widths
-    .#{$class}w\=full
-        width: 100%
+    .#{$class}justify-stretch
+        justify-content: stretch
+
+    @for $i from 1 to 4
+        .#{$class}grow\=#{ $i }
+            flex-grow: $i
+
+    @for $i from 1 to 4
+        .#{$class}shrink\=#{ $i }
+            flex-shrink: $i
+    // order
+    @for $order from 1 to 9
+        .#{$class}ordir\=#{ $order }
+            order: $order
 
     .#{$class}w\=site
         max-width: $site-width
@@ -63,11 +92,55 @@
         margin-left: 50%
         transform: translateX(-50%)
 
-    // widths
-    @for $denom from 2 through 12
-        .w\=1\/#{ $denom }
-            width: 100% / $denom
+    .#{$class}w\=full
+        width: 100%
+    
+    $denoms: 2, 3, 4, 6, 8, 12
 
-    @for $order from 1 to 9
-        .ordir\=#{ $order }
-            order: $order
+    @each $denom in $denoms 
+        .#{$class}w\=1\/#{ $denom }
+            width: 100% / $denom
+    .#{$class}w\=2\/3
+        width: 100% * 2 / 3
+    .#{$class}w\=3\/4
+        width: 75%
+    .#{$class}w\=5\/6
+        width: 100% * 5 / 6
+    .#{$class}w\=11\/12
+        width: 100% * 11 / 12
+
+
+    // width-versions for flex grid
+    @each $denom in $denoms
+        .flex-grid > .#{$class}w\=1\/#{ $denom }
+            width: calc(#{ 100% / $denom } - #{ $grid-gap *( $denom  - 1) / $denom })
+
+    .flex-grid > .#{$class}w\=2\/3
+        width: calc(#{ 100% * 2 / 3 } - #{ $grid-gap / 3 })
+    .flex-grid > .#{$class}w\=3\/4
+        width: calc(#{ 75% } - #{ $grid-gap / 4 })
+    .flex-grid > .#{$class}w\=5\/6
+        width: calc(#{ 100% * 5 / 6 } - #{  $grid-gap / 6 })
+    .flex-grid > .#{$class}w\=11\/12
+        width: calc(#{ 100% * 11 / 12 } - #{  $grid-gap / 12 })
+
+    // offsets
+    @each $denom in $denoms
+        .flex-grid > .#{$class}offset-l\=1\/#{ $denom }
+            margin-left: calc(#{ 100% / $denom } - #{ $grid-gap * (( $denom  - 1) / $denom - 1 )})
+
+    .flex-grid > .#{$class}offset-l\=2\/3
+        margin-left: calc(#{ 100% * 2 / 3 } + #{ $grid-gap * 2 / 3  })
+
+    .flex-grid > .#{$class}offset-l\=3\/4
+        margin-left: calc(#{ 75% } + #{ $grid-gap * 3 / 4 })
+
+    @each $denom in $denoms
+        .flex-grid > .#{$class}offset-r\=1\/#{ $denom }
+            margin-right: calc(#{ 100% / $denom } - #{ $grid-gap * (( $denom  - 1) / $denom - 1 )})
+
+    .flex-grid > .#{$class}offset-r\=2\/3
+        margin-right: calc(#{ 100% * 2 / 3 } + #{ $grid-gap * 2 / 3  })
+
+    .flex-grid > .#{$class}offset-r\=3\/4
+        margin-right: calc(#{ 75% } + #{ $grid-gap * 3 / 4 })

@@ -1,6 +1,14 @@
 
 // paddings and margins
 =paddings-and-margins($class)
+    .#{ $class }ml
+        margin-left: auto
+    .#{ $class }mr
+        margin-right: auto
+    .#{ $class }mx
+        margin-left: auto
+        margin-right: auto
+
     @for $size from -1 through 6
         .#{ $class }p\=#{ $size }
             @include spacing(padding, $size, l r t b)
