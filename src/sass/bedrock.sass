@@ -15,8 +15,8 @@
 @import generic-components/menu
 
 @include typography('')
-@include paddings-and-margins('')
 @include layout('')
+@include paddings-and-margins('')
 
 // set root rem
 $slope: ($text-size-upper-bound-px - $text-size-lower-bound-px) / ($rem-grow-end-px - $rem-grow-start-px)
@@ -33,11 +33,11 @@ html
         font-size: #{$text-size-upper-bound-px}px
 
 @media (min-width: $phone2tablet)
-    @include paddings-and-margins('md\\:')
     @include layout('md\\:')
+    @include paddings-and-margins('md\\:')
 @media (min-width: $tablet2laptop)
-    @include paddings-and-margins('lg\\:')
     @include layout('lg\\:')
+    @include paddings-and-margins('lg\\:')
 @media (min-width: $laptop2desktop)
-    @include paddings-and-margins('xl\:')
     @include layout('xl\\:')
+    @include paddings-and-margins('xl\:')
