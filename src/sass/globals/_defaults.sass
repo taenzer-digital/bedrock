@@ -1,6 +1,10 @@
 $text-size-lower-bound-px: 16 !default
 $text-size-upper-bound-px: 20 !default
 
+@function convert($value)
+  $remSize: $value / $text-size-upper-bound-px
+  @return #{$remSize}rem
+
 $rem-grow-start-px: 500 !default
 $rem-grow-end-px: 1200 !default
 
@@ -42,8 +46,8 @@ $text-base-fontsize: $unit * 2 / $text-leading
 $head-base-fontsize: $unit * 2 / $head-leading
 
 $site-width: 48  * $hunit
-$phone2tablet: 600px
-$tablet2laptop: 900px
-$laptop2desktop: 1500px
+$phone2tablet: convert(600px)
+$tablet2laptop: convert(900px)
+$laptop2desktop: convert(1500px)
 
 $grid-gap: $hunit !default
