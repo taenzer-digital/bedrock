@@ -4,7 +4,7 @@
   "homepage": "https://www.taenzer.de/",
   "author": {},
   "description": "Internal CSS framework",
-  "main": "bedrock.sass",
+  "main": "src/js/index.js",
   "unpkg": "css/bedrock.css",
   "style": "bedrock/css/bulma.min.css",
   "repository": {
@@ -22,10 +22,14 @@
   "devDependencies": {
     "autoprefixer": "^9.4.7",
     "clean-css-cli": "^4.2.1",
-    "node-sass": "^4.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "node-sass": "^4.12.0",
     "postcss-cli": "^6.1.1",
     "rimraf": "^2.6.3",
-    "rollup": "^1.11.3"
+    "rollup": "^1.11.3",
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-prettier": "^0.6.0"
   },
   "scripts": {
     "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss && npm run build-js",
@@ -34,6 +38,7 @@
     "build-clean": "rimraf css",
     "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
     "build-js": "rollup --config",
+    "watch-js": "rollup --config --watch",
     "deploy": "npm run build",
     "prepublishOnly": "npm run build",
     "start": "npm run build-sass -- --watch"
