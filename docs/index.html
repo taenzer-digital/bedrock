@@ -6,12 +6,50 @@
 
 
 <body>
-<nav class="fixed w=full flex justify-center bb flex-wrap c=sec">
-    <ul 
+<nav class="fixed w=full c=sec">
+    <ul
     id ="menubar"
     role="menubar"
+    class="w=site flex"
     aria-label="Bedrock">
-        <li role="none">
+        <li role="none" class="pl=1">
+            <a role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            href="#basics"
+            tabindex="0">
+                Basics
+            </a>
+            <ul 
+            class="c=sec"
+            role="menu"
+            aria-label="Utilities">
+                <li role="none">
+                    <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
+                </li>
+            </ul>
+        </li>
+        <li role="none" class="pl=1">
+            <a role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            href="#typography"
+            tabindex="0">
+                Typography
+            </a>
+            <ul 
+            class="c=sec"
+            role="menu"
+            aria-label="Utilities">
+                <li role="Fonts">
+                    <a role="menuitem" tabindex="-1" class="px=1"  href="#fonts">Fonts</a>
+                </li>
+                <li role="none">
+                    <a role="menuitem" tabindex="-1" class="px=1"  href="#font_sizes">Font Sizes</a>
+                </li>
+            </ul>
+        </li>
+        <li role="none" class="pl=1">
             <a role="menuitem"
             aria-haspopup="true"
             aria-expanded="false"
@@ -24,13 +62,7 @@
             role="menu"
             aria-label="Utilities">
                 <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
-                </li>
-                <li role="none">
                     <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
-                </li>
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#font_sizes">Font Sizes</a>
                 </li>
                 <li role="none">
                     <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
@@ -51,9 +83,11 @@
 
 <div class="pt=6 md:pt=4 lg:pt=2 px=1 pb=2 w=site">
     <a name="start"></a>
-    <h1 class="head-3xl text-align-center">Bedrock CSS</h1>
+    <h1 class="text-align-center">Bedrock CSS</h1>
+    <a name="basics"></a> 
+    <h2>Basics</h2>
     <a name="base_unit"></a> 
-    <h3 class="head-xl text-align-center">The Base Unit</h3>
+    <h3>The Base Unit</h3>
     <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
     <p>Vertical distances are a multiple of the unit value.
     <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
@@ -66,7 +100,82 @@
         even if its width is slightly larger than its height.
         <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
     </div>
+    <div class="text-align-center">✯</div>
 
+    <a name="typography"></a>
+    <h2>Typography</h2>
+    <a name="font_sizes"></a>
+    <h3>Fonts</h3>
+    <p>Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.
+    <p>The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default.
+    <div class="text-align-center">✯</div>
+    <a name="font_sizes"></a>
+    <h3>Font Sizes</h3>
+    There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
+    <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class.
+
+    <p>Complete overview:<br>
+        <code>text-s</code><br>
+        <div class="text-s">Lorum Ipsum</div>
+        <code>text</code><br>
+        <div>Lorum Ipsum</div>
+        <code>head</code><br>
+        <div class="head">Lorum Ipsum</div>
+        <code>head-l</code><br>
+        <div class="head-l">Lorum Ipsum</div>
+        <code>head-xl</code><br>
+        <div class="head-xl">Lorum Ipsum</div>
+        <code>head-xxl</code> or <code>head-2xl</code><br>
+        <div class="head-xxl">Lorum Ipsum</div>
+        <code>head-3xl</code><br>
+        <div class="head-3xl">Lorum Ipsum</div>
+        <code>head-4xl</code><br>
+        <div class="head-4xl">Lorum Ipsum</div>
+
+      <div class="p=2 my=1 b r">
+        <p>Font sizes follow a quadratic progression. The nth size is <code>1 + (0.25 * n * (n-1) / 2 )</code> the size of the base font size.
+        <p>Line heights are snapped to multiples of the unit values, except the footnote size.
+        <p class="mt=1">For reference:
+        <figure class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>size</th>
+                        <th class="numeric">leading</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><code>s</code></td>
+                    <td class="numeric">3/2 units<td>
+                </tr>
+                    <td>-</td>
+                    <td class="numeric">2 units</td>
+                </tr>
+                </tr>
+                    <td>l</td>
+                    <td class="numeric">2 units</td>
+                </tr>
+                </tr>
+                    <td>xl</td>
+                    <td class="numeric">3 units</td>
+                </tr>
+                </tr>
+                    <td>xxl</td>
+                    <td class="numeric">4 units</td>
+                </tr>
+                </tr>
+                    <td>3xl</td>
+                    <td class="numeric">5 units</td>
+                </tr>
+                </tr>
+                    <td>4xl</td>
+                    <td class="numeric">7 units</td>
+                </tr>
+            </table>
+        </figure>
+    </div>
+
+    <div class="text-align-center">✯</div>
     <a name="margins_and_paddings"></a>
     <h2 class="head-xl center">Margins and Paddings</h3>
     <p>Margins and and paddings are set with the utility class
@@ -95,8 +204,17 @@
         </table>
     </figure>
 
+
+    <p class="mt=1">Try it out yourself:</p>
+    <textarea data-target="margins-paddings-example" class="py=1 prototype px=1 mx=-1" rows="4"><div>
+    <div class="c=prim p=1">Foo</div>
+    <div class="c=sec px=5">Bar</div>
+    <div class="c=prim mt=2 ml=4">Baz</div>
+</div></textarea>
+    <div class="py=1" id="margins-paddings-example"></div>
+    <div class="text-align-center">✯</div>
     <a name="borders"></a>
-    <h2 class="head-xl text-align-center mt=4">Borders</h3>
+    <h3>Borders</h3>
     <p>Borders are set with the following utility classes:
     <figure class="table">
         <table>
@@ -166,75 +284,9 @@
     <div class="py=1" id="button-group-example"></div>
 
     The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
-
-    <a name="font_sizes"></a>
-    <h2 class="head-xl text-align-center mt=4">Font Sizes</h2>
-    There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
-    <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class.
-
-    <p>Complete overview:<br>
-        <code>text-s</code><br>
-        <div class="text-s">Lorum Ipsum</div>
-        <code>text</code><br>
-        <div>Lorum Ipsum</div>
-        <code>head</code><br>
-        <div class="head">Lorum Ipsum</div>
-        <code>head-l</code><br>
-        <div class="head-l">Lorum Ipsum</div>
-        <code>head-xl</code><br>
-        <div class="head-xl">Lorum Ipsum</div>
-        <code>head-xxl</code> or <code>head-2xl</code><br>
-        <div class="head-xxl">Lorum Ipsum</div>
-        <code>head-3xl</code><br>
-        <div class="head-3xl">Lorum Ipsum</div>
-        <code>head-4xl</code><br>
-        <div class="head-4xl">Lorum Ipsum</div>
-        
-
-    <div class="p=2 my=1 b r">
-        <p>Font sizes follow a quadratic progression. The nth size is <code>1 + (0.25 * n * (n-1) / 2 )</code> the size of the base font size.
-        <p>Line heights are snapped to multiples of the unit values, except the footnote size.
-        <p class="mt=1">For reference:
-        <figure class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>size</th>
-                        <th class="numeric">leading</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td><code>s</code></td>
-                    <td class="numeric">3/2 units<td>
-                </tr>
-                    <td>-</td>
-                    <td class="numeric">2 units</td>
-                </tr>
-                </tr>
-                    <td>l</td>
-                    <td class="numeric">2 units</td>
-                </tr>
-                </tr>
-                    <td>xl</td>
-                    <td class="numeric">3 units</td>
-                </tr>
-                </tr>
-                    <td>xxl</td>
-                    <td class="numeric">4 units</td>
-                </tr>
-                </tr>
-                    <td>3xl</td>
-                    <td class="numeric">5 units</td>
-                </tr>
-                </tr>
-                    <td>4xl</td>
-                    <td class="numeric">7 units</td>
-                </tr>
-            </table>
-        </figure>
-    </div>
+    <div class="text-align-center">✯</div>
     <a name="tables"></a>
-    <h2 class="head-xl text-align-center  mt=4">Tables</h2>
+    <h3>Tables</h3>
     <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.
     <p>For example,
     <textarea data-target="table-example-1" class="py=1 prototype p=1">
@@ -259,9 +311,8 @@ renders to
 
 <p>If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.
 <p>Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>.
-<p class="mt=1 w=viewport">Example:
-    <textarea data-target="table-example-2" class="py=1 prototype p=1">
-<figure class="table">
+<p class="mt=1">Example:
+    <textarea data-target="table-example-2" class="prototype"><figure class="table">
   <table>
     <thead>
       <tr>
@@ -351,12 +402,17 @@ renders to
     </div>
 
     <a name="responsive_design"></a>
-    <h2 class="head-xl text-align-center mt=4">Responsive Design</h2>
+    <h3>Responsive Design</h3>
     <p>Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).
     Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).
 
     <p class="pt=1">For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.
-    <div class="mt=1 lg:mt=2 xl:mt=3 p=1 b r">Resize the browser window to try it out yourself!</div> 
+    <p>In general, everything that has to do with layout and spacing is prefixed.
+    <div class="text-align-center">✯</div>
+
+    <a name="flex-grid"></a>
+    <h3>The Flex Grid</h3>
+    <p>
 
 
 </div>
