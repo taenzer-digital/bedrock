@@ -23,12 +23,17 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
   $foreLum: luminance($front) + .05
   @return max($backLum, $foreLum) / min($backLum, $foreLum)
 
+@function create_variant($color, $diff)
+  @if luminance($color) >= 0.5
+    @return darken($color, $diff)
+  @else
+    @return lighten($color, $diff)
 
-
-=color_combination($name, $palette, $check-colors: false)
+=color_combination($name, $palette, $variant, $selector, $check-colors: false)
+  $bg: create_variant(map-get($palette, 'bg'), $variant)
   @if $check-colors
-    $contrast-fg-bg: contrast(map-get($palette, 'fg'), map-get($palette, 'bg'))
-    $contrast-accent-bg: contrast(map-get($palette, 'accent'), map-get($palette, 'bg'))
+    $contrast-fg-bg: contrast(map-get($palette, 'fg'), $bg)
+    $contrast-accent-bg: contrast(map-get($palette, 'accent'), $bg)
     @if $contrast-fg-bg <= 4.5
       @warn 'c-#{$name}: contrast between background and foreground is #{$contrast-fg-bg}, but it should be at least 4.5'
     @else
@@ -39,15 +44,39 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
       @debug 'c-#{$name}: contrast between accent and foreground is #{$contrast-accent-bg}'
   .c\=#{$name}
     color: map-get($palette, 'fg')
-    background-color: map-get($palette, 'bg')
-    border-color: darken(map-get($palette, 'bg'), $border-darken)
+    background-color: $bg
+    border-color: darken($bg, $border-darken)
+    & *:focus
+      box-shadow: $focus-box-shadow map-get($palette, 'fg')
+    a
+      color: map-get($palette, 'accent')
+  .hover\:c\=#{$name}:hover
+    color: map-get($palette, 'fg')
+    background-color: $bg
+    border-color: darken($bg, $border-darken)
+    & *:focus
+      box-shadow: $focus-box-shadow map-get($palette, 'fg')
+    a
+      color: map-get($palette, 'accent')
+  .focus\:c\=#{$name}:focus
+    color: map-get($palette, 'fg')
+    background-color: $bg
+    border-color: darken($bg, $border-darken)
     & *:focus
       box-shadow: $focus-box-shadow map-get($palette, 'fg')
     a
       color: map-get($palette, 'accent')
 
-@include color-combination('text', $text-color, true)
-@include color-combination('prim', $primary-color, true)
-@include color-combination('sec', $secondary-color, true)
-@include color-combination('ter', $tertiary-color, true)
-@include color-combination('err', $error-color, true)
+
+
+@include color-combination('text', $text-color, 0%,  true)
+@include color-combination('text-variant', $text-color, $variant-diff, true)
+@include color-combination('prim', $primary-color, 0%, true)
+@include color-combination('prim-variant', $primary-color, $variant-diff, true)
+@include color-combination('sec', $secondary-color, 0%, true)
+@include color-combination('sec-variant', $secondary-color, $variant-diff, true)
+@include color-combination('ter', $tertiary-color, 0%, true)
+@include color-combination('ter-variant', $tertiary-color, $variant-diff, true)
+@include color-combination('err', $error-color, 0%, true)
+@include color-combination('err', $error-color, $variant-diff, true)
+

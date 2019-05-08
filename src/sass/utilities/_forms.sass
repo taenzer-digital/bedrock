@@ -42,3 +42,8 @@
       color: map-get($text-color, 'fg')
       $text-bg: map-get($text-color, 'bg')
       text-shadow: 2px 2px 1px $text-bg, -2px 2px 1px $text-bg, -2px -2px 1px $text-bg, 2px -2px 1px $text-bg
+
+  input,
+  textarea,
+  button
+    background-color: create_variant(map-get($text-color, 'bg'), $variant-diff)
