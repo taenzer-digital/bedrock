@@ -1,0 +1,18 @@
+.form
+  & input, & textarea
+    border: 0
+    width: 100%
+
+  & button
+    border: 0
+    
+  & button[type = reset]
+    color: map-get($error-color, 'fg')
+    background-color: map-get($error-color, 'bg')
+    border-color: darken(map-get($error-color, 'bg'), $border-darken)
+
+  & button[type = submit]
+    color: map-get($primary-color, 'fg')
+    background-color: map-get($primary-color, 'bg')
+    border-color: darken(map-get($primary-color, 'bg'), $border-darken)
+
