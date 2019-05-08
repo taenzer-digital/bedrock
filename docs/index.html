@@ -91,9 +91,9 @@
     <p>Vertical distances are a multiple of the unit value.
     <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
     <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
-    <div class="p=2 my=1 b r">
+    <div class="p=2 my=1 elevated r">
         <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
-        <div class="mt=1" style="background-color: #333; height: 48px; width: 50px;"></div>        
+        <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>        
         is perceived as more "square" than 
         <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
         even if its width is slightly larger than its height.
@@ -131,7 +131,7 @@
         <code>head-4xl</code><br>
         <div class="head-4xl">Lorum Ipsum</div>
 
-      <div class="p=2 my=1 b r">
+      <div class="p=2 my=1 elevated r">
         <p>Font sizes follow a quadratic progression. The nth size is <code>1 + (0.25 * n * (n-1) / 2 )</code> the size of the base font size.
         <p>Line heights are snapped to multiples of the unit values, except the footnote size.
         <p class="mt=1">For reference:
