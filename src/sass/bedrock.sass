@@ -1,8 +1,8 @@
 @charset "utf-8"
 
 @import globals/defaults
-@import globals/minireset
 @import globals/colors
+@import globals/minireset
 
 @import utilities/forms
 @import utilities/typography
@@ -44,3 +44,14 @@ html
 @media (min-width: $laptop2desktop)
     @include layout('xl\\:')
     @include paddings-and-margins('xl\:')
+
+@include color-combination('text', $text-color, 0%,  true)
+@include color-combination('text-alt', $text-color, $variant-diff, true)
+@include color-combination('prim', $primary-color, 0%, true)
+@include color-combination('prim-alt', $primary-color, $variant-diff, true)
+@include color-combination('sec', $secondary-color, 0%, true)
+@include color-combination('sec-alt', $secondary-color, $variant-diff, true)
+@include color-combination('ter', $tertiary-color, 0%, true)
+@include color-combination('ter-alt', $tertiary-color, $variant-diff, true)
+@include color-combination('err', $error-color, 0%, true)
+@include color-combination('err-alt', $error-color, $variant-diff, true)

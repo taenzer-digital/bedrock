@@ -31,6 +31,7 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
 
 =color_combination($name, $palette, $variant, $selector, $check-colors: false)
   $bg: create_variant(map-get($palette, 'bg'), $variant)
+  $fg: map-get($palette, 'fg')
   @if $check-colors
     $contrast-fg-bg: contrast(map-get($palette, 'fg'), $bg)
     $contrast-accent-bg: contrast(map-get($palette, 'accent'), $bg)
@@ -43,40 +44,29 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
     @else
       @debug 'c-#{$name}: contrast between accent and foreground is #{$contrast-accent-bg}'
   .c\=#{$name}
-    color: map-get($palette, 'fg')
+    color: $fg
     background-color: $bg
-    border-color: darken($bg, $border-darken)
+    border-color: $fg
     & *:focus
-      box-shadow: $focus-box-shadow map-get($palette, 'fg')
+      box-shadow: $focus-box-shadow $fg
     a
       color: map-get($palette, 'accent')
   .hover\:c\=#{$name}:hover
-    color: map-get($palette, 'fg')
+    color: $fg
     background-color: $bg
-    border-color: darken($bg, $border-darken)
+    border-color: $fg
     & *:focus
-      box-shadow: $focus-box-shadow map-get($palette, 'fg')
+      box-shadow: $focus-box-shadow $fg
     a
       color: map-get($palette, 'accent')
   .focus\:c\=#{$name}:focus
-    color: map-get($palette, 'fg')
+    color: $fg
     background-color: $bg
-    border-color: darken($bg, $border-darken)
+    border-color $fg
     & *:focus
-      box-shadow: $focus-box-shadow map-get($palette, 'fg')
+      box-shadow: $focus-box-shadow $fg
     a
       color: map-get($palette, 'accent')
 
 
-
-@include color-combination('text', $text-color, 0%,  true)
-@include color-combination('text-alt', $text-color, $variant-diff, true)
-@include color-combination('prim', $primary-color, 0%, true)
-@include color-combination('prim-alt', $primary-color, $variant-diff, true)
-@include color-combination('sec', $secondary-color, 0%, true)
-@include color-combination('sec-alt', $secondary-color, $variant-diff, true)
-@include color-combination('ter', $tertiary-color, 0%, true)
-@include color-combination('ter-alt', $tertiary-color, $variant-diff, true)
-@include color-combination('err', $error-color, 0%, true)
-@include color-combination('err-alt', $error-color, $variant-diff, true)
 

@@ -9,16 +9,6 @@
     border: 0
     padding-left: $hunit / 2
     padding-right: $hunit / 2
-    
-  & button[type = reset]
-    color: map-get($error-color, 'fg')
-    background-color: map-get($error-color, 'bg')
-    border-color: darken(map-get($error-color, 'bg'), $border-darken)
-
-  & button[type = submit]
-    color: map-get($primary-color, 'fg')
-    background-color: map-get($primary-color, 'bg')
-    border-color: darken(map-get($primary-color, 'bg'), $border-darken)
 
   // floating labels
   .floating-label
@@ -42,8 +32,3 @@
       color: map-get($text-color, 'fg')
       $text-bg: map-get($text-color, 'bg')
       text-shadow: 2px 2px 1px $text-bg, -2px 2px 1px $text-bg, -2px -2px 1px $text-bg, 2px -2px 1px $text-bg
-
-  input,
-  textarea,
-  button
-    background-color: create_variant(map-get($text-color, 'bg'), $variant-diff)
