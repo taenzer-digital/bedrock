@@ -47,6 +47,7 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
     color: $fg
     background-color: $bg
     border-color: $fg
+    transition: all $color-transition-delay ease
     & *:focus
       box-shadow: $focus-box-shadow $fg
     a
@@ -55,6 +56,7 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
     color: $fg
     background-color: $bg
     border-color: $fg
+    transition: all $color-transition-delay ease
     & *:focus
       box-shadow: $focus-box-shadow $fg
     a
@@ -62,7 +64,8 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
   .focus\:c\=#{$name}:focus
     color: $fg
     background-color: $bg
-    border-color $fg
+    border-color: $fg
+    transition: all $color-transition-delay ease
     & *:focus
       box-shadow: $focus-box-shadow $fg
     a
