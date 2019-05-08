@@ -10,3 +10,19 @@ ul[role="menubar"] ul[role="menu"]
 
 ul[role="menubar"] ul[role="menu"] li a
   display: block
+
+.nav
+  .menu,
+  .menubar
+    display: none
+.nav--active
+  .menu,
+  .menubar
+    display: inherit
+
+@media (min-width: $tablet2laptop)
+  .nav,
+  .nav--active
+    .menu,
+    .menubar
+      display: inherit

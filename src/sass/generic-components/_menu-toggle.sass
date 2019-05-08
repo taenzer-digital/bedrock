@@ -3,12 +3,9 @@ $burger-color-active: #000 !default
 
 $stroke-width: px-to-rem(2) !default
 $stroke-spacing: .5 * $unit !default
-
 $burger-width: 2 * $hunit !default
 $burger-padding: $unit $hunit !default
-
 $transition-time: .3s !default
-
 $toggle-button-margin: px-to-rem(3) !default
 
 .menu-toggle
@@ -18,6 +15,9 @@ $toggle-button-margin: px-to-rem(3) !default
   border: 0
   background: transparent
   z-index: 1000
+
+  @media (min-width: $tablet2laptop)
+    display: none
 
   &--right
     right: 0

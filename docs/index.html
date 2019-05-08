@@ -5,85 +5,92 @@
 <script src="../js/bundle.js"></script>
 
 
-<body class="flex">
-<nav class="c=sec lg:w=1/4 align-stretch">
-    <h1 class="head-xl">Bedrock CSS</h1>
-    <button class="js-menu-toggle menu-toggle menu-toggle--right menu-toggle--top">
-        <span class="menu-toggle__burger"></span>
-    </button>
-    <ul
-    id ="menubar"
-    role="menubar"
-    class="sticky"
-    aria-label="Bedrock">
-        <li role="none" class="pl=1">
-            <a role="menuitem"
-            aria-haspopup="true"
-            aria-expanded="false"
-            href="#basics"
-            tabindex="0">
-                Basics
-            </a>
-            <ul 
-            class="c=sec"
-            role="menu"
-            aria-label="Utilities">
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
-                </li>
-            </ul>
-        </li>
-        <li role="none" class="pl=1">
-            <a role="menuitem"
-            aria-haspopup="true"
-            aria-expanded="false"
-            href="#typography"
-            tabindex="1">
-                Typography
-            </a>
-            <ul 
-            class="c=sec"
-            role="menu"
-            aria-label="Utilities">
-                <li role="Fonts">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#fonts">Fonts</a>
-                </li>
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#font_sizes">Font Sizes</a>
-                </li>
-            </ul>
-        </li>
-        <li role="none" class="pl=1">
-            <a role="menuitem"
-            aria-haspopup="true"
-            aria-expanded="false"
-            href="#"
-            tabindex="2">
-                Utilities
-            </a>
-            <ul 
-            class="c=sec"
-            role="menu"
-            aria-label="Utilities">
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
-                </li>
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
-                </li>
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#placeholder">Placeholder</a>
-                </li>
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#interactive">Interactive Elements</a>
-                </li>
-                <li role="none">
-                    <a role="menuitem" tabindex="-1" class="px=1"  href="#responsive_design">Responsive Design</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+<body class="lg:flex">
+    <header class="c=sec w=full lg:w=1/4 align-stretch">
+        <h1 class="head-xl">Bedrock CSS</h1>
+        <nav class="nav">
+                <button
+                class="js-menu-toggle menu-toggle menu-toggle--right menu-toggle--top"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="menubar">
+                    <span class="menu-toggle__burger"></span>
+                </button>
+                <ul
+                id ="menubar"
+                role="menubar"
+                class="menu sticky"
+                aria-label="Bedrock">
+                    <li role="none" class="pl=1">
+                        <a role="menuitem"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        href="#basics"
+                        tabindex="0">
+                            Basics
+                        </a>
+                        <ul 
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Utilities">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none" class="pl=1">
+                        <a role="menuitem"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        href="#typography"
+                        tabindex="1">
+                            Typography
+                        </a>
+                        <ul 
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Utilities">
+                            <li role="Fonts">
+                                <a role="menuitem" tabindex="-1" class="px=1"  href="#fonts">Fonts</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1"  href="#font_sizes">Font Sizes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none" class="pl=1">
+                        <a role="menuitem"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        href="#"
+                        tabindex="2">
+                            Utilities
+                        </a>
+                        <ul 
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Utilities">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1"  href="#placeholder">Placeholder</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1"  href="#interactive">Interactive Elements</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1"  href="#responsive_design">Responsive Design</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
 
 <main class="w=site ml=2">
     <a name="basics"></a> 

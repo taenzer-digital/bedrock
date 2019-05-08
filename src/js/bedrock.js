@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
   [].forEach.call(document.getElementsByClassName('js-menu-toggle'), (el) => {
     el.addEventListener('click', (event) => {
       event.target.classList.toggle('menu-toggle--active');
+      event.target.parentNode.classList.toggle('nav--active');
+      if (event.target.getAttribute('aria-expanded')) {
+        event.target.setAttribute('aria-expanded', 'true');
+      } else {
+        event.target.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 });
