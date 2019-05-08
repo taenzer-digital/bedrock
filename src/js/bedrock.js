@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Accordion('.accordion');
 
   // prototype
-  [].forEach.call(document.getElementsByClassName('prototype'), el => {
+  [].forEach.call(document.getElementsByClassName('prototype'), (el) => {
     const targetId = el.getAttribute('data-target');
     const target = document.getElementById(targetId);
     if (target) {
@@ -31,4 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const menubar = new Menubar(document.getElementById('menubar'));
   menubar.init();
+
+
+  [].forEach.call(document.getElementsByClassName('js-menu-toggle'), (el) => {
+    el.addEventListener('click', (event) => {
+      event.target.classList.toggle('menu-toggle--active');
+    });
+  });
 });

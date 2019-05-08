@@ -1,15 +1,15 @@
 $burger-color: #000 !default
 $burger-color-active: #000 !default
 
-$stroke-width: 2px !default
-$stroke-spacing: 7px !default
+$stroke-width: px-to-rem(2) !default
+$stroke-spacing: .5 * $unit !default
 
-$burger-width: 24px !default
-$burger-padding: 1rem 1.5rem !default
+$burger-width: 2 * $hunit !default
+$burger-padding: $unit $hunit !default
 
 $transition-time: .3s !default
 
-$toggle-button-margin: 3px !default
+$toggle-button-margin: px-to-rem(3) !default
 
 .menu-toggle
   position: fixed
@@ -37,7 +37,7 @@ $toggle-button-margin: 3px !default
   &__burger
     width: $burger-width
     height: $stroke-width
-    margin: $toggle-button-margin+$stroke-spacing 0
+    margin: #{$toggle-button-margin + $stroke-spacing} 0
     background: $burger-color
     transition: all linear $transition-time
     position: relative
@@ -58,3 +58,14 @@ $toggle-button-margin: 3px !default
       background: $burger-color
       top: $stroke-spacing
 
+  &--active &__burger
+    background: transparent
+    &:before,
+    &:after
+      background: $burger-color-active
+    &:before
+      top: 0
+      transform: rotate(-45deg)
+    &:after
+      top: 0
+      transform: rotate(45deg)
