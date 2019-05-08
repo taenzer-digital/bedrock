@@ -41,6 +41,8 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
     color: map-get($palette, 'fg')
     background-color: map-get($palette, 'bg')
     border-color: darken(map-get($palette, 'bg'), $border-darken)
+    & *:focus
+      box-shadow: $focus-box-shadow map-get($palette, 'fg')
     a
       color: map-get($palette, 'accent')
 
