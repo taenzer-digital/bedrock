@@ -1,0 +1,20 @@
+=visibility($class)
+  .#{$class}visible
+    display: initial
+  .#{$class}visible.flex
+    display: flex
+  .#{$class}visible.inline-flex
+    display: inline-flex
+  .#{$class}visible.block
+    display: block
+  .#{$class}visible.inline-block
+    display: inline-block
+  .#{$class}visible.inline
+    display: inline
+  .#{$class}hidden,
+  .#{$class}hidden.flex,
+  .#{$class}hidden.inline-flex,
+  .#{$class}hidden.block,
+  .#{$class}hidden.inline-block,
+  .#{$class}hidden.inline
+    display: none

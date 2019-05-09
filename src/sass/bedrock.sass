@@ -12,6 +12,7 @@
 @import utilities/layout
 @import utilities/code
 @import utilities/utility-export
+@import utilities/visibility
 
 @import generic-components/menu
 @import generic-components/menu-toggle
@@ -20,6 +21,8 @@
 @include typography('')
 @include layout('')
 @include paddings-and-margins('')
++visibility('')
+
 
 // set root rem
 $slope: ($text-size-upper-bound-px - $text-size-lower-bound-px) / ($rem-grow-end-px - $rem-grow-start-px)
@@ -38,12 +41,17 @@ html
 @media (min-width: $phone2tablet)
     @include layout('md\\:')
     @include paddings-and-margins('md\\:')
+    +visibility('md\\:')
+
 @media (min-width: $tablet2laptop)
     @include layout('lg\\:')
     @include paddings-and-margins('lg\\:')
+    +visibility('lg\\:')
+
 @media (min-width: $laptop2desktop)
     @include layout('xl\\:')
     @include paddings-and-margins('xl\:')
+    +visibility('xl\\:')
 
 @include color-combination('text', $text-color, 0%,  true)
 @include color-combination('text-alt', $text-color, $variant-diff, true)
