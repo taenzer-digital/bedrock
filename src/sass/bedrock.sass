@@ -12,17 +12,17 @@
 @import utilities/layout
 @import utilities/code
 @import utilities/utility-export
+@import utilities/visibility
 @import utilities/aspect-ratio
 
 @import generic-components/menu
 @import generic-components/menu-toggle
 
-
 +typography('')
 +layout('')
 +paddings-and-margins('')
 +aspect-ratio('')
-
++visibility('')
 
 // set root rem
 $slope: ($text-size-upper-bound-px - $text-size-lower-bound-px) / ($rem-grow-end-px - $rem-grow-start-px)
@@ -42,14 +42,17 @@ html
     +layout('md\\:')
     +paddings-and-margins('md\\:')
     +aspect-ratio('md\\:')
+    +visibility('md\\:')
 @media (min-width: $tablet2laptop)
     +layout('lg\\:')
     +paddings-and-margins('lg\\:')
     +aspect-ratio('lg\\:')
+    +visibility('lg\\:')
 @media (min-width: $laptop2desktop)
     +layout('xl\\:')
     +paddings-and-margins('xl\:')
     +aspect-ratio('xl\\:')
+    +visibility('xl\\:')
 
 +color-combination('text', $text-color, 0%,  true)
 +color-combination('text-alt', $text-color, $variant-diff, true)
