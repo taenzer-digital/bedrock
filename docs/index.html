@@ -280,11 +280,10 @@
     <p class="mt=1">Big radii to create circles or pill like shapes can be created with `r-circle`. Of course, die modified classes `rl-circle`, `rr-circle`, `rt-circle` and `rb-circle` to restrict the radius to the left, right, top or bottom are also avaiable.
 
     <p class="mt=1">For example, a button group could look like this:</p>
-    <textarea data-target="button-group-example" class="p=1 prototype" rows="4"><form class="form">
+    <textarea data-target="button-group-example" class="p=1 prototype" rows="4">
     <button class="px=1 rl c=sec-alt">Foo</button>
     <button class="px=1 rr c=sec-alt">Bar</button>
-    <button class="r-circle px=4 c=prim">baz</button>
-</form></textarea>
+    <button class="r-circle px=4 c=prim">baz</button></textarea>
     <div class="py=1" id="button-group-example"></div>
 
     The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
@@ -423,7 +422,7 @@ renders to
 
     <a name="forms"></a>
     <h3>Forms</h3> 
-    <textarea data-target="form-example-1" class="py=1 prototype p=1"><form id="person" class="form" >
+    <textarea data-target="form-example-1" class="py=1 prototype p=1"><form id="person">
     <label for="first_name">First Name</label> 
     <input type="text" name="first_name" id="first_name" maxlength="30">
  
@@ -458,7 +457,7 @@ renders to
 <div class="c=text-alt hover:c=text">
     Baz
 </div>
-<div class="form">
+<div>
     <input class="r mt=1 focus:elevated focus:c=text"/>
 </div>
 </textarea>
