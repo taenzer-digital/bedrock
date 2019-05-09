@@ -13,16 +13,16 @@
 @import utilities/code
 @import utilities/utility-export
 @import utilities/visibility
+@import utilities/aspect-ratio
 
 @import generic-components/menu
 @import generic-components/menu-toggle
 
-
-@include typography('')
-@include layout('')
-@include paddings-and-margins('')
++typography('')
++layout('')
++paddings-and-margins('')
++aspect-ratio('')
 +visibility('')
-
 
 // set root rem
 $slope: ($text-size-upper-bound-px - $text-size-lower-bound-px) / ($rem-grow-end-px - $rem-grow-start-px)
@@ -39,27 +39,28 @@ html
         font-size: #{$text-size-upper-bound-px}px
 
 @media (min-width: $phone2tablet)
-    @include layout('md\\:')
-    @include paddings-and-margins('md\\:')
+    +layout('md\\:')
+    +paddings-and-margins('md\\:')
+    +aspect-ratio('md\\:')
     +visibility('md\\:')
-
 @media (min-width: $tablet2laptop)
-    @include layout('lg\\:')
-    @include paddings-and-margins('lg\\:')
+    +layout('lg\\:')
+    +paddings-and-margins('lg\\:')
+    +aspect-ratio('lg\\:')
     +visibility('lg\\:')
-
 @media (min-width: $laptop2desktop)
-    @include layout('xl\\:')
-    @include paddings-and-margins('xl\:')
+    +layout('xl\\:')
+    +paddings-and-margins('xl\:')
+    +aspect-ratio('xl\\:')
     +visibility('xl\\:')
 
-@include color-combination('text', $text-color, 0%,  true)
-@include color-combination('text-alt', $text-color, $variant-diff, true)
-@include color-combination('prim', $primary-color, 0%, true)
-@include color-combination('prim-alt', $primary-color, $variant-diff, true)
-@include color-combination('sec', $secondary-color, 0%, true)
-@include color-combination('sec-alt', $secondary-color, $variant-diff, true)
-@include color-combination('ter', $tertiary-color, 0%, true)
-@include color-combination('ter-alt', $tertiary-color, $variant-diff, true)
-@include color-combination('err', $error-color, 0%, true)
-@include color-combination('err-alt', $error-color, $variant-diff, true)
++color-combination('text', $text-color, 0%,  true)
++color-combination('text-alt', $text-color, $variant-diff, true)
++color-combination('prim', $primary-color, 0%, true)
++color-combination('prim-alt', $primary-color, $variant-diff, true)
++color-combination('sec', $secondary-color, 0%, true)
++color-combination('sec-alt', $secondary-color, $variant-diff, true)
++color-combination('ter', $tertiary-color, 0%, true)
++color-combination('ter-alt', $tertiary-color, $variant-diff, true)
++color-combination('err', $error-color, 0%, true)
++color-combination('err-alt', $error-color, $variant-diff, true)
