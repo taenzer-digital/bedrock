@@ -57,5 +57,26 @@ body
         font-size: $head-base-fontsize * 4.75
         line-height: $unit * 7
 
-.text-align-center
+
+// text alignment and whitespace behaviour
+=text-layout($class)
+  .#{$class}text-align\=c
     text-align: center
+  .#{$class}text-align\=l
+    text-align: left
+  .#{$class}text-align\=r
+    text-align: right
+
+  .#{$class}text-wrap\=inital
+    white-space: initial
+  .#{$class}text-wrap\=nowrap
+    white-space: nowrap
+
+  .#{$class}text-overflow\=initial
+    text-overflow: initial
+  .#{$class}text-overflow\=clip
+    overflow: hidden
+    text-overflow: clip
+  .#{$class}text-overflow\=\.\.\.
+    overflow: hidden
+    text-overflow: ellipsis
