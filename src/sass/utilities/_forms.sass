@@ -1,34 +1,33 @@
-.form
-  input, textarea
-    border: 0
-    width: 100%
-    padding-left: $hunit / 2
-    padding-right: $hunit / 2
+input, textarea
+  border: 0
+  width: 100%
+  padding-left: $hunit / 2
+  padding-right: $hunit / 2
 
-  & button
-    border: 0
-    padding-left: $hunit / 2
-    padding-right: $hunit / 2
+button
+  border: 0
+  padding-left: $hunit / 2
+  padding-right: $hunit / 2
 
-  // floating labels
-  .floating-label
-    position: relative
-    label
-      pointer-events: none
-      color: map-get($text-color, 'accent')
-      position: absolute
-      font-size: 1em
-      top: 0
-      left: $hunit / 4
-      padding: 0 $hunit / 4
-      transition-property: transform font-size
-      transition-duration: 0.2s
+// floating labels
+.floating-label
+  position: relative
+  label
+    pointer-events: none
+    color: map-get($text-color, 'accent')
+    position: absolute
+    font-size: 1em
+    top: 0
+    left: $hunit / 4
+    padding: 0 $hunit / 4
+    transition-property: transform font-size
+    transition-duration: 0.2s
 
-    input:focus + label,
-    input:not(:placeholder-shown) + label
-      top: -$unit*1.25
-      left: $hunit / 4
-      font-size: 0.75em
-      color: map-get($text-color, 'fg')
-      $text-bg: map-get($text-color, 'bg')
-      text-shadow: 2px 2px 1px $text-bg, -2px 2px 1px $text-bg, -2px -2px 1px $text-bg, 2px -2px 1px $text-bg
+  input:focus + label,
+  input:not(:placeholder-shown) + label
+    top: -$unit*1.25
+    left: $hunit / 4
+    font-size: 0.75em
+    color: map-get($text-color, 'fg')
+    $text-bg: map-get($text-color, 'bg')
+    text-shadow: 2px 2px 1px $text-bg, -2px 2px 1px $text-bg, -2px -2px 1px $text-bg, 2px -2px 1px $text-bg
