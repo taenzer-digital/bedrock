@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Placeholder('.placeholder');
 
   // accordion
-  Accordion('.accordion');
+  new Accordion('.accordion');
 
   // prototype
   [].forEach.call(document.getElementsByClassName('prototype'), (el) => {
