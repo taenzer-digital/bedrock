@@ -712,6 +712,7 @@ renders to
 renders to
   <div id="form-example-1" class=" my=1"></div>
     <p>Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.
+    <p>Its important to <em>not</em> use a radio input with the toggle styling, since the behaviour would be surprising for the user.
 
     <textarea data-target="switch-example-1" class="py=1 prototype p=1"><label class="check p=1 c=prim">
   <input type="checkbox">
@@ -738,10 +739,9 @@ renders to
   <span></span>
   Label
 </label></textarea>
-
-renders to
   <div id="switch-example-1" class=" my=1"></div>
 
+    <div class="text-align=c">✯</div>
 
     <a name="hover_and_focus"></a>
     <h3>Contextual variations</h3> 
