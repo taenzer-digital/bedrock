@@ -108,7 +108,7 @@
         even if its width is slightly larger than its height.
         <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
     </div>
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
 
     <a name="typography"></a>
     <h2>Typography</h2>
@@ -116,7 +116,7 @@
     <h3>Fonts</h3>
     <p>Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.
     <p>The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default.
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
     <a name="font_sizes"></a>
     <h3>Font Sizes</h3>
     There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
@@ -183,7 +183,7 @@
         </figure>
     </div>
 
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
     <a name="margins_and_paddings"></a>
     <h2 class="head-xl center">Margins and Paddings</h3>
     <p>Margins and and paddings are set with the utility class
@@ -220,7 +220,7 @@
     <div class="c=prim mt=2 ml=4">Baz</div>
 </div></textarea>
     <div class="py=1" id="margins-paddings-example"></div>
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
 
     <a name="flex"></a> 
     <h3>Layout, flex utilities and the flex grid</h3>
@@ -452,7 +452,7 @@
 </pre>
     <p>For multi column grid layouts, wrapp the columns in an element with the <code>flex-grid</code> class. This takes care of gutter widths, breaks and such. The gutter width is set to one unit, but can be overriden with the <code>$grid-gap</code> variable.
 
-<textarea data-target="flex-grid-example-1" class="prototype p=1"><div class="flex-grid text-align-center">
+<textarea data-target="flex-grid-example-1" class="prototype p=1"><div class="flex-grid text-align=c">
     <div class="c=prim w=1/3">Foo</div>
     <div class="c=prim w=1/3">Bar</div>
     <div class="c=prim w=1/3">Baz</div>
@@ -482,7 +482,7 @@
 
 
 
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
 
 
     <a name="borders"></a>
@@ -556,7 +556,7 @@
     <div class="py=1" id="button-group-example"></div>
 
     The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
     <a name="tables"></a>
     <h3>Tables</h3>
     <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.
@@ -632,7 +632,7 @@ renders to
     <div class="py=1" id="table-example-2"></div>
 
     <a name="placeholder"></a>
-    <h2 class="head-xl text-align-center  mt=4">Placeholder</h2>
+    <h2 class="head-xl text-align=c  mt=4">Placeholder</h2>
     <p>This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.
     <p class="mt=1">Examples:
     <figure class="code"><pre><&zwj;span class="head-l placeholder" wordcount="5"><&zwj;/span></pre></figure>
@@ -641,8 +641,8 @@ renders to
     <span class="placeholder" wordcount="20"></span>
 
     <a name="interactive"></a>
-    <h2 class="head-xl text-align-center mt=2">Interactive Elements</h2>
-    <h3 class="head-l text-align-center">Accordion</h3>
+    <h2 class="head-xl text-align=c mt=2">Interactive Elements</h2>
+    <h3 class="head-l text-align=c">Accordion</h3>
 
     The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>.
 
@@ -680,13 +680,13 @@ renders to
 
     <p class="pt=1">For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.
     <p>In general, everything that has to do with layout and spacing is prefixed.
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
 
     <a name="flex-grid"></a>
     <h3>Flexbox utils and the Flex Grid</h3>
     <p>
 
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
 
 
     <a name="forms"></a>
@@ -711,6 +711,36 @@ renders to
 </form></textarea>
 renders to
   <div id="form-example-1" class=" my=1"></div>
+    <p>Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.
+
+    <textarea data-target="switch-example-1" class="py=1 prototype p=1"><label class="check p=1 c=prim">
+  <input type="checkbox">
+  <span></span>
+  Label
+</label>
+<label class="check p=1">
+  <input type="radio" name="radio-example">
+  <span></span>
+  Foo
+</label>
+<label class="check p=1 pt=0">
+  <input type="radio" name="radio-example">
+  <span></span>
+  Bar
+</label>
+<label class="toggle p=1 c=sec">
+  <input type="checkbox">
+  <span></span>
+  Label
+</label>
+<label class="toggle p=1 c=text-alt">
+  <input type="checkbox">
+  <span></span>
+  Label
+</label></textarea>
+
+renders to
+  <div id="switch-example-1" class=" my=1"></div>
 
 
     <a name="hover_and_focus"></a>
@@ -733,7 +763,7 @@ renders to
     <div id="contextual-color-example-1" class=" my=1"></div>
     
     
-    <div class="text-align-center">✯</div>
+    <div class="text-align=c">✯</div>
 
     <a name="aspect-ratio"></a>
     <h3>Aspect Ratio</h3>
