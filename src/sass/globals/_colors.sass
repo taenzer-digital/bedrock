@@ -49,7 +49,7 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
     border-color: $fg
     transition: all $color-transition-delay ease
     & *:focus
-      outline: rgba($fg, $focus-outline-opacity) dashed $focus-outline-width
+      outline: $fg dashed $focus-outline-width
     a
       color: map-get($palette, 'accent')
   .hover\:c\=#{$name}:hover
@@ -58,16 +58,15 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
     border-color: $fg
     transition: all $color-transition-delay ease
     & *:focus
-      outline: rgba($fg, $focus-outline-opacity) dashed $focus-outline-width
+      outline: $fg dashed $focus-outline-width
     a
       color: map-get($palette, 'accent')
   .focus\:c\=#{$name}:focus
     color: $fg
     background-color: $bg
     border-color: $fg
-  
     & *:focus
-      outline: rgba($fg, $focus-outline-opacity) dashed $focus-outline-width
+      outline: $fg dashed $focus-outline-width
     a
       color: map-get($palette, 'accent')
 

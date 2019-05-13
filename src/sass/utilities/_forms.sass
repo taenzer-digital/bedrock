@@ -31,3 +31,97 @@ button
     color: map-get($text-color, 'fg')
     $text-bg: map-get($text-color, 'bg')
     text-shadow: 2px 2px 1px $text-bg, -2px 2px 1px $text-bg, -2px -2px 1px $text-bg, 2px -2px 1px $text-bg
+
+// mixin to hide elements without removing them for screenreader and such
+=hidden-but-not-removed
+  position: absolute
+  left: -10000px
+  top: auto
+  width: 1px
+  height: 1px
+  overflow: hidden
+
+// toggle styles
+label.toggle,
+label.check
+  display: block
+
+$radio-boarder-width: 2px
+
+label.check > input[type='checkbox'],
+label.check > input[type='radio']
+  +hidden-but-not-removed
+  $transition-duration: .2s
+  & ~ *
+    width: 2 * $unit
+    height: 2 * $unit
+    position: relative
+    display: inline-block
+    vertical-align: bottom
+    cursor: pointer
+    &::before
+      width: 100%
+      height: 100%
+      border-radius: $unit
+      border: $radio-boarder-width solid
+    &::after
+      width: $unit
+      height: $unit
+      margin: 0.5 * $unit
+      border-radius: 50%
+      border: 0.5 * $unit solid
+      opacity: 0
+      transition: opacity ease $transition-duration
+    &::before,
+    &::after
+      content: ''
+      top: 0
+      left: 0
+      position: absolute
+  &:focus
+     ~ *::before
+      outline: dashed $focus-outline-width
+      outline-offset: $focus-outline-offset
+  &:checked
+    ~ *::after
+      opacity: 1
+      transition: opacity ease $transition-duration
+
+label.toggle > input[type='checkbox']
+  +hidden-but-not-removed
+  $transition-duration: .2s
+  & ~ *
+    width: 3 * $hunit
+    height: 2 * $unit
+    position: relative
+    display: inline-block
+    vertical-align: bottom
+    cursor: pointer
+    &::before
+      width: 100%
+      height: 100%
+      border-radius: $hunit
+      border: $radio-boarder-width solid
+    &::after
+      width: 1.5 * $unit
+      height: 1.5 * $unit
+      margin: 0.25 * $unit 0.25 * $hunit
+      border-radius: 50%
+      border: $radio-boarder-width solid
+      transition: all ease $transition-duration
+    &::before,
+    &::after
+      content: ''
+      top: 0
+      left: 0
+      position: absolute
+  &:focus
+     ~ *::before
+      outline: dashed $focus-outline-width
+      outline-offset: $focus-outline-offset
+  &:checked
+    ~ *::after
+      border-width: 0.4 * $unit 
+      transform: translate($hunit, 0)
+      transition: all ease $transition-duration
+

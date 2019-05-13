@@ -47,8 +47,8 @@ button
   border-color: map-get($text-color, 'fg')
 
 *:focus
-  outline: rgba(map-get($text-color, 'fg'), $focus-outline-opacity) dashed $focus-outline-width
-  outline-offset: $unit / 4
+  outline: map-get($text-color, 'fg') dashed $focus-outline-width
+  outline-offset: $focus-outline-offset
   position: relative
   transition: all $color-transition-delay ease
 
