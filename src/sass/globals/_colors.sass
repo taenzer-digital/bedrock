@@ -29,15 +29,36 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
   @else
     @return lighten($color, $diff)
 
-=bg_with_arrow($bg, $fg)
+=bg_with_arrow_down($bg, $fg)
   background: linear-gradient(45deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(-45deg, $bg #{1.5 * $unit}, transparent #{1.5 * $unit}),  linear-gradient(180deg, $bg 33%, transparent 33%), $fg
   background-repeat: no-repeat
 
+=bg_with_arrow_left($bg, $fg)
+  background: linear-gradient(135deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(45deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(90deg, transparent calc(100% - #{1.44 * $unit}), $bg calc(100% - #{1.44 * $unit})), $fg
+  background-repeat: no-repeat
+
+=bg_with_arrow_right($bg, $fg)
+  background: linear-gradient(45deg, transparent, calc(100% - #{1.56 * $unit}), $bg calc(100%  - #{1.56 * $unit})), linear-gradient(135deg, transparent, calc(100% - #{1.56 * $unit}), $bg calc(100%  - #{1.56 * $unit})), linear-gradient(90deg, $bg calc(100% - #{2 * $unit}), transparent calc(100% - #{2 * $unit})), $fg
+  background-repeat: no-repeat
+
+=bg_with_arrow_up($bg, $fg)
+  background: linear-gradient(135deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(-135deg, $bg #{1.5 * $unit}, transparent #{1.5 * $unit}), linear-gradient(0deg, $bg 33%, transparent 33%), $fg
+  background-repeat: no-repeat
+
 .arrow-down,
-  +bg_with_arrow(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
+  +bg_with_arrow_down(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
+
+.arrow-up,
+  +bg_with_arrow_up(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
+
+.arrow-left,
+  +bg_with_arrow_left(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
+
+.arrow-right,
+  +bg_with_arrow_right(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
 
 select.arrow-down
-  +bg_with_arrow(create_variant(map-get($text-color, 'bg'), $variant-diff), map-get($text-color, 'fg'))
+  +bg_with_arrow_down(create_variant(map-get($text-color, 'bg'), $variant-diff), map-get($text-color, 'fg'))
 
 =color_combination($name, $palette, $variant, $selector, $check-colors: false)
   $bg: create_variant(map-get($palette, 'bg'), $variant)
@@ -63,7 +84,13 @@ select.arrow-down
     a
       color: map-get($palette, 'accent')
     &.arrow-down
-      +bg_with_arrow($bg, $fg)
+      +bg_with_arrow_down($bg, $fg)
+    &.arrow-up
+      +bg_with_arrow_up($bg, $fg)
+    &.arrow-left
+      +bg_with_arrow_left($bg, $fg)
+    &.arrow-right
+      +bg_with_arrow_right($bg, $fg)
   .hover\:c\=#{$name}:hover
     color: $fg
     background-color: $bg
@@ -74,7 +101,12 @@ select.arrow-down
     a
       color: map-get($palette, 'accent')
     &.arrow-down
-      +bg_with_arrow($bg, $fg)
+      +bg_with_arrow_down($bg, $fg)
+    &.arrow-up
+      +bg_with_arrow_up($bg, $fg)
+    &.arrow-left
+      +bg_with_arrow_left($bg, $fg)
+    &.arrow-right
   .focus\:c\=#{$name}:focus
     color: $fg
     background-color: $bg
@@ -84,7 +116,12 @@ select.arrow-down
     a
       color: map-get($palette, 'accent')
     &.arrow-down
-      +bg_with_arrow($bg, $fg)
+      +bg_with_arrow_down($bg, $fg)
+    &.arrow-up
+      +bg_with_arrow_up($bg, $fg)
+    &.arrow-left
+      +bg_with_arrow_left($bg, $fg)
+    &.arrow-right
 
 
 
