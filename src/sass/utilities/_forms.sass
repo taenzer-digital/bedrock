@@ -1,13 +1,14 @@
-input, textarea
+input,
+textarea,
+select,
+button
   border: 0
-  width: 100%
+  border-radius: 0
   padding-left: $hunit / 2
   padding-right: $hunit / 2
 
-button
-  border: 0
-  padding-left: $hunit / 2
-  padding-right: $hunit / 2
+input, textarea, select
+  width: 100%
 
 // floating labels
 .floating-label
@@ -125,4 +126,13 @@ label.toggle > input[type='checkbox']
       border-width: 0.4 * $unit 
       transform: translate($hunit, 0)
       transition: all ease $transition-duration
+
+select
+  height: 2 * $unit
+  box-sizing: border-box
+  appearance: none
+  -moz-appearance: none
+  -webkit-appearance: none
+  option
+    font-size: $text-base-fontsize
 
