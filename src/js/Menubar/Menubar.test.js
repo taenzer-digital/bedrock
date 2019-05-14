@@ -11,10 +11,10 @@ describe('testing Menubar', () => {
     + '     </ul>'
     + '  </li>'
     + '  <li role="none">'
-    + '    <a id="2" role="menuitem" tabindex="0"> Basics </a>'
+    + '    <a id="link-2" role="menuitem" tabindex="0"> Basics </a>'
     + '  </li>'
     + '  <li role="none">'
-    + '    <a id="3" role="menuitem" tabindex="0"> Basics </a>'
+    + '    <a id="link-3" role="menuitem" tabindex="0"> Basics </a>'
     + '  </li>'
     + '</ul>';
 
@@ -30,45 +30,52 @@ describe('testing Menubar', () => {
   });
 
   it('submenu closes on ESC', () => {
-    link = document.querySelector('#link-1-1');
+    link = document.activeElement;
     link.dispatchEvent (new KeyboardEvent('keydown', { keyCode: 27 }));
     expect(document.getElementById('submenu-1').style.display).toBe('none');
   });
 
   it('submenu opens on SPACE', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':32}));
+    link = document.querySelector('#link-1');
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':32}));
     expect(document.getElementById('submenu-1').style.display).toBe('block');
   });
 
   it('focus next upper menu element with RIGHT', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':39}));
-    expect(!!(document.activeElement === document.getElementById('2'))).toBe(true);
+    link = document.activeElement;
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':39}));
+    expect(!!(document.activeElement === document.getElementById('link-2'))).toBe(true);
   });
 
   it('focus prev upper menu element WITH LEFT', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':37}));
-    expect(!!(document.activeElement === document.getElementById('1'))).toBe(true);
+    link = document.activeElement;
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':37}));
+    expect(!!(document.activeElement === document.getElementById('link-1'))).toBe(true);
   });
 
   it('focus first sub menu element with DOWN', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':40}));
-    expect(!!(document.activeElement === document.getElementById('1-1'))).toBe(true);
+    link = document.activeElement;
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':40}));
+    expect(!!(document.activeElement === document.getElementById('link-1-1'))).toBe(true);
   });
 
   it('close sub menu with ESC', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':27}));
-    expect(!!(document.activeElement === document.getElementById('1'))).toBe(true);
-    expect(document.getElementById('submenu-1').style.display).toBe('');
+    link = document.activeElement;
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':27}));
+    expect(!!(document.activeElement === document.getElementById('link-1'))).toBe(true);
+    expect(document.getElementById('submenu-1').style.display).toBe('none');
   });
 
   it('jump to last element with PAGEDOWN', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':34}));
-    expect(!!(document.activeElement === document.getElementById('3'))).toBe(true);
+    link = document.activeElement;
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':34}));
+    expect(!!(document.activeElement === document.getElementById('link-3'))).toBe(true);
   });
 
   it('jump to last element with PAGEUP', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':33}));
-    expect(!!(document.activeElement === document.getElementById('1'))).toBe(true);
+    link = document.activeElement;
+    link.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':33}));
+    expect(!!(document.activeElement === document.getElementById('link-1'))).toBe(true);
   });
 });
 
