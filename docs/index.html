@@ -708,12 +708,34 @@ renders to
     </div>
     <button type="reset" class="c=err mt=1">Eingaben zurücksetzen</button>
     <button type="submit" class="c=prim mt=1">Eingaben absenden</button>
-</form></textarea>
+</textarea>
 renders to
   <div id="form-example-1" class=" my=1"></div>
+  <p>One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations.  
+<textarea data-target="form-example-2" class="py=1 prototype p=1">
+<select>
+    <option value="">-- without arrow --</option>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+</select>
+<select class="arrow-down">
+    <option value="">-- with arrow --</option>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+</select>
+<select class="c=prim arrow-down">
+    <option value="">-- with arrow and other color --</option>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+</select>
+<select class="c=sec hover:c=text-alt arrow-down">
+    <option value="">-- and hover effect --</option>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+</select></textarea>
+  <div id="form-example-2" class=" my=1"></div>
     <p>Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.
     <p>Its important to <em>not</em> use a radio input with the toggle styling, since the behaviour would be surprising for the user.
-
     <textarea data-target="switch-example-1" class="py=1 prototype p=1"><label class="check p=1 c=prim">
   <input type="checkbox">
   <span></span>
