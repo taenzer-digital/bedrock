@@ -1,55 +1,75 @@
 import Menubar from './Menubar';
 
 describe('testing Menubar', () => {
-  document.body.innerHTML = '<ul id="menubar" class="menubar" role="menubar" aria-label="Menubar Test >'
+  document.body.innerHTML = '<ul id="menubar" class="menubar" role="menubar" aria-label="Menubar Test" >'
     + '  <li role="none">'
-    + '    <a id="1" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#basics" tabindex="0"> Basics </a>'
-    + '    <ul id="submenu" role="menu" aria-haspopup="true" aria-expanded="false" href="#basics" tabindex="0">'
-    + '     <li role="none">'
-    + '       <a id="1-1" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#basics" tabindex="-1"> Basics </a>'
-    + '     </li>'
-  + '       <li role="none">'
-    + '       <a id="1-2" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#basics" tabindex="-1"> Basics </a>'
-    + '     </li>'
-    + '    </ul>'
+    + '    <a id="link-1" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0"> Basics </a>'
+    + '     <ul id="submenu-1" role="menu" aria-label="Utilities">'
+      + '    <li role="none">'
+      + '        <a id="link-1-1" role="menuitem" tabindex="-1" href="#base_unit">The Base Unit</a>'
+      + '    </li>'
+    + '     </ul>'
     + '  </li>'
     + '  <li role="none">'
-    + '    <a id="2" role="menuitem" aria-haspopup="true" aria-expanded="false" href="#basics" tabindex="0"> Basics </a>'
+    + '    <a id="2" role="menuitem" tabindex="0"> Basics </a>'
+    + '  </li>'
+    + '  <li role="none">'
+    + '    <a id="3" role="menuitem" tabindex="0"> Basics </a>'
     + '  </li>'
     + '</ul>';
 
   const menubar = new Menubar(document.getElementById('menubar'));
   menubar.init();
 
+  let link = document.querySelector('#link-1');
+
   it('sub menu opens on RETURN', () => {
-    document.getElementById('1').focus();
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':13, 'which':13}));
-    setTimeout(() => {
-      expect(document.getElementById('submenu').style.display).toBe('block');
-    }, 0 );
+    link.focus();
+    link.dispatchEvent (new KeyboardEvent('keydown', { keyCode: 13 }));
+    expect(document.querySelector('#submenu-1').style.display).toBe('block');
   });
 
   it('submenu closes on ESC', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':27, 'which':27}));
-      setTimeout(() => {
-        expect(document.getElementById('submenu').style.display).toBe('none');
-      }, 0 );
+    link = document.querySelector('#link-1-1');
+    link.dispatchEvent (new KeyboardEvent('keydown', { keyCode: 27 }));
+    expect(document.getElementById('submenu-1').style.display).toBe('none');
   });
 
-  it('submenu closes on SPACE', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':32, 'which':32}));
-      setTimeout(() => {
-        expect(document.getElementById('submenu').style.display).toBe('block');
-      }, 0 );
+  it('submenu opens on SPACE', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':32}));
+    expect(document.getElementById('submenu-1').style.display).toBe('block');
   });
 
-  it('focus next upper menu element', () => {
-    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':39, 'which':39}));
-      setTimeout(() => {
-        expect(document.activeElement === document.getElementById('2')).toBe(true);
-      }, 0 );
+  it('focus next upper menu element with RIGHT', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':39}));
+    expect(!!(document.activeElement === document.getElementById('2'))).toBe(true);
   });
 
+  it('focus prev upper menu element WITH LEFT', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':37}));
+    expect(!!(document.activeElement === document.getElementById('1'))).toBe(true);
+  });
+
+  it('focus first sub menu element with DOWN', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':40}));
+    expect(!!(document.activeElement === document.getElementById('1-1'))).toBe(true);
+  });
+
+  it('close sub menu with ESC', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':27}));
+    expect(!!(document.activeElement === document.getElementById('1'))).toBe(true);
+    expect(document.getElementById('submenu-1').style.display).toBe('');
+  });
+
+  it('jump to last element with PAGEDOWN', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':34}));
+    expect(!!(document.activeElement === document.getElementById('3'))).toBe(true);
+  });
+
+  it('jump to last element with PAGEUP', () => {
+    document.dispatchEvent (new KeyboardEvent('keydown', {'keyCode':33}));
+    expect(!!(document.activeElement === document.getElementById('1'))).toBe(true);
+  });
 });
 
 
@@ -64,4 +84,4 @@ describe('testing Menubar', () => {
 // LEFT: 37,
 // UP: 38,
 // RIGHT: 39,
-// DOWN: 40,
+// DOWN: 40

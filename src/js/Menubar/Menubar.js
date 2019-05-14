@@ -81,6 +81,7 @@ class Menubar {
       this.lastItem = this.menubarItems[numItems - 1];
     }
     this.firstItem.domNode.tabIndex = 0;
+    console.log(this.menubarItems);
   }
 
   /* FOCUS MANAGEMENT METHODS */
