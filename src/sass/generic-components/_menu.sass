@@ -1,12 +1,42 @@
-ul[role="menubar"]
+.menubar
   list-style: none
 
-ul[role="menubar"] li
+.menubar li
   list-style: none
+  white-space: nowrap
 
-ul[role="menubar"] ul[role="menu"]
+.menubar ul[role="menu"]
   display: none
   position: absolute
 
-ul[role="menubar"] ul[role="menu"] li a
+.menubar ul[role="menu"] li a
   display: block
+
+.menu
+  list-style: none
+
+.menu li
+  list-style: none
+
+.menu ul[role="menu"]
+  display: block
+  position: relative
+
+.menu ul[role="menu"] li a
+  display: block
+  
+.nav
+  .menu,
+  .menubar
+    display: none
+.nav--active
+  .menu,
+  .menubar
+    display: inherit
+
+@media (min-width: $tablet2laptop)
+  .nav,
+  .nav--active
+    .menu,
+    .menubar
+      display: inherit

@@ -8,18 +8,16 @@
 =layout($class)
   .#{$class}fixed
     position: fixed
-
-  .#{$class}sticky,
-    bottom: 0px
+  .#{$class}top
     top: 0px
-    position: sticky
-
-  .#{$class}sticky-t,
-    top: 0px
-    position: sticky
-
-  .#{$class}sticky-b
+  .#{$class}bottom
     bottom: 0px
+  .#{$class}left
+    left: 0px
+  .#{$class}right
+    right: 0px
+
+  .#{$class}sticky
     position: sticky
 
   .#{$class}overflow\=hidden
