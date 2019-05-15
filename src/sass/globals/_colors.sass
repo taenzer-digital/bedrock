@@ -83,13 +83,17 @@ select.arrow-down
       outline: $fg dashed $focus-outline-width
     a
       color: map-get($palette, 'accent')
-    &.arrow-down
+    &.arrow-down,
+    .arrow-down
       +bg_with_arrow_down($bg, $fg)
-    &.arrow-up
+    &.arrow-up,
+    .arrow-up
       +bg_with_arrow_up($bg, $fg)
-    &.arrow-left
+    &.arrow-left,
+    .arrow-left
       +bg_with_arrow_left($bg, $fg)
-    &.arrow-right
+    &.arrow-right,
+    .arrow-right
       +bg_with_arrow_right($bg, $fg)
   .hover\:c\=#{$name}:hover
     color: $fg
