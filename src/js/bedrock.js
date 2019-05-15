@@ -3,6 +3,7 @@ import {
   Accordion,
   Tabs,
   Placeholder,
+  BackgroundImage,
 } from './index';
 
 function updatePrototype(element, targetParam) {
@@ -23,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // accordion
   // eslint-disable-next-line no-new
   new Accordion('.accordion');
+
+  new BackgroundImage('.bg-img');
 
   // prototype
   [].forEach.call(document.getElementsByClassName('prototype'), (el) => {
