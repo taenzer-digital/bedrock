@@ -867,6 +867,26 @@ renders to
     </textarea>
     <div id="visibility-example-1" class=" my=1"></div>
 
+    <div class="text-align=c">✯</div>
+
+    <a name="background-img"></a>
+    <h3>Background images</h3>
+    <p>If you want to use a big background image, for example for a hero banner, you can use the <code>bg-img</code> class. You can set the image url with the <code>data-url</code> attribute.
+    <p>The image is loaded after the page itself and will ease in. The idea is that non functional parts of the - site like a hero image - shouldn't impact the inital page load. So make sure that the background color of that element is set so that the page looks good even if the image never loads, which might happen to users on very bad connections.
+
+    <textarea class="py=1 prototype p=1">
+<div class="ar=4/3 w=1/2 c=text-alt bg-img" data-url="cat.jpg"></div></textarea>
+<p>(the interactive code preview does not work with this functionality)
+<div class="ar=4/3 w=1/2 c=text-alt bg-img" data-url="cat.jpg"></div>
+
+    <p>Per default, the image is centered. If there is a focal point in the image that is not the center, it can be specified with the <code>data-focal</code> attribute like so:
+    <textarea class="py=1 prototype p=1" rows="5"><div class="c=text-alt bg-img"
+  style="height: 300px; width: 200px;"
+  data-url="cat.jpg"
+  data-focal="15% 40%">
+</div></textarea>
+<div class="c=text-alt bg-img mt=1" style="height: 300px; width: 200px;" data-url="cat.jpg" data-focal="15% 40%"></div>
+
 </main>
 
 </body>

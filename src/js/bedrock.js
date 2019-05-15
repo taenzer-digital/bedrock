@@ -1,4 +1,4 @@
-import { Menubar, Accordion } from './index';
+import { Menubar, Accordion, BackgroundImage } from './index';
 import Placeholder from './Placeholder/Placeholder';
 
 function updatePrototype(element, targetParam) {
@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // accordion
   new Accordion('.accordion');
+
+  new BackgroundImage('.bg-img');
 
   // prototype
   [].forEach.call(document.getElementsByClassName('prototype'), (el) => {
