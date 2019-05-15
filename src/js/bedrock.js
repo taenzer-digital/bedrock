@@ -1,5 +1,10 @@
-import { Menubar, Accordion, BackgroundImage } from './index';
-import Placeholder from './Placeholder/Placeholder';
+import {
+  Menubar,
+  Accordion,
+  Tabs,
+  Placeholder,
+  BackgroundImage,
+} from './index';
 
 function updatePrototype(element, targetParam) {
   const el = element;
@@ -17,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Placeholder('.placeholder');
 
   // accordion
+  // eslint-disable-next-line no-new
   new Accordion('.accordion');
 
   new BackgroundImage('.bg-img');
@@ -33,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const menubar = new Menubar(document.getElementById('menubar'));
   menubar.init();
+
+  [].forEach.call(document.getElementsByClassName('tabs'), (el) => {
+    const tabs = new Tabs(el);
+    tabs.init();
+  });
 
 
   [].forEach.call(document.getElementsByClassName('js-menu-toggle'), (el) => {
