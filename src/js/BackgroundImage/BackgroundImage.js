@@ -1,7 +1,9 @@
 class BackgroundImage {
   constructor(domNode) {
     this.domNode = domNode;
+  }
 
+  init() {
     [].slice.call(document.querySelectorAll(this.domNode)).forEach((bgImgP) => {
       const bgImg = bgImgP;
       const url = bgImg.getAttribute('data-url');
@@ -15,8 +17,9 @@ class BackgroundImage {
       }
 
       const imgDownload = new Image();
+
       imgDownload.onload = () => {
-        img.style.backgroundImage = `url(${this.src})`;
+        img.style.backgroundImage = `url(${imgDownload.src})`;
         bgImg.appendChild(img);
         bgImg.style.backgroundColor = 'transparent';
       };

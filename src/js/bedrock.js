@@ -22,9 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   Placeholder('.placeholder');
 
   // accordion
-  Accordion('.accordion');
+  const accordion = new Accordion('.accordion');
+  accordion.init();
 
-  BackgroundImage('.bg-img');
+  const bg = new BackgroundImage('.bg-img');
+  bg.init();
 
   // prototype
   [].forEach.call(document.getElementsByClassName('prototype'), (el) => {

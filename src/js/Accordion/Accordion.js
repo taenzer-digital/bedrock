@@ -1,7 +1,9 @@
 class Accordion {
   constructor(domNode) {
     this.domNode = domNode;
+  }
 
+  init() {
     [].slice.call(document.querySelectorAll(this.domNode)).forEach((accordion) => {
       this.detailElements = Array.prototype.slice.call(
         accordion.querySelectorAll('details'),
