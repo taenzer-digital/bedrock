@@ -87,7 +87,10 @@ label.check > input[type='radio']
     ~ *::after
       opacity: 1
       transition: opacity ease $transition-duration
-
+  &:disabled
+    ~ *
+      opacity: 0.6
+      
 label.toggle > input[type='checkbox']
   +hidden-but-not-removed
   $transition-duration: .2s
@@ -126,6 +129,10 @@ label.toggle > input[type='checkbox']
       border-width: 0.4 * $unit 
       transform: translate($hunit, 0)
       transition: all ease $transition-duration
+
+  &:disabled
+    ~ *
+      opacity: 0.6
 
 select
   height: 2 * $unit
