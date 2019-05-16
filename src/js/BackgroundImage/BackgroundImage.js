@@ -2,7 +2,8 @@ class BackgroundImage {
   constructor(domNode) {
     this.domNode = domNode;
 
-    [].slice.call(document.querySelectorAll(this.domNode)).forEach((bgImg) => {
+    [].slice.call(document.querySelectorAll(this.domNode)).forEach((bgImgP) => {
+      const bgImg = bgImgP;
       const url = bgImg.getAttribute('data-url');
       const focal = bgImg.getAttribute('data-focal');
 
@@ -13,16 +14,15 @@ class BackgroundImage {
         img.style.backgroundPosition = focal;
       }
 
-      var imgDownload = new Image();
-      imgDownload.onload = function() {
+      const imgDownload = new Image();
+      imgDownload.onload = () => {
         img.style.backgroundImage = `url(${this.src})`;
         bgImg.appendChild(img);
         bgImg.style.backgroundColor = 'transparent';
-      }
+      };
 
       imgDownload.src = url;
     });
-
   }
 }
 

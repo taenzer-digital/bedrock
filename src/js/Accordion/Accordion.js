@@ -16,7 +16,8 @@ class Accordion {
 
   open(details) {
     if (details.open) {
-      [].slice.call(this.detailElements).forEach((otherDetails) => {
+      [].slice.call(this.detailElements).forEach((otherDetailsP) => {
+        const otherDetails = otherDetailsP;
         if (otherDetails !== details) {
           otherDetails.open = false;
         }

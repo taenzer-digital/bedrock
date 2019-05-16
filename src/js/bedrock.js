@@ -22,10 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
   Placeholder('.placeholder');
 
   // accordion
-  // eslint-disable-next-line no-new
-  new Accordion('.accordion');
+  Accordion('.accordion');
 
-  new BackgroundImage('.bg-img');
+  BackgroundImage('.bg-img');
 
   // prototype
   [].forEach.call(document.getElementsByClassName('prototype'), (el) => {
