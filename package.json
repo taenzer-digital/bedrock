@@ -36,9 +36,11 @@
     "rollup-plugin-prettier": "^0.6.0"
   },
   "scripts": {
-    "build": "npm run build-clean && npm run build-sass && npm run build-sass-print && npm run build-autoprefix && npm run build-cleancss && npm run build-js",
+    "build": "npm run build-clean && npm run build-sass && npm run build-sass-print && npm run build-autoprefix && npm run build-autoprefix-print && npm run build-cleancss && npm run build-cleancss-print && npm run build-js",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/bedrock.css css/bedrock.css",
+    "build-autoprefix-print": "postcss --use autoprefixer --map false --output css/print.css css/print.css",
     "build-cleancss": "cleancss -o css/bedrock.min.css css/bedrock.css",
+    "build-cleancss-print": "cleancss -o css/print.min.css css/print.css",
     "build-clean": "rimraf css",
     "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
     "build-sass-print": "node-sass --output-style expanded --source-map true src/sass/print.sass css/print.css",
