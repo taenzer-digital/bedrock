@@ -2,41 +2,70 @@
 
 @import globals/defaults
 @import globals/colors
-@import globals/minireset
 
-@import utilities/forms
 @import utilities/typography
 @import utilities/spacing
-@import utilities/tables
-@import utilities/borders
-@import utilities/layout
-@import utilities/code
 @import utilities/utility-export
+@import utilities/layout
 @import utilities/visibility
 @import utilities/aspect-ratio
-@import utilities/background-image
 
-@import generic-components/menu
-@import generic-components/menu-toggle
 
+// margins
+@page
+    margin: $print-margin
 
 // we can get away with the lower bound for text size on printed paper
 html
     font-size: #{$text-size-lower-bound-px}px
 
+// hide header and footer by default. This can be overridden with the print:visible modifier
+header,
+footer
+    display: none
+
+// a few resets
+select
+  color: map-get($print-color, 'fg')
+  border-color: map-get($print-color, 'fg')
+
+input,
+textarea,
+button,
+select
+  background-color: create_variant(map-get($print-color, 'bg'), 0%)
+a
+  text-decoration: none
+  color: map-get($print-color, 'accent')
+  border-color: map-get($print-color, 'fg')
+
+// set all colors to the print color
++color-combination('text', $print-color, 0%,  false)
++color-combination('text-alt', $print-color, 0%, false)
++color-combination('prim', $print-color, 0%, false)
++color-combination('prim-alt', $print-color, 0%, false)
++color-combination('sec', $print-color, 0%, false)
++color-combination('sec-alt', $print-color, 0%, false)
++color-combination('ter', $print-color, 0%, false)
++color-combination('ter-alt', $print-color, 0%, false)
++color-combination('err', $print-color, 0%, false)
++color-combination('err-alt', $print-color, 0%, false)
+
+
+// overwrite site with classes
+@each $class in ('', 'sm', 'md', 'lg', 'xl') 
+  .#{$class}w\=site
+    max-width: 100%
+    margin-left: auto
+    margin-right: auto
+
+
 +layout('print\\:')
 +paddings-and-margins('print\:')
 +aspect-ratio('print\\:')
-+visibility('print\\:')
-+text-layout('print\\:')
 
-+color-combination('text', $text-color, 0%,  true)
-+color-combination('text-alt', $text-color, $variant-diff, true)
-+color-combination('prim', $primary-color, 0%, true)
-+color-combination('prim-alt', $primary-color, $variant-diff, true)
-+color-combination('sec', $secondary-color, 0%, true)
-+color-combination('sec-alt', $secondary-color, $variant-diff, true)
-+color-combination('ter', $tertiary-color, 0%, true)
-+color-combination('ter-alt', $tertiary-color, $variant-diff, true)
-+color-combination('err', $error-color, 0%, true)
-+color-combination('err-alt', $error-color, $variant-diff, true)
+.print-only
+  display: initial
+
+.screen-only
+  display: none
