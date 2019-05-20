@@ -1,0 +1,42 @@
+@charset "utf-8"
+
+@import globals/defaults
+@import globals/colors
+@import globals/minireset
+
+@import utilities/forms
+@import utilities/typography
+@import utilities/spacing
+@import utilities/tables
+@import utilities/borders
+@import utilities/layout
+@import utilities/code
+@import utilities/utility-export
+@import utilities/visibility
+@import utilities/aspect-ratio
+@import utilities/background-image
+
+@import generic-components/menu
+@import generic-components/menu-toggle
+
+
+// we can get away with the lower bound for text size on printed paper
+html
+    font-size: #{$text-size-lower-bound-px}px
+
++layout('print\\:')
++paddings-and-margins('print\:')
++aspect-ratio('print\\:')
++visibility('print\\:')
++text-layout('print\\:')
+
++color-combination('text', $text-color, 0%,  true)
++color-combination('text-alt', $text-color, $variant-diff, true)
++color-combination('prim', $primary-color, 0%, true)
++color-combination('prim-alt', $primary-color, $variant-diff, true)
++color-combination('sec', $secondary-color, 0%, true)
++color-combination('sec-alt', $secondary-color, $variant-diff, true)
++color-combination('ter', $tertiary-color, 0%, true)
++color-combination('ter-alt', $tertiary-color, $variant-diff, true)
++color-combination('err', $error-color, 0%, true)
++color-combination('err-alt', $error-color, $variant-diff, true)
