@@ -207,7 +207,6 @@ class PopupMenu {
   /* MENU DISPLAY METHODS */
 
   open() {
-
     // Get position and bounding rectangle of controller object's DOM node
     const rect = this.controller.domNode.getBoundingClientRect();
     // Set CSS properties
@@ -297,7 +296,7 @@ class PopupMenuItem {
 
     // Initialize flyout menu
 
-    var nextElement = this.domNode.nextElementSibling;
+    const nextElement = this.domNode.nextElementSibling;
 
     if (nextElement && nextElement.tagName === 'UL') {
       this.popupMenu = new PopupMenu(nextElement, this, this.menubar);
@@ -310,10 +309,10 @@ class PopupMenuItem {
   }
 
   handleKeydown(event) {
-    var tgt = event.currentTarget,
-      char = event.key,
-      flag = false,
-      clickEvent;
+    const tgt = event.currentTarget;
+    const char = event.key;
+    let flag = false;
+    let clickEvent;
 
     function isPrintableCharacter(str) {
       return str.length === 1 && str.match(/\S/);
