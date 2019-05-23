@@ -48,10 +48,11 @@ $breadcrumbs-spacer: '/' !default
 $text-base-fontsize: $unit * 2 / $text-leading
 $head-base-fontsize: $unit * 2 / $head-leading
 
-$site-width: 48  * $hunit
-$phone2tablet: px-to-rem(600)
-$tablet2laptop: px-to-rem(900)
-$laptop2desktop: px-to-rem(1500)
+$site-width-px: 900 !default
+$site-width: px-to-rem($site-width-px)
+$phone2tablet: px-to-rem(600) !default
+$tablet2laptop: px-to-rem(900) !default
+$laptop2desktop: px-to-rem(1500) !default
 
 $grid-gap: $hunit !default
 
