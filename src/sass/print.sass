@@ -69,3 +69,7 @@ a
 
 .screen-only
   display: none
+
+// show url after links
+a[href^="http"]::after  
+  content: " (" attr(href) ")"
