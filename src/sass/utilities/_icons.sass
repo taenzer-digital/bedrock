@@ -1,0 +1,22 @@
+[class*=icon] > svg
+    vertical-align: text-top
+
+=icons($class)
+    .#{$class}icon > svg
+        height: $text-base-fontsize
+
+    .#{$class}icon-l > svg
+        height: $head-base-fontsize * 1.25
+
+    .#{$class}icon-xl > svg
+        height: $head-base-fontsize * 1.75
+
+    .#{$class}icon-xxl > svg,
+    .#{$class}icon-2xl > svg
+        height: $head-base-fontsize * 2.5
+        
+    .#{$class}icon-3xl > svg
+        height: $head-base-fontsize * 3
+
+    .#{$class}icon-4xl > svg
+        height: $head-base-fontsize * 4.75
