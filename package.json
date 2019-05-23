@@ -32,7 +32,7 @@
     "postcss-cli": "^6.1.1",
     "rimraf": "^2.6.3",
     "rollup": "^1.12.1",
-    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-eslint": "^6.0.0",
     "rollup-plugin-prettier": "^0.6.0"
   },
   "scripts": {
