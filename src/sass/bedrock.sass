@@ -69,3 +69,11 @@ html
 +color-combination('ter-alt', $tertiary-color, $variant-diff, true)
 +color-combination('err', $error-color, 0%, true)
 +color-combination('err-alt', $error-color, $variant-diff, true)
+
+// hide if not print
+.print-only
+    display: none
+
+// show url after links
+a[href^="http"]::after  
+  content: " (" attr(href) ")"

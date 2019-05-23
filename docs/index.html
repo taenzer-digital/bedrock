@@ -2,6 +2,7 @@
 <title>Bedrock Doc</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="../css/bedrock.css">
+<link rel="stylesheet" media="print" href="../css/print.css">
 <script src="../js/bundle.js"></script>
 
 
@@ -120,6 +121,9 @@
                                 <li role="none">
                                     <a role="menuitem" tabindex="-1" class="px=1"  href="#aspect_ratio">Aspect Ratio</a>
                                 </li>
+                                <li role="none">
+                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#print_styles">print.css</a>
+                                </li>
                             </ul>
                           </li>
                     </ul>
@@ -150,7 +154,7 @@
 <main class="w=site ml=2">
     <a name="basics"></a> 
     <h2>Basics</h2>
-    <a name="base_unit"></a> 
+    <a name="base_unit"></a>
     <h3>The Base Unit</h3>
     <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
     <p>Vertical distances are a multiple of the unit value.
@@ -966,6 +970,16 @@ renders to
       </div>
     </textarea>
     <div id="tabs-example-1" class=" my=1"></div>
+
+
+
+
+    <a name="print_styles"></a>
+    <h3>print.css</h3>
+    <p>When you put <code><link rel="stylesheet" media="print" href="path/to/print.min.css"></code> in your html header, you get a print friendly restyling. Headers and footers are automaticly hidden, the page width class is a full site and all colors are set to black and white (can be modifed with the <code>$print-color</code> variable). The page margins are set with the <code>$print-margin</code> variable.
+    <p>All layout and aspect ratio classes get an addional prefix <code>print:</code> to add print specific styling and you can hide and show elements with the <code>print-only</code> and <code>screen-only</code> utility classes.
+    <p>Also, external links will show their target in parenthesis after the link text.
+
 </main>
 
 </body>
