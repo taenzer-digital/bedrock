@@ -51,14 +51,14 @@ select
   outline: map-get($text-color, 'fg') dashed $focus-outline-width
   outline-offset: $focus-outline-offset
   position: relative
-  transition: all $color-transition-delay ease
+  transition: transform $color-transition-delay ease, opacity $color-transition-delay ease, color $color-transition-delay ease, background-color $color-transition-delay ease, border-color $color-transition-delay ease
 
 input,
 textarea,
 button,
 select
   background-color: create_variant(map-get($text-color, 'bg'), $variant-diff)
-  transition: all $color-transition-delay ease
+  transition: transform $color-transition-delay ease, opacity $color-transition-delay ease, color $color-transition-delay ease, background-color $color-transition-delay ease, border-color $color-transition-delay ease
 
 button
   cursor: pointer
@@ -116,3 +116,6 @@ td,
 th
   padding: 0
   text-align: left
+
+.preload *
+  transition: none !important

@@ -113,7 +113,7 @@ label.toggle > input[type='checkbox']
       margin: 0.25 * $unit 0.25 * $hunit
       border-radius: 50%
       border: $radio-border-width solid
-      transition: all ease $transition-duration
+      transition: transform border ease $transition-duration
     &::before,
     &::after
       content: ''
@@ -128,7 +128,7 @@ label.toggle > input[type='checkbox']
     ~ *::after
       border-width: 0.4 * $unit 
       transform: translate($hunit, 0)
-      transition: all ease $transition-duration
+      transition: transform border ease $transition-duration
 
   &:disabled
     ~ *

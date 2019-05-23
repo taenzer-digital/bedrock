@@ -26,7 +26,7 @@ $toggle-button-margin: px-to-rem(3) !default
     height: $stroke-width
     margin: #{$toggle-button-margin + $stroke-spacing} 0
     background: $burger-color
-    transition: all linear $transition-time
+    transition: transform linear $transition-time
     position: relative
     display: block
 
@@ -37,7 +37,7 @@ $toggle-button-margin: px-to-rem(3) !default
       height: $stroke-width
       position: absolute
       z-index: -1
-      transition: all linear $transition-time
+      transition: transform linear $transition-time
     &:before
       background: $burger-color
       top: -$stroke-spacing
