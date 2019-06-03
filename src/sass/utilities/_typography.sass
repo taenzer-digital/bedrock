@@ -1,12 +1,14 @@
 @import 'modularscale-sass/stylesheets/modularscale'
 
-$typescale: ( base: px-to-rem(20), ratio: 1.2) !default
-$modularscale: $typescale
+$type-ratio: 1.2 !default
+$type-base: 20 !default
+$modularscale: ( base: px-to-rem($type-base), ratio: $type-ratio )
+$heads : ('4xl': 12, '3xl': 8, '2xl': 6, 'xl': 4, 'l': 2, 'head': 1, 'default': 0, 's': -1) !default
 
 body
     font-family: $text-font
-    font-size: ms(0)
-    line-height: line-height(ms(0) * $text-leading)
+    font-size: ms(map-get($heads, 'default'))
+    line-height: line-height(ms(map-get($heads, 'default')) * $text-leading)
 
 // type scale follows the formula 1 + (0.25 * n * (n-1) / 2 )
 
@@ -27,49 +29,49 @@ body
 =typography($class)
     .#{$class}text
         font-family: $text-font
-        font-size: ms(0)
-        line-height: line-height(ms(0) * $text-leading)
+        font-size: ms(map-get($heads, 'default'))
+        line-height: line-height(ms(map-get($heads, 'default')) * $text-leading)
 
     .#{$class}text-s
-        font-size: ms(-1)
-        line-height: line-height(ms(-1) * $text-leading)
+        font-size: ms(map-get($heads, 's'))
+        line-height: line-height(ms(map-get($heads, 's')) * $text-leading)
 
     .#{$class}head,
-    h4,
-    h5,
     h6
         font: $head-font
-        font-size: ms(1)
-        line-height: line-height(ms(1) * $head-leading)
+        font-size: ms(map-get($heads, 'head'))
+        line-height: line-height(ms(map-get($heads, 'head')) * $head-leading)
 
     .#{$class}head-l,
-    h3
+    h5
         font: $head-font
-        font-size: ms(2)
-        line-height: line-height(ms(2) * $head-leading)
+        font-size: ms(map-get($heads, 'l'))
+        line-height: line-height(ms(map-get($heads, 'l')) * $head-leading)
 
     .#{$class}head-xl,
-    h2
+    h4
         font: $head-font
-        font-size: ms(3)
-        line-height: line-height(ms(3) * $head-leading)
+        font-size: ms(map-get($heads, 'xl'))
+        line-height: line-height(ms(map-get($heads, 'xl')) * $head-leading)
 
     .#{$class}head-xxl,
-    .#{$class}head-2xl
+    .#{$class}head-2xl,
+    h3
         font: $head-font
-        font-size: ms(4)
-        line-height: line-height(ms(4) * $head-leading)
+        font-size: ms(map-get($heads, '2xl'))
+        line-height: line-height(ms(map-get($heads, '2xl')) * $head-leading)
         
     .#{$class}head-3xl,
+    h2
+        font: $head-font
+        font-size: ms(map-get($heads, '3xl'))
+        line-height: line-height(ms(map-get($heads, '3xl')) * $head-leading)
+
+    .#{$class}head-4xl,
     h1
         font: $head-font
-        font-size: ms(5)
-        line-height: line-height(ms(5) * $head-leading)
-
-    .#{$class}head-4xl
-        font: $head-font
-        font-size: ms(6)
-        line-height: line-height(ms(6) * $head-leading)
+        font-size: ms(map-get($heads, '4xl'))
+        line-height: line-height(ms(map-get($heads, '4xl')) * $head-leading)
 
 
 // text alignment and whitespace behaviour
