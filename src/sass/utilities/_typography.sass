@@ -1,6 +1,7 @@
 @import 'modularscale-sass/stylesheets/modularscale'
 
-$modularscale: ( base: 20px, ratio: 1.067) !default
+$typescale: ( base: 1rem, ratio: 1.2) !default
+$modularscale: $typescale
 
 body
     font-family: $text-font
@@ -11,6 +12,13 @@ body
 
 .bold
     font-weight: bold
+
+// analogigal to https://gist.github.com/aslakhellesoy/1134482
+@function line-height($value)
+  @if ($value >= 0)
+    @return (($value + ($unit / 2) - 1) / ($unit / 2)) * ($unit / 2)
+  @else
+    @return ($value / ($unit / 2)) * ($unit / 2)
 
 =typography($class)
     .#{$class}text
@@ -29,36 +37,36 @@ body
     h6
         font: $head-font
         font-size: ms(1)
-        line-height: $unit * 2
+        line-height: line-height(ms(1) * $head-leading)
 
     .#{$class}head-l,
     h3
         font: $head-font
         font-size: ms(2)
-        line-height: $unit * 3
+        line-height: line-height(ms(2) * $head-leading)
 
     .#{$class}head-xl,
     h2
         font: $head-font
         font-size: ms(3)
-        line-height: $unit * 4
+        line-height: line-height(ms(3) * $head-leading)
 
     .#{$class}head-xxl,
     .#{$class}head-2xl
         font: $head-font
         font-size: ms(4)
-        line-height: $unit * 5
+        line-height: line-height(ms(4) * $head-leading)
         
     .#{$class}head-3xl,
     h1
         font: $head-font
         font-size: ms(5)
-        line-height: $unit * 7
+        line-height: line-height(ms(5) * $head-leading)
 
     .#{$class}head-4xl
         font: $head-font
         font-size: ms(6)
-        line-height: $unit * 12
+        line-height: line-height(ms(6) * $head-leading)
 
 
 // text alignment and whitespace behaviour
