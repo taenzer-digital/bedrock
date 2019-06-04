@@ -1,14 +1,25 @@
 @import 'modularscale-sass/stylesheets/modularscale'
 
-$type-ratio: 1.2 !default
+$type-ratio: 1.067 !default
 $type-base: 20 !default
 $modularscale: ( base: px-to-rem($type-base), ratio: $type-ratio )
-$heads : ('4xl': 12, '3xl': 8, '2xl': 6, 'xl': 4, 'l': 2, 'head': 1, 'default': 0, 's': -1) !default
+
+$text-sizes: '-s' -1, '' 0, '-l' 1
+$cascade-limit: 12
+$head-nodes: 12, 8, 6, 4, 2, 1
+
+$head-sizes: ()
+@for $size from 1 through $cascade-limit
+  @if index($head-nodes, $size)
+    $node: 'h' + index($head-nodes, $size)
+    $head-sizes: append($head-sizes, $size $size $node)
+  @else
+    $head-sizes: append($head-sizes, $size $size)
 
 body
     font-family: $text-font
-    font-size: ms(map-get($heads, 'default'))
-    line-height: line-height(ms(map-get($heads, 'default')) * $text-leading)
+    font-size: ms(0)
+    line-height: line-height(0)
 
 // type scale follows the formula 1 + (0.25 * n * (n-1) / 2 )
 
@@ -19,60 +30,23 @@ body
     background: linear-gradient( to bottom, #fff, #fff 50%, #FF696950 50%, #FF696950)
     background-size: 100% $unit
 
-// analogigal to https://gist.github.com/aslakhellesoy/1134482
 @function line-height($value)
-  @if ($value >= 0)
-    @return round(($value + ($unit / 2) - 1) / ($unit / 2)) * ($unit / 2)
-  @else
-    @return round($value / ($unit / 2)) * ($unit / 2)
+    @return ceil(ms($value) / ($unit / 2)) * ($unit / 2)
+
 
 =typography($class)
-    .#{$class}text
+  @each $name, $size in $text-sizes
+    .#{$class}text#{$name}
         font-family: $text-font
-        font-size: ms(map-get($heads, 'default'))
-        line-height: line-height(ms(map-get($heads, 'default')) * $text-leading)
+        font-size: ms($size)
+        line-height: line-height($size)
 
-    .#{$class}text-s
-        font-size: ms(map-get($heads, 's'))
-        line-height: line-height(ms(map-get($heads, 's')) * $text-leading)
-
-    .#{$class}head,
-    h6
+  @each $name, $size, $node in $head-sizes
+    .#{$class}head-#{$name},
+    #{$node}
         font: $head-font
-        font-size: ms(map-get($heads, 'head'))
-        line-height: line-height(ms(map-get($heads, 'head')) * $head-leading)
-
-    .#{$class}head-l,
-    h5
-        font: $head-font
-        font-size: ms(map-get($heads, 'l'))
-        line-height: line-height(ms(map-get($heads, 'l')) * $head-leading)
-
-    .#{$class}head-xl,
-    h4
-        font: $head-font
-        font-size: ms(map-get($heads, 'xl'))
-        line-height: line-height(ms(map-get($heads, 'xl')) * $head-leading)
-
-    .#{$class}head-xxl,
-    .#{$class}head-2xl,
-    h3
-        font: $head-font
-        font-size: ms(map-get($heads, '2xl'))
-        line-height: line-height(ms(map-get($heads, '2xl')) * $head-leading)
-        
-    .#{$class}head-3xl,
-    h2
-        font: $head-font
-        font-size: ms(map-get($heads, '3xl'))
-        line-height: line-height(ms(map-get($heads, '3xl')) * $head-leading)
-
-    .#{$class}head-4xl,
-    h1
-        font: $head-font
-        font-size: ms(map-get($heads, '4xl'))
-        line-height: line-height(ms(map-get($heads, '4xl')) * $head-leading)
-
+        font-size: ms($size)
+        line-height: line-height($size)
 
 // text alignment and whitespace behaviour
 =text-layout($class)
@@ -96,3 +70,15 @@ body
   .#{$class}text-overflow\=\.\.\.
     overflow: hidden
     text-overflow: ellipsis
+
+h1
+  +spacing('margin', 2, b)
+
+h2
+  +spacing('margin', 1.5, b)
+
+h3
+  +spacing('margin', 1, b)
+
+h4
+  +spacing('margin', 0.5, b)
