@@ -4,9 +4,9 @@ $type-ratio: 1.067 !default
 $type-base: 20 !default
 $modularscale: ( base: px-to-rem($type-base), ratio: $type-ratio )
 
-$text-sizes: '-s' -1, '' 0, '-l' 1
-$cascade-limit: 12
-$head-nodes: 12, 8, 6, 4, 2, 1
+$text-sizes: '-s' -1, '' 0, '-l' 1 !default
+$cascade-limit: 12 !default
+$head-nodes: 12, 8, 6, 4, 2, 1 !default
 
 $head-sizes: ()
 @for $size from 1 through $cascade-limit
@@ -44,7 +44,7 @@ body
   @each $name, $size, $node in $head-sizes
     .#{$class}head-#{$name},
     #{$node}
-        font: $head-font
+        font-family: $head-font
         font-size: ms($size)
         line-height: line-height($size)
 
@@ -71,14 +71,5 @@ body
     overflow: hidden
     text-overflow: ellipsis
 
-h1
-  +spacing('margin', 2, b)
-
-h2
-  +spacing('margin', 1.5, b)
-
-h3
-  +spacing('margin', 1, b)
-
-h4
-  +spacing('margin', 0.5, b)
+p
+  max-width: $paragraph-length
