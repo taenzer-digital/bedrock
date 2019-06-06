@@ -190,8 +190,10 @@
     <div class="text-align=c">✯</div>
     <a name="font_sizes"></a>
     <h3>Font Sizes</h3>
-    There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
-    <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class.
+    <p>Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.
+    <p>The headline utility classes are <code>head-</code> following the position in the cascade.
+    <p>There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
+    <!-- <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class. -->
 
     <p>Complete overview:<br>
         <code>text-s</code><br>
