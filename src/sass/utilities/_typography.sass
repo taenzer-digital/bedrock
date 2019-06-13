@@ -1,67 +1,52 @@
+@import 'modularscale-sass/stylesheets/modularscale'
+
+$type-ratio: 1.067 !default
+$type-base: 20 !default
+$modularscale: ( base: px-to-rem($type-base), ratio: $type-ratio )
+
+$text-sizes: '-s' -1, '' 0, '-l' 1 !default
+$cascade-limit: 12 !default
+$head-nodes: 12, 8, 6, 4, 2, 1 !default
+
+$head-sizes: ()
+@for $size from 1 through $cascade-limit
+  @if index($head-nodes, $size)
+    $node: 'h' + index($head-nodes, $size)
+    $head-sizes: append($head-sizes, $size $size $node)
+  @else
+    $head-sizes: append($head-sizes, $size $size)
 
 body
     font-family: $text-font
-    font-size: $text-base-fontsize
-    line-height: 2 * $unit
+    font-size: ms(0)
+    line-height: line-height(0)
 
 // type scale follows the formula 1 + (0.25 * n * (n-1) / 2 )
 
 .bold
     font-weight: bold
 
+.vertical-rythm
+    background: linear-gradient( to bottom, #fff, #fff 50%, #FF696950 50%, #FF696950)
+    background-size: 100% $unit
+
+
+@function line-height($value)
+    @return ceil(ms($value) / ($unit / 2)) * ($unit / 2)
+
 =typography($class)
-    .#{$class}text-l
+  @each $name, $size in $text-sizes
+    .#{$class}text#{$name}
         font-family: $text-font
-        font-size: $text-base-fontsize * 1.25
-        line-height: 2.5 * $unit
-    
-    .#{$class}text
-        font-family: $text-font
-        font-size: $text-base-fontsize
-        line-height: 2 * $unit
+        font-size: ms($size)
+        line-height: line-height($size)
 
-    .#{$class}text-s
-        font: $text-font
-        line-height: 2 * $unit * 0.75
-        font-size: $text-base-fontsize * 0.75
-
-    .#{$class}head,
-    h4,
-    h5,
-    h6
-        font: $head-font
-        font-size: $head-base-fontsize
-        line-height: $unit * 2
-
-    .#{$class}head-l,
-    h3
-        font: $head-font
-        font-size: $head-base-fontsize * 1.25
-        line-height: $unit * 2
-
-    .#{$class}head-xl,
-    h2
-        font: $head-font
-        font-size: $head-base-fontsize * 1.75
-        line-height: $unit * 3
-
-    .#{$class}head-xxl,
-    .#{$class}head-2xl
-        font: $head-font
-        font-size: $head-base-fontsize * 2.5
-        line-height: $unit * 4
-        
-    .#{$class}head-3xl,
-    h1
-        font: $head-font
-        font-size: $head-base-fontsize * 3
-        line-height: $unit * 5
-
-    .#{$class}head-4xl
-        font: $head-font
-        font-size: $head-base-fontsize * 4.75
-        line-height: $unit * 7
-
+  @each $name, $size, $node in $head-sizes
+    .#{$class}head-#{$name},
+    #{$node}
+        font-family: $head-font
+        font-size: ms($size)
+        line-height: line-height($size)
 
 // text alignment and whitespace behaviour
 =text-layout($class)
@@ -85,3 +70,6 @@ body
   .#{$class}text-overflow\=\.\.\.
     overflow: hidden
     text-overflow: ellipsis
+
+p
+  max-width: $paragraph-length

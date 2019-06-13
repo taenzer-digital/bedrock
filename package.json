@@ -42,8 +42,8 @@
     "build-cleancss": "cleancss -o css/bedrock.min.css css/bedrock.css",
     "build-cleancss-print": "cleancss -o css/print.min.css css/print.css",
     "build-clean": "rimraf css",
-    "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
-    "build-sass-print": "node-sass --output-style expanded --source-map true src/sass/print.sass css/print.css",
+    "build-sass": "node-sass --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css --include-path node_modules",
+    "build-sass-print": "node-sass --output-style expanded --source-map true src/sass/print.sass css/print.css  --include-path node_modules",
     "build-js": "rollup --config",
     "watch-js": "rollup --config --watch",
     "deploy": "npm run build",
@@ -58,5 +58,8 @@
     "src",
     "LICENSE",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+    "modularscale-sass": "^3.0.8"
+  }
 }
