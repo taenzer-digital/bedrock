@@ -30,9 +30,9 @@ body
     background: linear-gradient( to bottom, #fff, #fff 50%, #FF696950 50%, #FF696950)
     background-size: 100% $unit
 
+
 @function line-height($value)
     @return ceil(ms($value) / ($unit / 2)) * ($unit / 2)
-
 
 =typography($class)
   @each $name, $size in $text-sizes
