@@ -71,7 +71,7 @@ label.check > input[type='radio']
       border-radius: 50%
       border: 0.5 * $unit solid
       opacity: 0
-      transition: opacity ease $transition-duration
+      transition: opacity $transition-duration, ease $transition-duration
     &::before,
     &::after
       content: ''
@@ -85,7 +85,7 @@ label.check > input[type='radio']
   &:checked
     ~ *::after
       opacity: 1
-      transition: opacity ease $transition-duration
+      transition: opacity $transition-duration, ease $transition-duration
   &:disabled
     ~ *
       opacity: 0.6
@@ -112,7 +112,7 @@ label.toggle > input[type='checkbox']
       margin: 0.25 * $unit 0.25 * $hunit
       border-radius: 50%
       border: $radio-border-width solid
-      transition: transform border ease $transition-duration
+      transition: transform $transition-duration, border $transition-duration, ease $transition-duration
     &::before,
     &::after
       content: ''
@@ -127,7 +127,7 @@ label.toggle > input[type='checkbox']
     ~ *::after
       border-width: 0.4 * $unit 
       transform: translate($hunit, 0)
-      transition: transform border ease $transition-duration
+      transition: transform $transition-duration, border $transition-duration, ease $transition-duration
 
   &:disabled
     ~ *
