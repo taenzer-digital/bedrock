@@ -24,7 +24,8 @@ input, textarea, select
     transition-duration: 0.2s
 
   input:focus + label,
-  input:not(:placeholder-shown) + label
+  input:not(:placeholder-shown) + label,
+  input:-webkit-autofill + label
     top: -$unit*1.25
     left: $hunit / 4
     font-size: 0.75em
