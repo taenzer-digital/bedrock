@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <title>Bedrock Doc</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
 <link rel="stylesheet" href="../css/bedrock.css">
 <link rel="stylesheet" media="print" href="../css/print.css">
 <script src="../js/bundle.js"></script>
@@ -32,13 +33,13 @@
                     class="pr=3 arrow-down">
                         Basics
                     </a>
-                    <ul 
+                    <ul
                     class="c=sec"
                     role="menu"
                     aria-label="Utilities">
                         <li role="none">
                             <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
-                            
+
                         </li>
                     </ul>
                 </li>
@@ -51,7 +52,7 @@
                     class="pr=3 arrow-down">
                         Typography
                     </a>
-                    <ul 
+                    <ul
                     class="c=sec"
                     role="menu"
                     aria-label="Utilities">
@@ -72,7 +73,7 @@
                     class="pr=3 arrow-down">
                         Utilities
                     </a>
-                    <ul 
+                    <ul
                     class="c=sec"
                     role="menu"
                     aria-label="Utilities">
@@ -81,7 +82,7 @@
                         </li>
                         <li role="none">
                             <a role="menuitem" tabindex="-1" class="px=1"  href="#flex">Layout</a>
-                        </li>                
+                        </li>
                         <li role="none">
                             <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
                         </li>
@@ -96,7 +97,7 @@
                         </li>
                         <li role="none">
                             <a role="menuitem" tabindex="-1" class="pl=1 pr=3 arrow-right" href="#aspect_ratio">Aspect Ratio</a>
-                            <ul 
+                            <ul
                             class="c=sec"
                             role="menu"
                             aria-label="Utilities">
@@ -105,7 +106,7 @@
                                 </li>
                                 <li role="none">
                                     <a role="menuitem" tabindex="-1" class="px=1"  href="#flex">Layout</a>
-                                </li>                
+                                </li>
                                 <li role="none">
                                     <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
                                 </li>
@@ -125,45 +126,47 @@
                                     <a role="menuitem" tabindex="-1" class="px=1"  href="#print_styles">print.css</a>
                                 </li>
                             </ul>
-                          </li>
-                          <li role="none">
+                        </li>
+                        <li role="none">
                             <a role="menuitem" tabindex="-1" class="px=1 arrow-right"  href="#icons">Icons</a>
-                            <ul 
+                            <ul
                             class="c=sec"
                             role="menu"
                             aria-label="Utilities">
-                              <li role="none">
-                                <a role="menuitem" tabinde="-1" class="px=1" href="#icon-sizes">Icon Sizes</a>
-                              </li>
+                                <li role="none">
+                                    <a role="menuitem" tabinde="-1" class="px=1" href="#icon-sizes">Icon Sizes</a>
+                                </li>
                             </ul>
-                          </li>
+                        </li>
                     </ul>
                 </li>
-                <ul role="none" class="pl=1">
-                  <a role="menuitem"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  href="#basics"
-                  id="link-1"
-                  tabindex="0"
-                  class="pr=3 arrow-down">
-                      Components
-                  </a>
-                  <ul 
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Components">
-                    <li role="none">
-                        <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Tabs</a>
-                    </li>
-                  </ul>
+                <li>
+                    <ul role="none" class="pl=1">
+                        <a role="menuitem"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        href="#basics"
+                        id="link-1"
+                        tabindex="0"
+                        class="pr=3 arrow-down">
+                          Components
+                        </a>
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Components">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Tabs</a>
+                            </li>
+                        </ul>
+                    </ul>
                 </li>
             </ul>
         </nav>
     </header>
 
-<main class="w=site ml=2 vertical-rythm">
-    <a name="basics"></a> 
+<main class="w=site ml=2">
+    <a name="basics"></a>
     <h2>Basics</h2>
     <a name="base_unit"></a>
     <h3>The Base Unit</h3>
@@ -173,8 +176,8 @@
     <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
     <div class="p=2 my=1 elevated r">
         <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
-        <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>        
-        is perceived as more "square" than 
+        <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>
+        is perceived as more "square" than
         <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
         even if its width is slightly larger than its height.
         <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
@@ -241,26 +244,27 @@
                     <td><code>s</code></td>
                     <td class="numeric">3/2 units<td>
                 </tr>
+                <tr>
                     <td>-</td>
                     <td class="numeric">2 units</td>
                 </tr>
-                </tr>
+                <tr>
                     <td>l</td>
                     <td class="numeric">2 units</td>
                 </tr>
-                </tr>
+                <tr>
                     <td>xl</td>
                     <td class="numeric">3 units</td>
                 </tr>
-                </tr>
+                <tr>
                     <td>xxl</td>
                     <td class="numeric">4 units</td>
                 </tr>
-                </tr>
+                <tr>
                     <td>3xl</td>
                     <td class="numeric">5 units</td>
                 </tr>
-                </tr>
+                <tr>
                     <td>4xl</td>
                     <td class="numeric">7 units</td>
                 </tr>
@@ -270,7 +274,7 @@
 
     <div class="text-align=c">✯</div>
     <a name="margins_and_paddings"></a>
-    <h2 class="head-xl center">Margins and Paddings</h3>
+    <h2 class="head-xl center">Margins and Paddings</h2>
     <p>Margins and and paddings are set with the utility class
     <div class="center"><code>.[m/p][side]=size</code>.</div>
     <p>For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.
@@ -307,7 +311,7 @@
     <div class="py=1" id="margins-paddings-example"></div>
     <div class="text-align=c">✯</div>
 
-    <a name="flex"></a> 
+    <a name="flex"></a>
     <h3>Layout, flex utilities and the flex grid</h3>
     <p>CSS flexbox is more or less exposed as is. In combination with a few other utilities classes these are strong bulding blocks for layouting. Here is a list with all the utilites with the associated css rules.
 <pre>
@@ -748,16 +752,16 @@ renders to
 
     <figure class="code">
       <pre>
-<&zwj;div class="accordion my=2 b r">
-    <&zwj;details>
-        <&zwj; class="placeholder p=1" wordcount=4><&zwj;/summary>
-        <&zwj; class="placeholder p=1" wordcount=4><&zwj;/div>
-    <&zwj;/details>
-    <&zwj;details>
-        <&zwj;summary class="p=1 bt">Click here b<&zwj;/summary>
-        <&zwj;div class="placeholder px=1 pb=1" wordcount=30><&zwj;/div>
-    <&zwj;/details>
-<&zwj;/div></pre>
+<div class="accordion my=2 b r">
+    <details>
+        <div class="placeholder p=1" wordcount=4></summary>
+        <div class="placeholder p=1" wordcount=4></div>
+    </details>
+    <details>
+        <summary class="p=1 bt">Click here b</summary>
+        <div class="placeholder px=1 pb=1" wordcount=30></div>
+    </details>
+</div></pre>
     </figure>
 
     <div class="accordion my=2">
@@ -788,12 +792,12 @@ renders to
 
 
     <a name="forms"></a>
-    <h3>Forms</h3> 
+    <h3>Forms</h3>
     <textarea data-target="form-example-1" class="py=1 prototype p=1"><form id="person">
-    <label for="first_name">First Name</label> 
+    <label for="first_name">First Name</label>
     <input type="text" name="first_name" id="first_name" maxlength="30">
- 
-    <label for="name">Name</label> 
+
+    <label for="name">Name</label>
     <input type="text" name="name" id="name" maxlength="30">
 
     <div class="floating-label mt=1">
@@ -809,7 +813,7 @@ renders to
 </textarea>
 renders to
   <div id="form-example-1" class=" my=1"></div>
-  <p>One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations.  
+  <p>One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations.
 <textarea data-target="form-example-2" class="py=1 prototype p=1">
 <select>
     <option value="">-- without arrow --</option>
@@ -873,7 +877,7 @@ renders to
     <div class="text-align=c">✯</div>
 
     <a name="hover_and_focus"></a>
-    <h3>Contextual variations</h3> 
+    <h3>Contextual variations</h3>
     <p>To create contextual variations, the color utility classes and the <code>elevated</code> class can be prefixed with <code>hover:</code> or <code>focus:</code>
 
     <textarea data-target="contextual-color-example-1" class="py=1 prototype p=1"><div class="c=prim hover:c=sec">
@@ -890,8 +894,8 @@ renders to
 </div>
 </textarea>
     <div id="contextual-color-example-1" class=" my=1"></div>
-    
-    
+
+
     <div class="text-align=c">✯</div>
 
     <a name="aspect-ratio"></a>
@@ -907,7 +911,7 @@ renders to
     <div id="aspect-ratio-example-1" class=" my=1"></div>
 
     <a name="visibility"></a>
-    <h3>Visibility</h3> 
+    <h3>Visibility</h3>
     <p>To hide or show an element, the visibility utility classes <code>visible</code> and <code>hidden</code> can be used. They can also be prefixed with the responsive prefixes
 
     <textarea data-target="visibility-example-1" class="py=1 prototype p=1">
