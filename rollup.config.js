@@ -12,7 +12,6 @@ const prettierConfig = {
 };
 
 const pluginOptions = [
-  uglify(),
   prettier(prettierConfig),
   commonjs(),
   eslint({
