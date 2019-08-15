@@ -6,6 +6,7 @@
   "rules": {
     "prefer-destructuring": 0,
     "import/no-cycle": 0,
-    "no-use-before-define": ["error", { "functions": true, "classes": false }]
+    "no-use-before-define": ["error", { "functions": true, "classes": false }],
+    "max-classes-per-file": 0
   }
 }
