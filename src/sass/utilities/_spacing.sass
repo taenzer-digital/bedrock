@@ -1,13 +1,18 @@
 =spacing($mp, $size, $sides)
+    $spacing-sizes: $padding-sizes
+
+    @if $mp == margin
+        $spacing-sizes: $margin-sizes
+
     @each $side in $sides
         @if $side == 't'
-            #{$mp}-top: $unit *$size
+            #{$mp}-top: $unit * nth($spacing-sizes, $size + 2)
         @else if $side == 'b'
-            #{$mp}-bottom: $unit *$size
+            #{$mp}-bottom: $unit * nth($spacing-sizes, $size + 2)
         @else if $side == 'l'
-            #{$mp}-left: $hunit *$size        
+            #{$mp}-left: $hunit * nth($spacing-sizes, $size + 2)        
         @else if $side == 'r'
-            #{$mp}-right: $hunit *$size
+            #{$mp}-right: $hunit * nth($spacing-sizes, $size + 2)
         @else
             @error('unkown side specifier: #{$side}')
 
