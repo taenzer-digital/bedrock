@@ -198,6 +198,8 @@ input, textarea, select {
   transition-duration: 0.2s;
 }
 
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label,
 .floating-label input:focus + label,
 .floating-label input:not(:placeholder-shown) + label,
 .floating-label input:-webkit-autofill + label {
