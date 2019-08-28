@@ -1,6 +1,10 @@
 
 
-
+@function str-replace($string, $search, $replace: '')
+  $index: str-index($string, $search)
+  @if $index
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+  @return $string
 
 // Algorithm, for c in 0 to 255:
 // f(c) {
@@ -29,20 +33,41 @@ $linear-channel-values: 0 .0003035269835488375 .000607053967097675 .000910580950
   @else
     @return lighten($color, $diff)
 
+$arrow-down: "<svg xmlns='http://www.w3.org/2000/svg' width='#{$hunit}' height='#{$unit}' viewBox='0 0 8 6'><path fill='$fill-color' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>" !default
+$arrow-left: "<svg xmlns='http://www.w3.org/2000/svg' width='#{$hunit}' height='#{$unit}' viewBox='0 0 5 8'><path fill='$fill-color' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>" !default
+$arrow-right: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='#{$hunit}' height='#{$unit}'><path fill='$fill-color' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>" !default
+$arrow-up: "<svg xmlns='http://www.w3.org/2000/svg' width='#{$hunit}' height='#{$unit}' viewBox='0 0 8 6'><path fill='$fill-color' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>" !default
+
 =bg_with_arrow_down($bg, $fg)
-  background: linear-gradient(45deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(-45deg, $bg #{1.5 * $unit}, transparent #{1.5 * $unit}),  linear-gradient(180deg, $bg 33%, transparent 33%), $fg
+  $temp-fg: str-replace(#{$fg}, "#", "%23")
+  $arrow-down: str-replace($arrow-down, '$fill-color', $temp-fg)
+  background-image: url("data:image/svg+xml;utf8,#{$arrow-down}")
+  background-color: $bg
+  background-position: calc(100% - 8px) center
   background-repeat: no-repeat
 
 =bg_with_arrow_left($bg, $fg)
-  background: linear-gradient(135deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(45deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(90deg, transparent calc(100% - #{1.44 * $unit}), $bg calc(100% - #{1.44 * $unit})), $fg
+  $temp-fg: str-replace(#{$fg}, "#", "%23")
+  $arrow-left: str-replace($arrow-left, '$fill-color', $temp-fg)
+  background-image: url("data:image/svg+xml;utf8,#{$arrow-left}")
+  background-color: $bg
+  background-position: calc(100% - 8px) center
   background-repeat: no-repeat
 
 =bg_with_arrow_right($bg, $fg)
-  background: linear-gradient(45deg, transparent, calc(100% - #{1.56 * $unit}), $bg calc(100%  - #{1.56 * $unit})), linear-gradient(135deg, transparent, calc(100% - #{1.56 * $unit}), $bg calc(100%  - #{1.56 * $unit})), linear-gradient(90deg, $bg calc(100% - #{2 * $unit}), transparent calc(100% - #{2 * $unit})), $fg
+  $temp-fg: str-replace(#{$fg}, "#", "%23")
+  $arrow-right: str-replace($arrow-right, '$fill-color', $temp-fg)
+  background-image: url("data:image/svg+xml;utf8,#{$arrow-right}")
+  background-color: $bg
+  background-position: calc(100% - 8px) center
   background-repeat: no-repeat
 
 =bg_with_arrow_up($bg, $fg)
-  background: linear-gradient(135deg, $bg, calc(100% - #{2 * $unit}), transparent calc(100%  - #{2 * $unit})), linear-gradient(-135deg, $bg #{1.5 * $unit}, transparent #{1.5 * $unit}), linear-gradient(0deg, $bg 33%, transparent 33%), $fg
+  $temp-fg: str-replace(#{$fg}, "#", "%23")
+  $arrow-up: str-replace($arrow-up, '$fill-color', $temp-fg)
+  background-image: url("data:image/svg+xml;utf8,#{$arrow-up}")
+  background-color: $bg
+  background-position: calc(100% - 8px) center
   background-repeat: no-repeat
 
 .arrow-down,
