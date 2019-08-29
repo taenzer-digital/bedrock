@@ -8,9 +8,12 @@
 
 
 <body class="flex wrap">
-    <header class="c=sec w=full elevated align-stretch justify-between">
-        <h1 class="head-1">Bedrock CSS</h1>
-        <nav class="nav flex sticky top bottom">
+    <header class="w=full elevated align-stretch justify-between">
+        <div class="w=full c=prim">
+          <h1 class="w=site py=1 head-4">bedrock</h1>
+        </div>
+        <div class="w=full c=prim">
+          <nav class="w=site nav flex sticky top bottom">
             <button
             class="js-menu-toggle menu-toggle fixed lg:hidden top right"
             aria-haspopup="true"
@@ -23,15 +26,15 @@
             role="menubar"
             class="menubar"
             aria-label="Bedrock">
-                <li role="none" class="pl=1">
+                <li role="none">
                     <a role="menuitem"
                     aria-haspopup="true"
                     aria-expanded="false"
                     href="#basics"
                     id="link-1"
                     tabindex="0"
-                    class="pr=3 arrow-down">
-                        Basics
+                    class="pr=3 head-4 arrow-down">
+                        basics
                     </a>
                     <ul
                     class="c=sec"
@@ -161,9 +164,10 @@
                 </li>
             </ul>
         </nav>
+      </div>
     </header>
 
-<main class="w=site ml=2">
+<main class="w=site mx">
     <a name="basics"></a>
     <h2>Basics</h2>
     <a name="base_unit"></a>
