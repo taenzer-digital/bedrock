@@ -70,16 +70,16 @@ $arrow-up: "<svg xmlns='http://www.w3.org/2000/svg' width='#{$hunit}' height='#{
   background-position: calc(100% - 8px) center
   background-repeat: no-repeat
 
-.arrow-down,
+.arrow-down
   +bg_with_arrow_down(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
 
-.arrow-up,
+.arrow-up
   +bg_with_arrow_up(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
 
-.arrow-left,
+.arrow-left
   +bg_with_arrow_left(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
 
-.arrow-right,
+.arrow-right
   +bg_with_arrow_right(map-get($text-color, 'bg'), map-get($text-color, 'fg'))
 
 select.arrow-down
@@ -105,7 +105,7 @@ select.arrow-down
     border-color: $fg
     transition: color $color-transition-delay ease, background-color $color-transition-delay ease, border-color $color-transition-delay ease
     & *:focus
-      outline: $fg dashed $focus-outline-width
+      outline: rgba($fg, .3) solid $focus-outline-width
     a
       color: map-get($palette, 'accent')
     &.arrow-down,
@@ -126,7 +126,7 @@ select.arrow-down
     border-color: $fg
     transition: color $color-transition-delay ease, background-color $color-transition-delay ease, border-color $color-transition-delay ease
     & *:focus
-      outline: $fg dashed $focus-outline-width
+      outline: rgba($fg, .3) solid $focus-outline-width
     a
       color: map-get($palette, 'accent')
     &.arrow-down
@@ -142,7 +142,7 @@ select.arrow-down
     background-color: $bg
     border-color: $fg
     & *:focus
-      outline: $fg dashed $focus-outline-width
+      outline: rgba($fg, .3) solid $focus-outline-width
     a
       color: map-get($palette, 'accent')
     &.arrow-down
