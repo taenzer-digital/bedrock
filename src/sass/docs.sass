@@ -1,0 +1,73 @@
+@font-face
+  font-family: 'Inter'
+  font-style: normal
+  font-weight: 400
+  src: url(../fonts/inter/Inter-Regular.woff2) format('woff2')
+
+$text-size-lower-bound-px: 16
+$text-size-upper-bound-px: 20
+
+$rem-grow-start-px: 500
+$rem-grow-end-px: 1200
+
+$text-leading: 1.5
+
+$unit: $text-leading * 0.5rem
+$head-leading: $text-leading
+
+// https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+
+$text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$head-font: $text-font
+
+$optical-compensation: 25/24
+$hunit: $optical-compensation * $unit
+
+// colors
+// there are multiple colors sets. Every color set consists of foreground, 
+// background and accent. variants are generated on the fly
+
+$variant-diff: 8%
+$text-color: ( 'fg': #444, 'bg': #fff, 'accent': #555)
+$primary-color: ( 'fg': #fff, 'bg': #000, 'accent': #fff)
+$secondary-color: ( 'fg': #fff, 'bg': #3DC18E, 'accent': #fff)
+$tertiary-color: ( 'fg': #fff, 'bg': #154150, 'accent': #fff)
+$error-color: ( 'fg': #fff, 'bg': #B03040, 'accent': #fff)
+
+// borders
+$border-radius: $unit / 2
+$border-width: 1px
+
+$radio-border-width: $border-width
+
+$paragraph-length: 35em
+
+// shadows
+$elevated-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3)
+
+$breadcrumbs-spacer: '/'
+
+$text-base-fontsize: $unit * 2 / $text-leading
+$head-base-fontsize: $unit * 2 / $head-leading
+
+$site-width-px: 900
+$phone2tablet-px: 600
+$tablet2laptop-px: 900
+$laptop2desktop-px: 1500
+
+$site-width: px-to-rem($site-width-px)
+$phone2tablet: px-to-rem($phone2tablet-px)
+$tablet2laptop: px-to-rem($tablet2laptop-px)
+$laptop2desktop: px-to-rem($laptop2desktop-px)
+
+$grid-gap: $hunit
+
+$focus-outline-width: 2px
+$focus-outline-offset: 2px
+$color-transition-delay: 0.2s
+
+// print settings
+$print-color: ( 'fg': #000, 'bg': #fff, 'accent': #000)
+$print-margin: 25mm
+
+@import './bedrock'

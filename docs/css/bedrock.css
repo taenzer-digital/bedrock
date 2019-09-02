@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/inter/Inter-Regular.woff2) format("woff2");
+}
+
 .arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23444' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
   background-color: #fff;
@@ -79,7 +86,7 @@ input,
 textarea,
 button,
 select {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #444;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -344,6 +351,7 @@ select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  box-sizing: content-box;
 }
 
 select option {
@@ -351,7 +359,7 @@ select option {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   line-height: line-height(0);
 }
@@ -663,97 +671,97 @@ p {
 }
 
 .text-s {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.93721rem;
   line-height: 1.125rem;
 }
 
 .text {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   line-height: 1.125rem;
 }
 
 .text-l {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.067rem;
   line-height: 1.125rem;
 }
 
 .head-1,
 h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.067rem;
   line-height: 1.125rem;
 }
 
 .head-2,
 h5 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.13849rem;
   line-height: 1.5rem;
 }
 
 .head-3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.21477rem;
   line-height: 1.5rem;
 }
 
 .head-4,
 h4 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.29616rem;
   line-height: 1.5rem;
 }
 
 .head-5 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.383rem;
   line-height: 1.5rem;
 }
 
 .head-6,
 h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.47566rem;
   line-height: 1.5rem;
 }
 
 .head-7 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.57453rem;
   line-height: 1.875rem;
 }
 
 .head-8,
 h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.68002rem;
   line-height: 1.875rem;
 }
 
 .head-9 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.79259rem;
   line-height: 1.875rem;
 }
 
 .head-10 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.91269rem;
   line-height: 2.25rem;
 }
 
 .head-11 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 2.04084rem;
   line-height: 2.25rem;
 }
 
 .head-12,
 h1 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 2.17757rem;
   line-height: 2.25rem;
 }
@@ -3520,83 +3528,83 @@ html {
     height: 4.75rem;
   }
   .lg\:text-s {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 0.93721rem;
     line-height: 1.125rem;
   }
   .lg\:text {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
     line-height: 1.125rem;
   }
   .lg\:text-l {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.067rem;
     line-height: 1.125rem;
   }
   .lg\:head-1,
   h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.067rem;
     line-height: 1.125rem;
   }
   .lg\:head-2,
   h5 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.13849rem;
     line-height: 1.5rem;
   }
   .lg\:head-3 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.21477rem;
     line-height: 1.5rem;
   }
   .lg\:head-4,
   h4 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.29616rem;
     line-height: 1.5rem;
   }
   .lg\:head-5 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.383rem;
     line-height: 1.5rem;
   }
   .lg\:head-6,
   h3 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.47566rem;
     line-height: 1.5rem;
   }
   .lg\:head-7 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.57453rem;
     line-height: 1.875rem;
   }
   .lg\:head-8,
   h2 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.68002rem;
     line-height: 1.875rem;
   }
   .lg\:head-9 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.79259rem;
     line-height: 1.875rem;
   }
   .lg\:head-10 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.91269rem;
     line-height: 2.25rem;
   }
   .lg\:head-11 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 2.04084rem;
     line-height: 2.25rem;
   }
   .lg\:head-12,
   h1 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 2.17757rem;
     line-height: 2.25rem;
   }
@@ -4705,7 +4713,7 @@ html {
 
 .c\=prim {
   color: #fff;
-  background-color: #3cacd3;
+  background-color: black;
   border-color: #fff;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -4721,7 +4729,7 @@ html {
 .c\=prim.arrow-down,
 .c\=prim .arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
@@ -4729,7 +4737,7 @@ html {
 .c\=prim.arrow-up,
 .c\=prim .arrow-up {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
@@ -4737,7 +4745,7 @@ html {
 .c\=prim.arrow-left,
 .c\=prim .arrow-left {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 5 8'><path fill='%23fff' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
@@ -4745,14 +4753,14 @@ html {
 .c\=prim.arrow-right,
 .c\=prim .arrow-right {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='0.78125rem' height='0.75rem'><path fill='%23fff' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim:hover {
   color: #fff;
-  background-color: #3cacd3;
+  background-color: black;
   border-color: #fff;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -4767,35 +4775,35 @@ html {
 
 .hover\:c\=prim:hover.arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim:hover.arrow-up {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim:hover.arrow-left {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 5 8'><path fill='%23fff' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim:hover.arrow-right {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='0.78125rem' height='0.75rem'><path fill='%23fff' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim:focus {
   color: #fff;
-  background-color: #3cacd3;
+  background-color: black;
   border-color: #fff;
 }
 
@@ -4809,35 +4817,35 @@ html {
 
 .focus\:c\=prim:focus.arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim:focus.arrow-up {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim:focus.arrow-left {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 5 8'><path fill='%23fff' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim:focus.arrow-right {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='0.78125rem' height='0.75rem'><path fill='%23fff' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>");
-  background-color: #3cacd3;
+  background-color: black;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .c\=prim-alt {
   color: #fff;
-  background-color: #5dbadb;
+  background-color: #141414;
   border-color: #fff;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -4853,7 +4861,7 @@ html {
 .c\=prim-alt.arrow-down,
 .c\=prim-alt .arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
@@ -4861,7 +4869,7 @@ html {
 .c\=prim-alt.arrow-up,
 .c\=prim-alt .arrow-up {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
@@ -4869,7 +4877,7 @@ html {
 .c\=prim-alt.arrow-left,
 .c\=prim-alt .arrow-left {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 5 8'><path fill='%23fff' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
@@ -4877,14 +4885,14 @@ html {
 .c\=prim-alt.arrow-right,
 .c\=prim-alt .arrow-right {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='0.78125rem' height='0.75rem'><path fill='%23fff' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim-alt:hover {
   color: #fff;
-  background-color: #5dbadb;
+  background-color: #141414;
   border-color: #fff;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -4899,35 +4907,35 @@ html {
 
 .hover\:c\=prim-alt:hover.arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim-alt:hover.arrow-up {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim-alt:hover.arrow-left {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 5 8'><path fill='%23fff' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .hover\:c\=prim-alt:hover.arrow-right {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='0.78125rem' height='0.75rem'><path fill='%23fff' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim-alt:focus {
   color: #fff;
-  background-color: #5dbadb;
+  background-color: #141414;
   border-color: #fff;
 }
 
@@ -4941,28 +4949,28 @@ html {
 
 .focus\:c\=prim-alt:focus.arrow-down {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M1.30859661.47349261l-.89136473.80341084 3.44568234 3.8229009 3.44568241-3.82290098-.8913648-.80341076-2.55431754 2.83395338z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim-alt:focus.arrow-up {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 8 6'><path fill='%23fff' fill-rule='nonzero' d='M6.69140339 5.52650739l.89136473-.80341084L4.13708578.90019565.69140337 4.72309663l.8913648.80341076 2.55431754-2.83395338z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim-alt:focus.arrow-left {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='0.78125rem' height='0.75rem' viewBox='0 0 5 8'><path fill='%23fff' fill-rule='nonzero' d='M5.02650739 1.80859661L4.22309655.91723188.40019565 4.36291422l3.82290098 3.44568241.80341076-.8913648-2.83395338-2.55431754z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }
 
 .focus\:c\=prim-alt:focus.arrow-right {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 8' width='0.78125rem' height='0.75rem'><path fill='%23fff' fill-rule='nonzero' d='M-.02650739 6.19140339l.80341084.89136473 3.8229009-3.44568234L.77690337.19140337l-.80341076.8913648 2.83395338 2.55431754z'/></svg>");
-  background-color: #5dbadb;
+  background-color: #141414;
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
 }

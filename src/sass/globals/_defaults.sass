@@ -1,12 +1,4 @@
-@font-face {
-  font-family:'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: 
-    url(./fonts/inter/Inter-Regular.woff2) format('woff2');
-}
-  
-  $text-size-lower-bound-px: 16 !default
+$text-size-lower-bound-px: 16 !default
 $text-size-upper-bound-px: 20 !default
 
 @function px-to-rem($value)
@@ -22,8 +14,7 @@ $unit: $text-leading * 0.5rem !default
 $head-leading: $text-leading !default
 
 // https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
-
-$text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default
+$text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default
 $head-font: $text-font !default
 
 $optical-compensation: 25/24 !default
@@ -32,10 +23,9 @@ $hunit: $optical-compensation * $unit
 // colors
 // there are multiple colors sets. Every color set consists of foreground, 
 // background and accent. variants are generated on the fly
-
 $variant-diff: 8% !default
 $text-color: ( 'fg': #444, 'bg': #fff, 'accent': #555) !default
-$primary-color: ( 'fg': #fff, 'bg': #000, 'accent': #fff) !default
+$primary-color: ( 'fg': #fff, 'bg': #3CACD3, 'accent': #fff) !default
 $secondary-color: ( 'fg': #fff, 'bg': #3DC18E, 'accent': #fff) !default
 $tertiary-color: ( 'fg': #fff, 'bg': #154150, 'accent': #fff) !default
 $error-color: ( 'fg': #fff, 'bg': #B03040, 'accent': #fff) !default
