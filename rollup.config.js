@@ -31,7 +31,7 @@ module.exports = [
     input: 'src/js/bedrock.js',
     output: {
       name: 'docs',
-      file: 'js/bundle.js',
+      file: 'docs/js/bundle.js',
       format: 'cjs',
     },
     plugins: pluginOptions,

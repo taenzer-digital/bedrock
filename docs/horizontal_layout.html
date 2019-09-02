@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <title>Bedrock Doc</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
 <link rel="stylesheet" href="../css/bedrock.css">
-<script src="../js/bedrock.js"></script>
-<body class="center">
-    <textarea class="prototype" data-target="proto" rows=10></textarea>
-    <div id="proto"></div>
+<link rel="stylesheet" media="print" href="../css/print.css">
+<script src="../js/bundle.js"></script>
 
-    <div class="w=1/4"">
-        <span class="placeholder" wordcount=100>
 
-        </span>
+<body class="flex-grid m=2">
+    <div class="b c=text hover:c=text-alt md:w=1/4 text-align=c">foobar</div>
+    <div class="w=1/2 c=prim">foobar</div>
+
+    <hr class="w=full">
+
+    <div class="floating-label mt=1">
+        <input type="text" placeholder=" "/>
+        <label>floaty labels</label>
     </div>
 </body>

@@ -1,6 +1,6 @@
 {
   "name": "@taenzer-digital/bedrock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://www.taenzer.de/",
   "author": {},
   "description": "Internal CSS framework",
@@ -48,8 +48,8 @@
     "build-cleancss": "cleancss -o css/bedrock.min.css css/bedrock.css",
     "build-cleancss-print": "cleancss -o css/print.min.css css/print.css",
     "build-clean": "rimraf css",
-    "build-sass": "node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css",
-    "build-sass-print": "node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true src/sass/print.sass css/print.css",
+    "build-sass": "node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true src/sass/bedrock.sass css/bedrock.css && node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true src/sass/bedrock.sass docs/css/bedrock.css",
+    "build-sass-print": "node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true src/sass/print.sass css/print.css && node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true src/sass/print.sass docs/css/print.css",
     "build-js": "rollup --config",
     "watch-js": "rollup --config --watch",
     "deploy": "npm run build",

@@ -23,6 +23,8 @@ input, textarea, select
     padding: 0 $hunit / 4
     transition-duration: 0.2s
 
+  textarea:focus + label,
+  textarea:not(:placeholder-shown) + label,
   input:focus + label,
   input:not(:placeholder-shown) + label,
   input:-webkit-autofill + label
@@ -140,6 +142,7 @@ select
   appearance: none
   -moz-appearance: none
   -webkit-appearance: none
+  box-sizing: content-box
   option
     font-size: $text-base-fontsize
 
