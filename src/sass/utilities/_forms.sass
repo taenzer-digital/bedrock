@@ -83,8 +83,7 @@ label.check > input[type='radio']
       position: absolute
   &:focus
      ~ *::before
-      outline: dashed $focus-outline-width
-      outline-offset: $focus-outline-offset
+      box-shadow: 0px 0px 4px 2px 
   &:checked
     ~ *::after
       opacity: 1
@@ -124,8 +123,7 @@ label.toggle > input[type='checkbox']
       position: absolute
   &:focus
      ~ *::before
-      outline: dashed $focus-outline-width
-      outline-offset: $focus-outline-offset
+      box-shadow: 0px 0px 4px 2px
   &:checked
     ~ *::after
       border-width: 0.4 * $unit 
