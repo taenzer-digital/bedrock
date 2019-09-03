@@ -9,10 +9,13 @@
 
 <body class="flex wrap">
     <header class="w=full elevated align-stretch justify-between">
-        <div class="w=full c=prim">
-          <h1 class="w=site py=1 head-4">bedrock</h1>
+        <div class="w=full py=1 c=prim">
+          <div class="w=site">
+            <img class="logo absolute" src="./img/bedrocks-logo.svg">
+            <h1 class="head-4 bold">bedrockcss</h1>
+          </div>
         </div>
-        <div class="w=full c=prim">
+        <div class="w=full py=1 c=text">
           <nav class="w=site nav flex sticky top bottom">
             <button
             class="js-menu-toggle menu-toggle fixed lg:hidden top right"
@@ -33,7 +36,7 @@
                     href="#basics"
                     id="link-1"
                     tabindex="0"
-                    class="pr=3 head-4 arrow-down">
+                    class="pr=2 head-4 arrow-down">
                         basics
                     </a>
                     <ul
@@ -46,14 +49,14 @@
                         </li>
                     </ul>
                 </li>
-                <li role="none" class="pl=1">
+                <li role="none" class="pl=2">
                     <a role="menuitem"
                     aria-haspopup="true"
                     aria-expanded="false"
                     href="#typography"
                     tabindex="1"
-                    class="pr=3 arrow-down">
-                        Typography
+                    class="pr=2 head-4 arrow-down">
+                        typography
                     </a>
                     <ul
                     class="c=sec"
@@ -67,14 +70,14 @@
                         </li>
                     </ul>
                 </li>
-                <li role="none" class="pl=1">
+                <li role="none" class="pl=2">
                     <a role="menuitem"
                     aria-haspopup="true"
                     aria-expanded="false"
                     href="#"
                     tabindex="2"
-                    class="pr=3 arrow-down">
-                        Utilities
+                    class="pr=2 head-4 arrow-down">
+                        utilities
                     </a>
                     <ul
                     class="c=sec"
@@ -143,15 +146,15 @@
                         </li>
                     </ul>
                 </li>
-                <li role="none">
+                <li role="none" class="pl=2">
                   <a role="menuitem"
                   aria-haspopup="true"
                   aria-expanded="false"
                   href="#basics"
                   id="link-1"
                   tabindex="0"
-                  class="pr=3 arrow-down">
-                    Components
+                  class="pr=2 head-4 arrow-down">
+                    components
                   </a>
                   <ul
                   class="c=sec"
@@ -167,24 +170,33 @@
       </div>
     </header>
 
-<main class="w=site mx">
-    <a name="basics"></a>
-    <h2>Basics</h2>
-    <a name="base_unit"></a>
-    <h3>The Base Unit</h3>
-    <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
-    <p>Vertical distances are a multiple of the unit value.
-    <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
-    <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
-    <div class="p=2 my=1 elevated r">
-        <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
-        <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>
-        is perceived as more "square" than
-        <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
-        even if its width is slightly larger than its height.
-        <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
+<main class="w=full mx">
+  <div style="height:405px" class="w=full py=1 c=sec flex column justify-center">
+    <h1 class="w=site head-14">The most advanced responsive front-end framework in the world </h1>
+  </div>
+  <div class="w=site pt=6">
+      <div class="doccontents flex-grid row-reverse">
+      <aside class="w=1/4">
+        <a name="basics"></a>
+        <h2>basics</h2>
+      </aside>
+      <div class="w=3/4">
+        <a name="basics"></a>
+        <h3 class="pb=1">The Base Unit</h3>
+        <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
+        <p>Vertical distances are a multiple of the unit value.
+        <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
+        <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
+        <!-- <div class="p=2 my=1 elevated r">
+          <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
+          <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>
+          is perceived as more "square" than
+          <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
+          even if its width is slightly larger than its height.
+          <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
+        </div> -->
+      </div>
     </div>
-    <div class="text-align=c">✯</div>
 
     <a name="typography"></a>
     <h2>Typography</h2>
@@ -1020,7 +1032,7 @@ renders to
     <p>When you put <code><link rel="stylesheet" media="print" href="path/to/print.min.css"></code> in your html header, you get a print friendly restyling. Headers and footers are automaticly hidden, the page width class is a full site and all colors are set to black and white (can be modifed with the <code>$print-color</code> variable). The page margins are set with the <code>$print-margin</code> variable.
     <p>All layout and aspect ratio classes get an addional prefix <code>print:</code> to add print specific styling and you can hide and show elements with the <code>print-only</code> and <code>screen-only</code> utility classes.
     <p>Also, external links will show their target in parenthesis after the link text.
-
+  </div>
 </main>
 
 </body>
