@@ -17,7 +17,7 @@ $head-sizes: ()
     $head-sizes: append($head-sizes, $size $size)
 
 @function line-height($value)
-  @return ceil(ms($value) / ($unit / 2)) * ($unit / 2)  
+  @return ceil(ms($value) / ($unit)) * ($unit)  
 
 body
     font-family: $text-font

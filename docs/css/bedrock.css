@@ -98,8 +98,9 @@ select {
 }
 
 *:focus {
-  outline: #000 dashed 2px;
+  outline: 0;
   outline-offset: 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
   position: relative;
   transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -278,8 +279,7 @@ label.check > input[type='radio'] ~ *::after {
 
 label.check > input[type='checkbox']:focus ~ *::before,
 label.check > input[type='radio']:focus ~ *::before {
-  outline: dashed 2px;
-  outline-offset: 2px;
+  box-shadow: 0px 0px 4px 2px;
 }
 
 label.check > input[type='checkbox']:checked ~ *::after,
@@ -336,8 +336,7 @@ label.toggle > input[type='checkbox'] ~ *::before, label.toggle > input[type='ch
 }
 
 label.toggle > input[type='checkbox']:focus ~ *::before {
-  outline: dashed 2px;
-  outline-offset: 2px;
+  box-shadow: 0px 0px 4px 2px;
 }
 
 label.toggle > input[type='checkbox']:checked ~ *::after {
@@ -679,46 +678,46 @@ p {
 .text-s {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.93721rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .text-l {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.067rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .head-1,
 h6 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.067rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .head-2,
 h5 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.13849rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .head-3 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.21477rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .head-4,
 h4 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.29616rem;
-  line-height: 1.35rem;
+  line-height: 1.8rem;
 }
 
 .head-5 {
@@ -756,20 +755,20 @@ h2 {
 .head-10 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.91269rem;
-  line-height: 2.25rem;
+  line-height: 2.7rem;
 }
 
 .head-11 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 2.04084rem;
-  line-height: 2.25rem;
+  line-height: 2.7rem;
 }
 
 .head-12,
 h1 {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 2.17757rem;
-  line-height: 2.25rem;
+  line-height: 2.7rem;
 }
 
 .fixed {
@@ -3536,40 +3535,40 @@ html {
   .lg\:text-s {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 0.93721rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:text {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:text-l {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.067rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:head-1,
   h6 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.067rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:head-2,
   h5 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.13849rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:head-3 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.21477rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:head-4,
   h4 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.29616rem;
-    line-height: 1.35rem;
+    line-height: 1.8rem;
   }
   .lg\:head-5 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -3601,18 +3600,18 @@ html {
   .lg\:head-10 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.91269rem;
-    line-height: 2.25rem;
+    line-height: 2.7rem;
   }
   .lg\:head-11 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 2.04084rem;
-    line-height: 2.25rem;
+    line-height: 2.7rem;
   }
   .lg\:head-12,
   h1 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 2.17757rem;
-    line-height: 2.25rem;
+    line-height: 2.7rem;
   }
 }
 
@@ -4461,7 +4460,7 @@ html {
 }
 
 .c\=text *:focus {
-  outline: #000 dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .c\=text a {
@@ -4508,7 +4507,7 @@ html {
 }
 
 .hover\:c\=text:hover *:focus {
-  outline: #000 dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hover\:c\=text:hover a {
@@ -4550,7 +4549,7 @@ html {
 }
 
 .focus\:c\=text:focus *:focus {
-  outline: #000 dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .focus\:c\=text:focus a {
@@ -4593,7 +4592,7 @@ html {
 }
 
 .c\=text-alt *:focus {
-  outline: #000 dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .c\=text-alt a {
@@ -4640,7 +4639,7 @@ html {
 }
 
 .hover\:c\=text-alt:hover *:focus {
-  outline: #000 dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hover\:c\=text-alt:hover a {
@@ -4682,7 +4681,7 @@ html {
 }
 
 .focus\:c\=text-alt:focus *:focus {
-  outline: #000 dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .focus\:c\=text-alt:focus a {
@@ -4725,7 +4724,7 @@ html {
 }
 
 .c\=prim *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=prim a {
@@ -4772,7 +4771,7 @@ html {
 }
 
 .hover\:c\=prim:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=prim:hover a {
@@ -4814,7 +4813,7 @@ html {
 }
 
 .focus\:c\=prim:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=prim:focus a {
@@ -4857,7 +4856,7 @@ html {
 }
 
 .c\=prim-alt *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=prim-alt a {
@@ -4904,7 +4903,7 @@ html {
 }
 
 .hover\:c\=prim-alt:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=prim-alt:hover a {
@@ -4946,7 +4945,7 @@ html {
 }
 
 .focus\:c\=prim-alt:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=prim-alt:focus a {
@@ -4989,7 +4988,7 @@ html {
 }
 
 .c\=sec *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=sec a {
@@ -5036,7 +5035,7 @@ html {
 }
 
 .hover\:c\=sec:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=sec:hover a {
@@ -5078,7 +5077,7 @@ html {
 }
 
 .focus\:c\=sec:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=sec:focus a {
@@ -5121,7 +5120,7 @@ html {
 }
 
 .c\=sec-alt *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=sec-alt a {
@@ -5168,7 +5167,7 @@ html {
 }
 
 .hover\:c\=sec-alt:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=sec-alt:hover a {
@@ -5210,7 +5209,7 @@ html {
 }
 
 .focus\:c\=sec-alt:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=sec-alt:focus a {
@@ -5253,7 +5252,7 @@ html {
 }
 
 .c\=ter *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=ter a {
@@ -5300,7 +5299,7 @@ html {
 }
 
 .hover\:c\=ter:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=ter:hover a {
@@ -5342,7 +5341,7 @@ html {
 }
 
 .focus\:c\=ter:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=ter:focus a {
@@ -5385,7 +5384,7 @@ html {
 }
 
 .c\=ter-alt *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=ter-alt a {
@@ -5432,7 +5431,7 @@ html {
 }
 
 .hover\:c\=ter-alt:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=ter-alt:hover a {
@@ -5474,7 +5473,7 @@ html {
 }
 
 .focus\:c\=ter-alt:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=ter-alt:focus a {
@@ -5517,7 +5516,7 @@ html {
 }
 
 .c\=err *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=err a {
@@ -5564,7 +5563,7 @@ html {
 }
 
 .hover\:c\=err:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=err:hover a {
@@ -5606,7 +5605,7 @@ html {
 }
 
 .focus\:c\=err:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=err:focus a {
@@ -5649,7 +5648,7 @@ html {
 }
 
 .c\=err-alt *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .c\=err-alt a {
@@ -5696,7 +5695,7 @@ html {
 }
 
 .hover\:c\=err-alt:hover *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hover\:c\=err-alt:hover a {
@@ -5738,7 +5737,7 @@ html {
 }
 
 .focus\:c\=err-alt:focus *:focus {
-  outline: #fff dashed 2px;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
 .focus\:c\=err-alt:focus a {
@@ -5779,7 +5778,7 @@ html {
 
 .logo {
   margin-left: -36px;
-  top: 9px;
+  top: 13px;
 }
 
 /*# sourceMappingURL=bedrock.css.map */
