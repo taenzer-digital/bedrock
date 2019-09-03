@@ -12,7 +12,7 @@
         <div class="w=full py=1 c=prim">
           <div class="w=site">
             <img class="logo absolute" src="./img/bedrocks-logo.svg">
-            <h1 class="head-4">bedrockcss</h1>
+            <h1 class="head-4">{{ title }}</h1>
           </div>
         </div>
         <div class="w=full py=1 c=text">
@@ -24,565 +24,101 @@
             aria-controls="menubar">
                 <span class="menu-toggle__burger"></span>
             </button>
-            <ul
-            id ="menubar"
-            role="menubar"
-            class="menubar"
-            aria-label="Bedrock">
-                <li role="none">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#basics"
-                    id="link-1"
-                    tabindex="0"
-                    class="pr=2 head-4 arrow-down">
-                        basics
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Utilities">
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
+            {{#chapters.length}}
+              <ul
+              id ="menubar"
+              role="menubar"
+              class="menubar"
+              aria-label="Bedrock">
+                {{#chapters}}
+                  <li role="none" class="mr=2">
+                      <a role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="#{{ slug }}"
+                      id="link-1"
+                      tabindex="0"
+                      class="pr=2 head-4 arrow-down">
+                          {{ name }}
+                      </a>
+                      {{#chapters.length}}
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Utilities">
+                          {{#chapters}}
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 {{#chapters.length}}arrow-right{{/chapters.length}}" href="#{{slug}}">{{ name }}</a>
+                                  {{#chapters.length}}
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                      {{#chapters}}
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#{{slug}}">{{ name }}</a>
 
-                        </li>
-                    </ul>
-                </li>
-                <li role="none" class="pl=2">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#typography"
-                    tabindex="1"
-                    class="pr=2 head-4 arrow-down">
-                        typography
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Utilities">
-                        <li role="Fonts">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#fonts">Fonts</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#font_sizes">Font Sizes</a>
-                        </li>
-                    </ul>
-                </li>
-                <li role="none" class="pl=2">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#"
-                    tabindex="2"
-                    class="pr=2 head-4 arrow-down">
-                        utilities
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Utilities">
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#flex">Layout</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#placeholder">Placeholder</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#interactive">Interactive Elements</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#responsive_design">Responsive Design</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="pl=1 pr=3 arrow-right" href="#aspect_ratio">Aspect Ratio</a>
-                            <ul
-                            class="c=sec"
-                            role="menu"
-                            aria-label="Utilities">
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#flex">Layout</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#placeholder">Placeholder</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#interactive">Interactive Elements</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#responsive_design">Responsive Design</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#aspect_ratio">Aspect Ratio</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#print_styles">print.css</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1 arrow-right"  href="#icons">Icons</a>
-                            <ul
-                            class="c=sec"
-                            role="menu"
-                            aria-label="Utilities">
-                                <li role="none">
-                                    <a role="menuitem" tabinde="-1" class="px=1" href="#icon-sizes">Icon Sizes</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li role="none" class="pl=2">
-                  <a role="menuitem"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  href="#basics"
-                  id="link-1"
-                  tabindex="0"
-                  class="pr=2 head-4 arrow-down">
-                    components
-                  </a>
-                  <ul
-                  class="c=sec"
-                  role="menu"
-                  aria-label="Components">
-                      <li role="none">
-                          <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Tabs</a>
-                      </li>
-                  </ul>
-                </li>
-            </ul>
+                                        </li>
+                                      {{/chapters}}
+                                    </ul>
+                                  {{/chapters.length}}
+                            </li>
+                          {{/chapters}}
+                        </ul>
+                      {{/chapters.length}}
+                  </li>
+                {{/chapters}}
+              </ul>
+            {{/chapters.length}}            
         </nav>
       </div>
     </header>
 
 <main class="w=full mx">
-  <div style="height:405px" class="w=full py=1 c=sec flex column justify-center">
-    <h1 class="w=site head-14">The most advanced responsive front-end framework in the world </h1>
+  <div class="w=full py=6 c=sec flex column justify-center">
+    <h1 class="w=site head-14">{{ slogan }}</h1>
   </div>
   <div class="w=site pt=6">
-      <div class="flex-grid row-reverse">
-      <aside class="w=full md:w=1/4">
-        <a name="basics"></a>
-        <h2>basics</h2>
-      </aside>
-      <div class="w=full md:w=3/4">
-        <a name="base_unit"></a>
-        <h3 class="pb=1">The Base Unit</h3>
-        <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
-        <p>Vertical distances are a multiple of the unit value.
-        <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
-        <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
-        <!-- <div class="p=2 my=1 elevated r">
-          <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
-          <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>
-          is perceived as more "square" than
-          <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
-          even if its width is slightly larger than its height.
-          <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
-        </div> -->
-      </div>
-    </div>
-
-    <a name="typography"></a>
-    <h2>Typography</h2>
-    <a name="font_sizes"></a>
-    <h3>Fonts</h3>
-    <p>Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.
-    <p>The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default.
-    <div class="text-align=c">✯</div>
-    <a name="font_sizes"></a>
-    <h3>Font Sizes</h3>
-    <p>Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.
-    <p>The headline utility classes are <code>head-</code> following the position in the cascade.
-    <p>There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
-    <!-- <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class. -->
-
-    <p>Complete overview:<br>
-        <code>text-s</code><br>
-        <div class="text-s">Lorum Ipsum</div>
-        <code>text</code><br>
-        <div>Lorum Ipsum</div>
-        <code>head-1</code><br>
-        <div class="head-1">Lorum Ipsum</div>
-        <code>head-2</code><br>
-        <div class="head-2">Lorum Ipsum</div>
-        <code>head-3</code><br>
-        <div class="head-3">Lorum Ipsum</div>
-        <code>head-4</code><br>
-        <div class="head-4">Lorum Ipsum</div>
-        <code>head-5</code><br>
-        <div class="head-5">Lorum Ipsum</div>
-        <code>head-6</code><br>
-        <div class="head-6">Lorum Ipsum</div>
-        <code>head-7</code><br>
-        <div class="head-7">Lorum Ipsum</div>
-        <code>head-8</code><br>
-        <div class="head-8">Lorum Ipsum</div>
-        <code>head-9</code><br>
-        <div class="head-9">Lorum Ipsum</div>
-        <code>head-10</code><br>
-        <div class="head-10">Lorum Ipsum</div>
-        <code>head-11</code><br>
-        <div class="head-11">Lorum Ipsum</div>
-        <code>head-12</code><br>
-        <div class="head-12">Lorum Ipsum</div>
-
-      <div class="p=2 my=1 elevated r">
-        <p>Font sizes follow a quadratic progression. The nth size is <code>1 + (0.25 * n * (n-1) / 2 )</code> the size of the base font size.
-        <p>Line heights are snapped to multiples of the unit values, except the footnote size.
-        <p class="mt=1">For reference:
-        <figure class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>size</th>
-                        <th class="numeric">leading</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td><code>s</code></td>
-                    <td class="numeric">3/2 units<td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td class="numeric">2 units</td>
-                </tr>
-                <tr>
-                    <td>l</td>
-                    <td class="numeric">2 units</td>
-                </tr>
-                <tr>
-                    <td>xl</td>
-                    <td class="numeric">3 units</td>
-                </tr>
-                <tr>
-                    <td>xxl</td>
-                    <td class="numeric">4 units</td>
-                </tr>
-                <tr>
-                    <td>3xl</td>
-                    <td class="numeric">5 units</td>
-                </tr>
-                <tr>
-                    <td>4xl</td>
-                    <td class="numeric">7 units</td>
-                </tr>
-            </table>
-        </figure>
-    </div>
-
-    <div class="text-align=c">✯</div>
-    <a name="margins_and_paddings"></a>
-    <h2 class="head-xl center">Margins and Paddings</h2>
-    <p>Margins and and paddings are set with the utility class
-    <div class="center"><code>.[m/p][side]=size</code>.</div>
-    <p>For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.
-    <p>Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value.
-    <p>Further examples:
-    <figure class="table">
-        <table>
-            <tr>
-                <td><code><&zwj;div class="mt=1">...</code></td>
-                <td>margin top is set to 1 unit</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="px=2">...</code></td>
-                <td>left and right padding is set to 2 units</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="m=5">...</code></td>
-                <td>all margins are 5 units</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="py=3">...</code></td>
-                <td>bottom and top padding is set to 3 units</td>
-            </tr>
-        </table>
-    </figure>
-
-
-    <p class="mt=1">Try it out yourself:</p>
-    <textarea data-target="margins-paddings-example" class="py=1 prototype px=1 mx=-1" rows="4"><div>
-    <div class="c=prim p=1">Foo</div>
-    <div class="c=sec px=5">Bar</div>
-    <div class="c=prim mt=2 ml=4">Baz</div>
-</div></textarea>
-    <div class="py=1" id="margins-paddings-example"></div>
-    <div class="text-align=c">✯</div>
-
-    <a name="flex"></a>
-    <h3>Layout, flex utilities and the flex grid</h3>
-    <p>CSS flexbox is more or less exposed as is. In combination with a few other utilities classes these are strong bulding blocks for layouting. Here is a list with all the utilites with the associated css rules.
-<pre>
-.fixed {
-  position: fixed;
-}
-
-.sticky {
-  position: sticky;
-}
-
-.block {
-  display: block;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.inline {
-  display: inline;
-}
-
-.flex {
-  display: flex;
-}
-
-.inline-flex {
-  display: inline-flex;
-}
-
-.row {
-  flex-direction: row;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.row-reverse {
-  flex-direction: row-reverse;
-}
-
-.column-reverse {
-  flex-direction: column-reverse;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.no-wrap {
-  flex-wrap: no-wrap;
-}
-
-.wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.align-start {
-  align-items: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-}
-
-.align-baseline {
-  align-items: baseline;
-}
-
-.align-stretch {
-  align-items: stretch;
-}
-
-.justify-stretch {
-  justify-content: stretch;
-}
-
-.grow=1 {
-  flex-grow: 1;
-}
-
-.grow=2 {
-  flex-grow: 2;
-}
-
-.grow=3 {
-  flex-grow: 3;
-}
-
-.shrink=1 {
-  flex-shrink: 1;
-}
-
-.shrink=2 {
-  flex-shrink: 2;
-}
-
-.shrink=3 {
-  flex-shrink: 3;
-}
-
-.ordir=1 {
-  order: 1;
-}
-
-.ordir=2 {
-  order: 2;
-}
-
-.ordir=3 {
-  order: 3;
-}
-
-.ordir=4 {
-  order: 4;
-}
-
-.ordir=5 {
-  order: 5;
-}
-
-.ordir=6 {
-  order: 6;
-}
-
-.ordir=7 {
-  order: 7;
-}
-
-.ordir=8 {
-  order: 8;
-}
-
-.w=site {
-  max-width: 37.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.w=viewport {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-
-.w=full {
-  width: 100%;
-}
-
-.h=full {
-  min-height: 100%;
-}
-
-.h=viewport {
-  min-height: 100vh;
-}
-
-.w=1/2 {
-  width: 50%;
-}
-
-.w=1/3 {
-  width: 33.33333%;
-}
-
-.w=1/4 {
-  width: 25%;
-}
-
-.w=1/6 {
-  width: 16.66667%;
-}
-
-.w=1/8 {
-  width: 12.5%;
-}
-
-.w=1/12 {
-  width: 8.33333%;
-}
-
-.w=2/3 {
-  width: 66.66667%;
-}
-
-.w=3/4 {
-  width: 75%;
-}
-
-.w=5/6 {
-  width: 83.33333%;
-}
-
-.w=11/12 {
-  width: 91.66667%;
-}
-</pre>
-    <p>For multi column grid layouts, wrapp the columns in an element with the <code>flex-grid</code> class. This takes care of gutter widths, breaks and such. The gutter width is set to one unit, but can be overriden with the <code>$grid-gap</code> variable.
-
-<textarea data-target="flex-grid-example-1" class="prototype p=1"><div class="flex-grid text-align=c">
-    <div class="c=prim w=1/3">Foo</div>
-    <div class="c=prim w=1/3">Bar</div>
-    <div class="c=prim w=1/3">Baz</div>
-
-    <div class="c=text-alt w=2/3">Foo</div>
-    <div class="c=text-alt w=1/3">Baz</div>
-
-    <div class="c=prim w=1/3 offset-r=1/3">use offsets</div>
-    <div class="c=prim w=1/3">for empty rows</div>
-
-    <div class="c=text-alt w=1/4 offset-l=1/4">1/4</div>
-    <div class="c=text-alt w=1/4">1/4</div>
-    <div class="c=text-alt w=1/4">1/4</div>
-
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/6">1/6</div>
-    <div class="c=prim w=1/6">1/6</div>
-    <div class="c=prim w=1/3">1/3</div>
-</div></textarea>
-  <div id="flex-grid-example-1" class=" my=1"></div>
-    <p>Offsets are available with the left and right modifier and for all the widths fractions.
-
-    <p>All these classes are prefixed for the different size classes, see <a href="#responsive_design">responsive design.</a>
-
+      {{#chapters}}
+        <div class="flex-grid row-reverse mt=2 align-start">
+          <aside class="w=full md:w=1/4 sticky top">
+            <a name="{{slug}}"></a>
+            <h2>{{name}}</h2>
+            {{#chapters}}
+              <p>{{name}}</p>
+            {{/chapters}}
+          </aside>
+          <div class="w=full md:w=3/4">
+            {{#chapters}}
+              <a name="{{slug}}"></a>
+              <h3 class="pb=1 mt=2">{{name}}</h3>
+              {{#description}}
+                <p>{{{.}}}</p>
+              {{/description}}
+
+              {{#examples.length}}
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table>
+                    {{#examples}}
+                      <tr class="bb">
+                        <td><code>{{code}}</code></td>
+                        <td>{{{description}}}
+                      </tr>
+                    {{/examples}}
+                  </table>
+                </figure>
+              {{/examples.length}}
+
+              {{#code.length}}
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="{{ slug }}-example" class="py=1 prototype px=1 mx=-1" rows="4">{{#code}}{{{.}}}{{/code}}</textarea>
+                <div class="py=1" id="{{ slug }}-example"></div>
+              {{/code.length}}
+            {{/chapters}}
+          </div>
+        </div>
+      {{/chapters}}
 
 
     <div class="text-align=c">✯</div>

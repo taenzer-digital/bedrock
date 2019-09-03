@@ -1,0 +1,345 @@
+{
+  "title": "bedrockcss",
+  "slogan": "The most advanced responsive front-end framework in the world",
+  "chapters": [
+    {
+      "name": "Basics",
+      "slug": "basics",
+      "chapters": [
+        {
+          "name": "The Base Unit",
+          "description": [
+            "The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).",
+            "Vertical distances are a multiple of the unit value.",
+            "Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.",
+            "This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Typography",
+      "slug": "typography",
+      "chapters": [
+        {
+          "name": "Fonts",
+          "description": [
+            "Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.",
+            "The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default."
+          ]
+        },
+        {
+          "name": "Font Sizes",
+          "description": [
+            "Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.",
+            "The headline utility classes are <code>head-</code> following the position in the cascade.",
+            "There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.",
+            "Complete overview:<br><code>text-s</code><br><div class='text-s'>Lorum Ipsum</div><code>text</code><br><div>Lorum Ipsum</div><code>head-1</code><br><div class='head-1'>Lorum Ipsum</div><code>head-2</code><br><div class='head-2'>Lorum Ipsum</div><code>head-3</code><br><div class='head-3'>Lorum Ipsum</div><code>head-4</code><br><div class='head-4'>Lorum Ipsum</div><code>head-5</code><br><div class='head-5'>Lorum Ipsum</div><code>head-6</code><br><div class='head-6'>Lorum Ipsum</div><code>head-7</code><br><div class='head-7'>Lorum Ipsum</div><code>head-8</code><br><div class='head-8'>Lorum Ipsum</div><code>head-9</code><br><div class='head-9'>Lorum Ipsum</div><code>head-10</code><br><div class='head-10'>Lorum Ipsum</div><code>head-11</code><br><div class='head-11'>Lorum Ipsum</div><code>head-12</code><br><div class='head-12'>Lorum Ipsum</div>"
+          ] 
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "slug": "utilities",
+      "chapters": [
+        {
+          "name": "Margins and Paddings",
+          "slug": "margins_and_paddings",
+          "description": [
+            "Margins and and paddings are set with the utility class",
+            "<div class='center'><code>.[m/p][side]=size</code>.</div>",
+            "For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.",
+            "Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value."
+          ],
+          "examples": [
+            {
+              "code": "<‍div class='mt=1'>...",
+              "description": "margin top is set to 1 unit"
+            },
+            {
+              "code": "<‍div class='px=2'>...",
+              "description": "left and right padding is set to 2 units"
+            },
+            {
+              "code": "<‍div class='m=5'>...",
+              "description": "all margins are 5 units"
+            },
+            {
+              "code": "<‍div class='py=3'>...",
+              "description": "bottom and top padding is set to 3 units"
+            }
+          ],
+          "code": [
+            "<div>\n",
+            "<div class='c=prim p=1'>Foo</div>\n",
+            "<div class='c=sec px=5'>Bar</div>\n",
+            "<div class='c=prim mt=2 ml=4'>Baz</div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Layout and flex utilities",
+          "slug": "flex",
+          "description": [
+            "CSS flexbox is more or less exposed as is. In combination with a few other utilities classes these are strong bulding blocks for layouting. Here is a list with all the utilites with the associated css rules."
+          ],
+          "examples": [
+            {
+              "code": ".fixed",
+              "description": "position: fixed;"
+            },
+            {
+              "code": ".sticky",
+              "description": "position: sticky;"
+            },
+            {
+              "code": ".block",
+              "description": "position: block;"
+            },
+            {
+              "code": ".inline-block",
+              "description": "position: inline-block;"
+            },
+            {
+              "code": ".inline",
+              "description": "position: inline;"
+            },
+            {
+              "code": ".flex",
+              "description": "position: flex;"
+            },
+            {
+              "code": ".inline-flex",
+              "description": "position: inline-flex;"
+            },
+            {
+              "code": ".row",
+              "description": "position: row;"
+            },
+            {
+              "code": ".row-reverse",
+              "description": "position: row-reverse;"
+            },
+            {
+              "code": ".column-reverse",
+              "description": "position: column-reverse;"
+            },
+            {
+              "code": ".wrap",
+              "description": "position: wrap;"
+            },
+            {
+              "code": ".no-wrap",
+              "description": "position: no-wrap;"
+            },
+            {
+              "code": ".wrap-reverse",
+              "description": "position: wrap-reverse;"
+            },
+            {
+              "code": ".justify-start",
+              "description": "position: justify-start;"
+            },
+            {
+              "code": ".align-start",
+              "description": "position: align-start;"
+            },
+            {
+              "code": ".justify-end",
+              "description": "position: justify-end;"
+            },
+            {
+              "code": ".align-end",
+              "description": "position: align-end;"
+            },
+            {
+              "code": ".justify-center",
+              "description": "position: justify-center;"
+            },
+            {
+              "code": ".align-center",
+              "description": "position: align-center;"
+            },
+            {
+              "code": ".space-between",
+              "description": "position: space-between;"
+            },
+            {
+              "code": ".space-around",
+              "description": "position: space-around;"
+            },
+            {
+              "code": ".space-evenly",
+              "description": "position: space-evenly;"
+            },
+            {
+              "code": ".align-baseline",
+              "description": "position: align-baseline;"
+            },
+            {
+              "code": ".justify-stretch",
+              "description": "position: justify-center;"
+            },
+            {
+              "code": ".align-stretch",
+              "description": "position: align-center;"
+            },
+            {
+              "code": ".grow=1",
+              "description": "flex-grow: 1;"
+            },
+            {
+              "code": ".grow=2",
+              "description": "flex-grow: 2;"
+            },
+            {
+              "code": ".grow=3",
+              "description": "flex-grow: 3;"
+            },
+            {
+              "code": ".shrink=1",
+              "description": "flex-shrink: 1;"
+            },
+            {
+              "code": ".shrink=2",
+              "description": "flex-shrink: 2;"
+            },
+            {
+              "code": ".shrink=3",
+              "description": "flex-shrink: 3;"
+            },
+            {
+              "code": ".ordir=1",
+              "description": "order: 1;"
+            },
+            {
+              "code": ".ordir=2",
+              "description": "order: 2;"
+            },
+            {
+              "code": ".ordir=3",
+              "description": "order: 3;"
+            },
+            {
+              "code": ".ordir=4",
+              "description": "order: 4;"
+            },
+            {
+              "code": ".ordir=5",
+              "description": "order: 5;"
+            },
+            {
+              "code": ".ordir=6",
+              "description": "order: 6;"
+            },
+            {
+              "code": ".ordir=7",
+              "description": "order: 7;"
+            },
+            {
+              "code": ".ordir=8",
+              "description": "order: 8;"
+            }
+          ]
+        },
+        {
+          "name": "Flex grid",
+          "slug": "flex-grid",
+          "description": [
+            "For multi column grid layouts, wrapp the columns in an element with the flex-grid class. This takes care of gutter widths, breaks and such. The gutter width is set to one unit, but can be overriden with the <code>$grid-gap</code> variable.",
+            "Offsets are available with the left and right modifier and for all the widths fractions.",
+            "All these classes are prefixed for the different size classes, see <a href='#responsive_design'>responsive design.</a>"
+          ],
+          "examples": [
+            {
+              "code": ".w=site",
+              "description": "max-width: 37.5rem;<br>margin-left: auto;<br>margin-right: auto;"
+            },
+            {
+              "code": ".w=viewport",
+              "description": "width: 100vw;<br />margin-left: 50%;<br />transform: translateX(-50%);"
+            },
+            {
+              "code": ".w=full",
+              "description": "width: 100%;"
+            },
+            {
+              "code": ".h=full",
+              "description": "min-height: 100%;"
+            },
+            {
+              "code": ".h=viewport",
+              "description": "min-height: 100vh;"
+            },
+            {
+              "code": ".w=1/2",
+              "description": "width: 50%;"
+            },
+            {
+              "code": ".w=1/3",
+              "description": "width: 33.33333%;"
+            },
+            {
+              "code": ".w=1/4",
+              "description": "width: 25%;"
+            },
+            {
+              "code": ".w=1/6",
+              "description": "width: 16.66667%;"
+            },
+            {
+              "code": ".w=1/8",
+              "description": "width: 12.5%;"
+            },
+            {
+              "code": ".w=1/12",
+              "description": "width: 8.33333%;"
+            },
+            {
+              "code": ".w=2/3",
+              "description": "width: 66.66667%;"
+            },
+            {
+              "code": ".w=3/4",
+              "description": "width: 75%;"
+            },
+            {
+              "code": ".w=5/6",
+              "description": "width: 83.33333%;"
+            },
+            {
+              "code": ".w=11/12",
+              "description": "width: 91.66667%;"
+            }
+          ],
+          "code": [
+            "<div class='flex-grid text-align=c'>\n",
+            " <div class='c=prim w=1/3'>Foo</div>\n",
+            " <div class='c=prim w=1/3'>Bar</div>\n",
+            " <div class='c=prim w=1/3'>Baz</div>\n",
+            " <div class='c=text-alt w=2/3'>Foo</div>\n",
+            " <div class='c=text-alt w=1/3'>Baz</div>\n",
+            " <div class='c=prim w=1/3 offset-r=1/3'>use offsets</div>\n",
+            " <div class='c=prim w=1/3'>for empty rows</div>\n",
+            " <div class='c=text-alt w=1/4 offset-l=1/4'>1/4</div>\n",
+            " <div class='c=text-alt w=1/4'>1/4</div>\n",
+            " <div class='c=text-alt w=1/4'>1/4</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/6'>1/6</div>\n",
+            " <div class='c=prim w=1/6'>1/6</div>\n",
+            " <div class='c=prim w=1/3'>1/3</div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Borders",
+          "slug": "borders"
+        }
+      ]
+    }
+  ]
+}
