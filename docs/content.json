@@ -5,7 +5,7 @@
     {
       "name": "Basics",
       "slug": "basics",
-      "chapters": [
+      "level-2": [
         {
           "name": "The Base Unit",
           "description": [
@@ -20,7 +20,7 @@
     {
       "name": "Typography",
       "slug": "typography",
-      "chapters": [
+      "level-2": [
         {
           "name": "Fonts",
           "description": [
@@ -33,22 +33,79 @@
           "description": [
             "Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.",
             "The headline utility classes are <code>head-</code> following the position in the cascade.",
-            "There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.",
-            "Complete overview:<br><code>text-s</code><br><div class='text-s'>Lorum Ipsum</div><code>text</code><br><div>Lorum Ipsum</div><code>head-1</code><br><div class='head-1'>Lorum Ipsum</div><code>head-2</code><br><div class='head-2'>Lorum Ipsum</div><code>head-3</code><br><div class='head-3'>Lorum Ipsum</div><code>head-4</code><br><div class='head-4'>Lorum Ipsum</div><code>head-5</code><br><div class='head-5'>Lorum Ipsum</div><code>head-6</code><br><div class='head-6'>Lorum Ipsum</div><code>head-7</code><br><div class='head-7'>Lorum Ipsum</div><code>head-8</code><br><div class='head-8'>Lorum Ipsum</div><code>head-9</code><br><div class='head-9'>Lorum Ipsum</div><code>head-10</code><br><div class='head-10'>Lorum Ipsum</div><code>head-11</code><br><div class='head-11'>Lorum Ipsum</div><code>head-12</code><br><div class='head-12'>Lorum Ipsum</div>"
-          ] 
+            "There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much."
+          ],
+          "examples": [
+            {
+              "code": ".text-s",
+              "description": "<div class='text-s'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".text",
+              "description": "<div class='text'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-1",
+              "description": "<div class='head-1'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-2",
+              "description": "<div class='head-2'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-3",
+              "description": "<div class='head-3'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-4",
+              "description": "<div class='head-4'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-5",
+              "description": "<div class='head-5'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-6",
+              "description": "<div class='head-6'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-7",
+              "description": "<div class='head-7'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-8",
+              "description": "<div class='head-8'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-9",
+              "description": "<div class='head-9'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-10",
+              "description": "<div class='head-10'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-11",
+              "description": "<div class='head-11'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-12",
+              "description": "<div class='head-12'>Lorum Ipsum</div>"
+            }
+          ]
         }
       ]
     },
     {
       "name": "Utilities",
       "slug": "utilities",
-      "chapters": [
+      "level-2": [
         {
           "name": "Margins and Paddings",
           "slug": "margins_and_paddings",
           "description": [
             "Margins and and paddings are set with the utility class",
-            "<div class='center'><code>.[m/p][side]=size</code>.</div>",
+            "<code>.[m/p][side]=size</code>.",
             "For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.",
             "Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value."
           ],
@@ -337,7 +394,104 @@
         },
         {
           "name": "Borders",
-          "slug": "borders"
+          "slug": "borders",
+          "description": [
+            ""
+          ]
+        },
+        {
+          "name": "Arrows",
+          "slug": "arrows",
+          "description": [
+            "Elements can be decorated with arrows on the right side like so:"
+          ],
+          "code": [
+            "<span class='px=3 arrow-left'>foo</span>\n",
+            "<span class='px=3 c=text-alt arrow-down'>bar</span>\n",
+            "<span class='px=3 c=prim arrow-right'>baz</span>\n",
+            "<span class='px=3 c=sec arrow-up'>qux</span>"
+          ]
+        },
+        {
+          "name": "Tables",
+          "slug": "tables",
+          "description": [
+            "To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>."
+          ],
+          "code": [
+            "<figure class='table'>\n",
+            " <table>\n",
+            "   <thead>\n",
+            "     <tr>\n",
+            "       <th>Foo</th>\n",
+            "       <th>Bar</th>\n",
+            "     </tr>\n",
+            "   </thead>\n",
+            "   <tbody>\n",
+            "     <tr>\n",
+            "       <td>baz</td>\n",
+            "       <td>qux</td>\n",
+            "     </tr>\n",
+            "   </tbody>\n",
+            " </table>\n",
+            "</figure>"
+          ],
+          "level-3": [
+            {
+              "name": "Advanced",
+              "slug": "advanced-tables",
+              "description": [
+                "If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.",
+                "Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>."
+              ],
+              "code": [
+                "<figure class='table'>",
+                " <table>\n",
+                "   <thead>\n",
+                "     <tr>\n",
+                "       <th class='numeric'>No</th>\n",
+                "       <th>Name</th>\n",
+                "       <th class='numeric'>Weight</th>\n",
+                "       <th>Symbol</th>\n",
+                "     </tr>\n",
+                "   </thead>\n",
+                "   <tbody>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>1</td>\n",
+                "       <td>Hydrogen</td>\n",
+                "       <td class='numeric'>1.<span class='dec-pos-align-wide'>0079</span></td>\n",
+                "       <td>H</td>\n",
+                "     </tr>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>2</td>\n",
+                "       <td>Helium</td>\n",
+                "       <td class='numeric'>4.<span class='dec-pos-align-wide'>0026</span></td>\n",
+                "       <td>He</td>\n",
+                "     </tr>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>3</td>\n",
+                "       <td>Lithium</td>\n",
+                "       <td class='numeric'>6.<span class='dec-pos-align-wide'>941</span></td>\n",
+                "       <td>Li</td>\n",
+                "     </tr>\n",
+                "     <tr>",
+                "       <td class='numeric'>4</td>\n",
+                "       <td>Beryllium</td>\n",
+                "       <td class='numeric'>9.<span class='dec-pos-align-wide'>0122</span></td>\n",
+                "       <td>Be</td>\n",
+                "     </tr>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>5</td>\n",
+                "       <td>Boron</td>\n",
+                "       <td class='numeric'>10.<span class='dec-pos-align-wide'>811</span></td>\n",
+                "       <td>B</td>\n",
+                "     </tr>\n",
+                "   </tbody>\n",
+                " </table>\n",
+                "</figure>\n"
+              ]
+            }
+          ]
         }
       ]
     }

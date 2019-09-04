@@ -41,31 +41,31 @@
                       class="pr=2 head-4 arrow-down">
                           {{ name }}
                       </a>
-                      {{#chapters.length}}
+                      {{#level-2.length}}
                         <ul
                         class="c=sec"
                         role="menu"
-                        aria-label="Utilities">
-                          {{#chapters}}
+                        aria-label="{{ name }}">
+                          {{#level-2}}
                             <li role="none">
-                                <a role="menuitem" tabindex="-1" class="px=1 {{#chapters.length}}arrow-right{{/chapters.length}}" href="#{{slug}}">{{ name }}</a>
-                                  {{#chapters.length}}
+                                <a role="menuitem" tabindex="-1" class="px=1 {{#level-3.length}}arrow-right{{/level-3.length}}" href="#{{slug}}">{{ name }}</a>
+                                  {{#level-3.length}}
                                     <ul
                                     class="c=sec"
                                     role="menu"
                                     aria-label="Utilities">
-                                      {{#chapters}}
+                                      {{#level-3}}
                                         <li role="none">
                                             <a role="menuitem" tabindex="-1" class="px=1" href="#{{slug}}">{{ name }}</a>
 
                                         </li>
-                                      {{/chapters}}
+                                      {{/level-3}}
                                     </ul>
-                                  {{/chapters.length}}
+                                  {{/level-3.length}}
                             </li>
-                          {{/chapters}}
+                          {{/level-2}}
                         </ul>
-                      {{/chapters.length}}
+                      {{/level-2.length}}
                   </li>
                 {{/chapters}}
               </ul>
@@ -84,12 +84,12 @@
           <aside class="w=full md:w=1/4 sticky top">
             <a name="{{slug}}"></a>
             <h2>{{name}}</h2>
-            {{#chapters}}
+            {{#level-2}}
               <p>{{name}}</p>
-            {{/chapters}}
+            {{/level-2}}
           </aside>
           <div class="w=full md:w=3/4">
-            {{#chapters}}
+            {{#level-2}}
               <a name="{{slug}}"></a>
               <h3 class="pb=1 mt=2">{{name}}</h3>
               {{#description}}
@@ -115,7 +115,38 @@
                 <textarea data-target="{{ slug }}-example" class="py=1 prototype px=1 mx=-1" rows="4">{{#code}}{{{.}}}{{/code}}</textarea>
                 <div class="py=1" id="{{ slug }}-example"></div>
               {{/code.length}}
-            {{/chapters}}
+
+              {{#level-3}}
+                <a name="{{slug}}"></a>
+                <h4 class="pb=1 mt=2">{{name}}</h4>
+                {{#description}}
+                  <p>{{{.}}}</p>
+                {{/description}}
+
+                {{#examples.length}}
+                  <p class="mt=2">Further examples:
+                  <figure class="table">
+                    <table>
+                      {{#examples}}
+                        <tr class="bb">
+                          <td><code>{{code}}</code></td>
+                          <td>{{{description}}}
+                        </tr>
+                      {{/examples}}
+                    </table>
+                  </figure>
+                {{/examples.length}}
+
+                {{#code.length}}
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="{{ slug }}-example" class="py=1 prototype px=1 mx=-1" rows="4">{{#code}}{{{.}}}{{/code}}</textarea>
+                  <div class="py=1" id="{{ slug }}-example"></div>
+                {{/code.length}}
+            {{/level-3}}
+
+            {{/level-2}}
+
+            
           </div>
         </div>
       {{/chapters}}
@@ -195,18 +226,6 @@
     <div class="py=1" id="button-group-example"></div>
 
     The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
-    <div class="text-align=c">✯</div>
-    <a name="arrows"></a>
-    <h3>Arrows</h3>
-    <p>Elements can be decorated with arrows on the right side like so:
-
-<textarea data-target="arrows-example" class="p=1 prototype" rows="3"><span class="px=3 arrow-left">foo</span>
-<span class="px=3 c=text-alt arrow-down">bar</span>
-<span class="px=3 c=prim arrow-right">baz</span>
-<span class="px=3 c=sec arrow-up">qux</span></textarea>
-    <div class="py=1" id="arrows-example"></div>
-
-
     <div class="text-align=c">✯</div>
 
     <a name="tables"></a>
