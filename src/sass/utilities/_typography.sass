@@ -16,10 +16,12 @@ $head-sizes: ()
   @else
     $head-sizes: append($head-sizes, $size $size)
 
+@function line-height($value)
+  @return ceil(ms($value) / ($unit)) * ($unit)  
+
 body
     font-family: $text-font
     font-size: ms(0)
-    line-height: line-height(0)
 
 // type scale follows the formula 1 + (0.25 * n * (n-1) / 2 )
 
@@ -31,8 +33,7 @@ body
     background-size: 100% $unit
 
 
-@function line-height($value)
-    @return ceil(ms($value) / ($unit / 2)) * ($unit / 2)
+
 
 =typography($class)
   @each $name, $size in $text-sizes

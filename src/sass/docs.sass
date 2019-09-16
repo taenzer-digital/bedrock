@@ -1,0 +1,92 @@
+@font-face
+  font-family: 'Inter'
+  src: url(../fonts/inter/Inter-Regular.woff2) format('woff2')
+
+@font-face
+  font-family: 'Inter'
+  src: url(../fonts/inter/Inter-SemiBold.woff2) format('woff2')
+  font-weight: 600
+
+
+$text-size-lower-bound-px: 16
+$text-size-upper-bound-px: 20
+
+$rem-grow-start-px: 500
+$rem-grow-end-px: 1200
+
+$text-leading: 1.8
+
+$unit: $text-leading * 0.5rem
+$head-leading: $text-leading
+
+// https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+
+$text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$head-font: $text-font
+
+$optical-compensation: 25/24
+$hunit: $optical-compensation * $unit
+
+// colors
+// there are multiple colors sets. Every color set consists of foreground, 
+// background and accent. variants are generated on the fly
+
+$variant-diff: 8%
+$text-color: ( 'fg': #000, 'bg': #fff, 'accent': #000)
+$primary-color: ( 'fg': #fff, 'bg': #000, 'accent': #fff)
+$secondary-color: ( 'fg': #fff, 'bg': #37A7C5, 'accent': #fff)
+$tertiary-color: ( 'fg': #fff, 'bg': #154150, 'accent': #fff)
+$error-color: ( 'fg': #fff, 'bg': #B03040, 'accent': #fff)
+
+// borders
+$border-radius: $unit / 2
+$border-width: 1px
+
+$radio-border-width: $border-width
+
+$paragraph-length: 35em
+
+// shadows
+$elevated-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3)
+
+$breadcrumbs-spacer: '/'
+
+$text-base-fontsize: $unit * 2 / $text-leading
+$head-base-fontsize: $unit * 2 / $head-leading
+
+$site-width-px: 1024
+$phone2tablet-px: 600
+$tablet2laptop-px: 900
+$laptop2desktop-px: 1500
+
+$site-width: px-to-rem($site-width-px)
+$phone2tablet: px-to-rem($phone2tablet-px)
+$tablet2laptop: px-to-rem($tablet2laptop-px)
+$laptop2desktop: px-to-rem($laptop2desktop-px)
+
+$grid-gap: $hunit
+
+$focus-outline-width: 2px
+$focus-outline-offset: 2px
+$color-transition-delay: 0.2s
+
+// print settings
+$print-color: ( 'fg': #000, 'bg': #fff, 'accent': #000)
+$print-margin: 25mm
+
+$margin-sizes: -0.5, 0, 1, 1.5, 2, 2.5, 3, 3.5
+$padding-sizes: 0, 0, 0.75, 1.5, 2, 2.5, 3, 6
+
+$arrow-down: "<svg xmlns='http://www.w3.org/2000/svg' width='#{$hunit*0.66}' height='#{$unit}' viewBox='0 0 9.4 6.5'><path fill='$fill-color' d='M5.4 6.5H4l-4-5L.7 0h8l.7 1.5-4 5zM2.6 1.8l2.1 2.7 2.1-2.7H2.6z'/></svg>"
+
+@import './bedrock'
+
+.logo
+  margin-left: -36px
+  top: 13px
+
+// .doccontents__main
+//   max-width: 
+
+// aside
+//   max-width: $site-width-px - $paragraph-length

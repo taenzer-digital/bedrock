@@ -8,9 +8,15 @@
 
 
 <body class="flex wrap">
-    <header class="c=sec w=full elevated align-stretch justify-between">
-        <h1 class="head-1">Bedrock CSS</h1>
-        <nav class="nav flex sticky top bottom">
+    <header class="w=full elevated align-stretch justify-between">
+        <div class="w=full py=1 c=prim">
+          <div class="w=site">
+            <img class="logo absolute" src="./img/bedrocks-logo.svg">
+            <h1 class="head-4">bedrockcss</h1>
+          </div>
+        </div>
+        <div class="w=full py=1 c=text">
+          <nav class="w=site nav flex sticky top bottom">
             <button
             class="js-menu-toggle menu-toggle fixed lg:hidden top right"
             aria-haspopup="true"
@@ -18,1005 +24,1116 @@
             aria-controls="menubar">
                 <span class="menu-toggle__burger"></span>
             </button>
-            <ul
-            id ="menubar"
-            role="menubar"
-            class="menubar"
-            aria-label="Bedrock">
-                <li role="none" class="pl=1">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#basics"
-                    id="link-1"
-                    tabindex="0"
-                    class="pr=3 arrow-down">
-                        Basics
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Utilities">
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1" href="#base_unit">The Base Unit</a>
+              <ul
+              id ="menubar"
+              role="menubar"
+              class="menubar"
+              aria-label="Bedrock">
+                  <li role="none" class="mr=2">
+                      <a role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="#basics"
+                      id="link-1"
+                      tabindex="0"
+                      class="pr=2 head-4 arrow-down">
+                          Basics
+                      </a>
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Basics">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#basics">The Base Unit</a>
+                            </li>
+                        </ul>
+                  </li>
+                  <li role="none" class="mr=2">
+                      <a role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="#typography"
+                      id="link-1"
+                      tabindex="0"
+                      class="pr=2 head-4 arrow-down">
+                          Typography
+                      </a>
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Typography">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#typography">Fonts</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#typography">Font Sizes</a>
+                            </li>
+                        </ul>
+                  </li>
+                  <li role="none" class="mr=2">
+                      <a role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="#utilities"
+                      id="link-1"
+                      tabindex="0"
+                      class="pr=2 head-4 arrow-down">
+                          Utilities
+                      </a>
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Utilities">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#margins_and_paddings">Margins and Paddings</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#flex">Layout and flex utilities</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#flex-grid">Flex grid</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 arrow-right" href="#borders">Borders</a>
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#border-radius">Radius</a>
 
-                        </li>
-                    </ul>
-                </li>
-                <li role="none" class="pl=1">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#typography"
-                    tabindex="1"
-                    class="pr=3 arrow-down">
-                        Typography
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Utilities">
-                        <li role="Fonts">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#fonts">Fonts</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#font_sizes">Font Sizes</a>
-                        </li>
-                    </ul>
-                </li>
-                <li role="none" class="pl=1">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#"
-                    tabindex="2"
-                    class="pr=3 arrow-down">
-                        Utilities
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Utilities">
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#flex">Layout</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#placeholder">Placeholder</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#interactive">Interactive Elements</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1"  href="#responsive_design">Responsive Design</a>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="pl=1 pr=3 arrow-right" href="#aspect_ratio">Aspect Ratio</a>
-                            <ul
-                            class="c=sec"
-                            role="menu"
-                            aria-label="Utilities">
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Margins and Paddings</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#flex">Layout</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#tables">Tables</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#placeholder">Placeholder</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#interactive">Interactive Elements</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#responsive_design">Responsive Design</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#aspect_ratio">Aspect Ratio</a>
-                                </li>
-                                <li role="none">
-                                    <a role="menuitem" tabindex="-1" class="px=1"  href="#print_styles">print.css</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1 arrow-right"  href="#icons">Icons</a>
-                            <ul
-                            class="c=sec"
-                            role="menu"
-                            aria-label="Utilities">
-                                <li role="none">
-                                    <a role="menuitem" tabinde="-1" class="px=1" href="#icon-sizes">Icon Sizes</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li role="none">
-                    <a role="menuitem"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    href="#basics"
-                    id="link-1"
-                    tabindex="0"
-                    class="pr=3 arrow-down">
-                      Components
-                    </a>
-                    <ul
-                    class="c=sec"
-                    role="menu"
-                    aria-label="Components">
-                        <li role="none">
-                            <a role="menuitem" tabindex="-1" class="px=1" href="#margins_and_paddings">Tabs</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#arrows">Arrows</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 arrow-right" href="#tables">Tables</a>
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#advanced-tables">Advanced</a>
+
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#placeholder">Placeholder</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 arrow-right" href="#interactive">Interactive Elements</a>
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#accordion">Accordion</a>
+
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#responsive">Responsive Design</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 arrow-right" href="#forms">Forms</a>
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#select">Select</a>
+
+                                        </li>
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#check-radio">Check- and Radiobuttons</a>
+
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#contextual">Contextual variations</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#utilities">Aspect Ratio</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#utilities">Visibility</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 arrow-right" href="#utilities">Icons</a>
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#icon-sizes">Icon Sizes</a>
+
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 arrow-right" href="#background-images">Background images</a>
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#focal-point">Focal Point</a>
+
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                  </li>
+                  <li role="none" class="mr=2">
+                      <a role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="#components"
+                      id="link-1"
+                      tabindex="0"
+                      class="pr=2 head-4 arrow-down">
+                          Components
+                      </a>
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="Components">
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#tabs">Tabs</a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 " href="#print">print.css</a>
+                            </li>
+                        </ul>
+                  </li>
+              </ul>
         </nav>
+      </div>
     </header>
 
-<main class="w=site ml=2">
-    <a name="basics"></a>
-    <h2>Basics</h2>
-    <a name="base_unit"></a>
-    <h3>The Base Unit</h3>
-    <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).
-    <p>Vertical distances are a multiple of the unit value.
-    <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.
-    <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.
-    <div class="p=2 my=1 elevated r">
-        <p>Thats not completely correct. The human eye perceives vertical distances as slightly larger then horizontal ones. This is the reason why
-        <div class="mt=1" style="background-color: #333; height: 48px; width: 49.5px;"></div>
-        is perceived as more "square" than
-        <div class="mt=1" style="background-color: #333; height: 48px; width: 48px;"></div>
-        even if its width is slightly larger than its height.
-        <p>So all vertical distances are optically compensated. But this is an implementation detail and we name the distances as we perceive them. The amount of optical compensation is set with the <code>$optical-compensation</code> variable.
-    </div>
-    <div class="text-align=c">✯</div>
-
-    <a name="typography"></a>
-    <h2>Typography</h2>
-    <a name="font_sizes"></a>
-    <h3>Fonts</h3>
-    <p>Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.
-    <p>The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default.
-    <div class="text-align=c">✯</div>
-    <a name="font_sizes"></a>
-    <h3>Font Sizes</h3>
-    <p>Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.
-    <p>The headline utility classes are <code>head-</code> following the position in the cascade.
-    <p>There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.
-    <!-- <p>Headline styles can be selected with the <code>head[-s -l -xl -xxl -3xl -4xl]</code> utility class. -->
-
-    <p>Complete overview:<br>
-        <code>text-s</code><br>
-        <div class="text-s">Lorum Ipsum</div>
-        <code>text</code><br>
-        <div>Lorum Ipsum</div>
-        <code>head-1</code><br>
-        <div class="head-1">Lorum Ipsum</div>
-        <code>head-2</code><br>
-        <div class="head-2">Lorum Ipsum</div>
-        <code>head-3</code><br>
-        <div class="head-3">Lorum Ipsum</div>
-        <code>head-4</code><br>
-        <div class="head-4">Lorum Ipsum</div>
-        <code>head-5</code><br>
-        <div class="head-5">Lorum Ipsum</div>
-        <code>head-6</code><br>
-        <div class="head-6">Lorum Ipsum</div>
-        <code>head-7</code><br>
-        <div class="head-7">Lorum Ipsum</div>
-        <code>head-8</code><br>
-        <div class="head-8">Lorum Ipsum</div>
-        <code>head-9</code><br>
-        <div class="head-9">Lorum Ipsum</div>
-        <code>head-10</code><br>
-        <div class="head-10">Lorum Ipsum</div>
-        <code>head-11</code><br>
-        <div class="head-11">Lorum Ipsum</div>
-        <code>head-12</code><br>
-        <div class="head-12">Lorum Ipsum</div>
-
-      <div class="p=2 my=1 elevated r">
-        <p>Font sizes follow a quadratic progression. The nth size is <code>1 + (0.25 * n * (n-1) / 2 )</code> the size of the base font size.
-        <p>Line heights are snapped to multiples of the unit values, except the footnote size.
-        <p class="mt=1">For reference:
-        <figure class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>size</th>
-                        <th class="numeric">leading</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td><code>s</code></td>
-                    <td class="numeric">3/2 units<td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td class="numeric">2 units</td>
-                </tr>
-                <tr>
-                    <td>l</td>
-                    <td class="numeric">2 units</td>
-                </tr>
-                <tr>
-                    <td>xl</td>
-                    <td class="numeric">3 units</td>
-                </tr>
-                <tr>
-                    <td>xxl</td>
-                    <td class="numeric">4 units</td>
-                </tr>
-                <tr>
-                    <td>3xl</td>
-                    <td class="numeric">5 units</td>
-                </tr>
-                <tr>
-                    <td>4xl</td>
-                    <td class="numeric">7 units</td>
-                </tr>
-            </table>
-        </figure>
-    </div>
-
-    <div class="text-align=c">✯</div>
-    <a name="margins_and_paddings"></a>
-    <h2 class="head-xl center">Margins and Paddings</h2>
-    <p>Margins and and paddings are set with the utility class
-    <div class="center"><code>.[m/p][side]=size</code>.</div>
-    <p>For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.
-    <p>Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value.
-    <p>Further examples:
-    <figure class="table">
-        <table>
-            <tr>
-                <td><code><&zwj;div class="mt=1">...</code></td>
-                <td>margin top is set to 1 unit</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="px=2">...</code></td>
-                <td>left and right padding is set to 2 units</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="m=5">...</code></td>
-                <td>all margins are 5 units</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="py=3">...</code></td>
-                <td>bottom and top padding is set to 3 units</td>
-            </tr>
-        </table>
-    </figure>
+<main class="w=full mx">
+  <div class="w=full py=6 c=sec flex column justify-center">
+    <h1 class="w=site head-14">The most advanced responsive front-end framework in the world</h1>
+  </div>
+  <div class="w=site pt=6">
+        <div class="flex-grid row-reverse mt=2 align-start">
+          <aside class="w=full md:w=1/4 sticky top">
+            <a name="basics"></a>
+            <h2>Basics</h2>
+              <p>The Base Unit</p>
+          </aside>
+          <div class="w=full md:w=3/4">
+              <a name="basics"></a>
+              <h3 class="pb=1 mt=2">The Base Unit</h3>
+                <p>The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).</p>
+                <p>Vertical distances are a multiple of the unit value.</p>
+                <p>Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.</p>
+                <p>This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons.</p>
 
 
-    <p class="mt=1">Try it out yourself:</p>
-    <textarea data-target="margins-paddings-example" class="py=1 prototype px=1 mx=-1" rows="4"><div>
-    <div class="c=prim p=1">Foo</div>
-    <div class="c=sec px=5">Bar</div>
-    <div class="c=prim mt=2 ml=4">Baz</div>
+
+
+
+            
+          </div>
+        </div>
+        <div class="flex-grid row-reverse mt=2 align-start">
+          <aside class="w=full md:w=1/4 sticky top">
+            <a name="typography"></a>
+            <h2>Typography</h2>
+              <p>Fonts</p>
+              <p>Font Sizes</p>
+          </aside>
+          <div class="w=full md:w=3/4">
+              <a name="typography"></a>
+              <h3 class="pb=1 mt=2">Fonts</h3>
+                <p>Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.</p>
+                <p>The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default.</p>
+
+
+
+
+              <a name="typography"></a>
+              <h3 class="pb=1 mt=2">Font Sizes</h3>
+                <p>Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.</p>
+                <p>The headline utility classes are <code>head-</code> following the position in the cascade.</p>
+                <p>There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much.</p>
+
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                      <tr class="bb">
+                        <td><code>.text-s</code></td>
+                        <td><div class='text-s'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.text</code></td>
+                        <td><div class='text'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-1</code></td>
+                        <td><div class='head-1'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-2</code></td>
+                        <td><div class='head-2'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-3</code></td>
+                        <td><div class='head-3'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-4</code></td>
+                        <td><div class='head-4'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-5</code></td>
+                        <td><div class='head-5'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-6</code></td>
+                        <td><div class='head-6'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-7</code></td>
+                        <td><div class='head-7'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-8</code></td>
+                        <td><div class='head-8'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-9</code></td>
+                        <td><div class='head-9'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-10</code></td>
+                        <td><div class='head-10'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-11</code></td>
+                        <td><div class='head-11'>Lorum Ipsum</div>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.head-12</code></td>
+                        <td><div class='head-12'>Lorum Ipsum</div>
+                      </tr>
+                  </table>
+                </figure>
+
+
+
+
+            
+          </div>
+        </div>
+        <div class="flex-grid row-reverse mt=2 align-start">
+          <aside class="w=full md:w=1/4 sticky top">
+            <a name="utilities"></a>
+            <h2>Utilities</h2>
+              <p>Margins and Paddings</p>
+              <p>Layout and flex utilities</p>
+              <p>Flex grid</p>
+              <p>Borders</p>
+              <p>Arrows</p>
+              <p>Tables</p>
+              <p>Placeholder</p>
+              <p>Interactive Elements</p>
+              <p>Responsive Design</p>
+              <p>Forms</p>
+              <p>Contextual variations</p>
+              <p>Aspect Ratio</p>
+              <p>Visibility</p>
+              <p>Icons</p>
+              <p>Background images</p>
+          </aside>
+          <div class="w=full md:w=3/4">
+              <a name="margins_and_paddings"></a>
+              <h3 class="pb=1 mt=2">Margins and Paddings</h3>
+                <p>Margins and and paddings are set with the utility class</p>
+                <p><code>.[m/p][side]=size</code>.</p>
+                <p>For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.</p>
+                <p>Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value.</p>
+
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                      <tr class="bb">
+                        <td><code>&lt;‍div class&#x3D;&#39;mt&#x3D;1&#39;&gt;...</code></td>
+                        <td>margin top is set to 1 unit
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;‍div class&#x3D;&#39;px&#x3D;2&#39;&gt;...</code></td>
+                        <td>left and right padding is set to 2 units
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;‍div class&#x3D;&#39;m&#x3D;5&#39;&gt;...</code></td>
+                        <td>all margins are 5 units
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;‍div class&#x3D;&#39;py&#x3D;3&#39;&gt;...</code></td>
+                        <td>bottom and top padding is set to 3 units
+                      </tr>
+                  </table>
+                </figure>
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="margins_and_paddings-example" class="py=1 prototype px=1 mx=-1" rows="4"><div>
+<div class='c=prim p=1'>Foo</div>
+<div class='c=sec px=5'>Bar</div>
+<div class='c=prim mt=2 ml=4'>Baz</div>
 </div></textarea>
-    <div class="py=1" id="margins-paddings-example"></div>
-    <div class="text-align=c">✯</div>
+                <div class="py=1" id="margins_and_paddings-example"></div>
 
-    <a name="flex"></a>
-    <h3>Layout, flex utilities and the flex grid</h3>
-    <p>CSS flexbox is more or less exposed as is. In combination with a few other utilities classes these are strong bulding blocks for layouting. Here is a list with all the utilites with the associated css rules.
-<pre>
-.fixed {
-  position: fixed;
-}
 
-.sticky {
-  position: sticky;
-}
+              <a name="flex"></a>
+              <h3 class="pb=1 mt=2">Layout and flex utilities</h3>
+                <p>CSS flexbox is more or less exposed as is. In combination with a few other utilities classes these are strong bulding blocks for layouting. Here is a list with all the utilites with the associated css rules.</p>
 
-.block {
-  display: block;
-}
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                      <tr class="bb">
+                        <td><code>.fixed</code></td>
+                        <td>position: fixed;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.sticky</code></td>
+                        <td>position: sticky;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.block</code></td>
+                        <td>position: block;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.inline-block</code></td>
+                        <td>position: inline-block;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.inline</code></td>
+                        <td>position: inline;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.flex</code></td>
+                        <td>position: flex;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.inline-flex</code></td>
+                        <td>position: inline-flex;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.row</code></td>
+                        <td>position: row;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.row-reverse</code></td>
+                        <td>position: row-reverse;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.column-reverse</code></td>
+                        <td>position: column-reverse;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.wrap</code></td>
+                        <td>position: wrap;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.no-wrap</code></td>
+                        <td>position: no-wrap;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.wrap-reverse</code></td>
+                        <td>position: wrap-reverse;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.justify-start</code></td>
+                        <td>position: justify-start;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.align-start</code></td>
+                        <td>position: align-start;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.justify-end</code></td>
+                        <td>position: justify-end;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.align-end</code></td>
+                        <td>position: align-end;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.justify-center</code></td>
+                        <td>position: justify-center;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.align-center</code></td>
+                        <td>position: align-center;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.space-between</code></td>
+                        <td>position: space-between;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.space-around</code></td>
+                        <td>position: space-around;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.space-evenly</code></td>
+                        <td>position: space-evenly;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.align-baseline</code></td>
+                        <td>position: align-baseline;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.justify-stretch</code></td>
+                        <td>position: justify-center;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.align-stretch</code></td>
+                        <td>position: align-center;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.grow&#x3D;1</code></td>
+                        <td>flex-grow: 1;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.grow&#x3D;2</code></td>
+                        <td>flex-grow: 2;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.grow&#x3D;3</code></td>
+                        <td>flex-grow: 3;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.shrink&#x3D;1</code></td>
+                        <td>flex-shrink: 1;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.shrink&#x3D;2</code></td>
+                        <td>flex-shrink: 2;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.shrink&#x3D;3</code></td>
+                        <td>flex-shrink: 3;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;1</code></td>
+                        <td>order: 1;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;2</code></td>
+                        <td>order: 2;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;3</code></td>
+                        <td>order: 3;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;4</code></td>
+                        <td>order: 4;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;5</code></td>
+                        <td>order: 5;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;6</code></td>
+                        <td>order: 6;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;7</code></td>
+                        <td>order: 7;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.ordir&#x3D;8</code></td>
+                        <td>order: 8;
+                      </tr>
+                  </table>
+                </figure>
 
-.inline-block {
-  display: inline-block;
-}
 
-.inline {
-  display: inline;
-}
 
-.flex {
-  display: flex;
-}
+              <a name="flex-grid"></a>
+              <h3 class="pb=1 mt=2">Flex grid</h3>
+                <p>For multi column grid layouts, wrapp the columns in an element with the flex-grid class. This takes care of gutter widths, breaks and such. The gutter width is set to one unit, but can be overriden with the <code>$grid-gap</code> variable.</p>
+                <p>Offsets are available with the left and right modifier and for all the widths fractions.</p>
+                <p>All these classes are prefixed for the different size classes, see <a href='#responsive_design'>responsive design.</a></p>
 
-.inline-flex {
-  display: inline-flex;
-}
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                      <tr class="bb">
+                        <td><code>.w&#x3D;site</code></td>
+                        <td>max-width: 37.5rem;<br>margin-left: auto;<br>margin-right: auto;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;viewport</code></td>
+                        <td>width: 100vw;<br />margin-left: 50%;<br />transform: translateX(-50%);
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;full</code></td>
+                        <td>width: 100%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.h&#x3D;full</code></td>
+                        <td>min-height: 100%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.h&#x3D;viewport</code></td>
+                        <td>min-height: 100vh;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;1&#x2F;2</code></td>
+                        <td>width: 50%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;1&#x2F;3</code></td>
+                        <td>width: 33.33333%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;1&#x2F;4</code></td>
+                        <td>width: 25%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;1&#x2F;6</code></td>
+                        <td>width: 16.66667%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;1&#x2F;8</code></td>
+                        <td>width: 12.5%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;1&#x2F;12</code></td>
+                        <td>width: 8.33333%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;2&#x2F;3</code></td>
+                        <td>width: 66.66667%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;3&#x2F;4</code></td>
+                        <td>width: 75%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;5&#x2F;6</code></td>
+                        <td>width: 83.33333%;
+                      </tr>
+                      <tr class="bb">
+                        <td><code>.w&#x3D;11&#x2F;12</code></td>
+                        <td>width: 91.66667%;
+                      </tr>
+                  </table>
+                </figure>
 
-.row {
-  flex-direction: row;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.row-reverse {
-  flex-direction: row-reverse;
-}
-
-.column-reverse {
-  flex-direction: column-reverse;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.no-wrap {
-  flex-wrap: no-wrap;
-}
-
-.wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.align-start {
-  align-items: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-}
-
-.align-baseline {
-  align-items: baseline;
-}
-
-.align-stretch {
-  align-items: stretch;
-}
-
-.justify-stretch {
-  justify-content: stretch;
-}
-
-.grow=1 {
-  flex-grow: 1;
-}
-
-.grow=2 {
-  flex-grow: 2;
-}
-
-.grow=3 {
-  flex-grow: 3;
-}
-
-.shrink=1 {
-  flex-shrink: 1;
-}
-
-.shrink=2 {
-  flex-shrink: 2;
-}
-
-.shrink=3 {
-  flex-shrink: 3;
-}
-
-.ordir=1 {
-  order: 1;
-}
-
-.ordir=2 {
-  order: 2;
-}
-
-.ordir=3 {
-  order: 3;
-}
-
-.ordir=4 {
-  order: 4;
-}
-
-.ordir=5 {
-  order: 5;
-}
-
-.ordir=6 {
-  order: 6;
-}
-
-.ordir=7 {
-  order: 7;
-}
-
-.ordir=8 {
-  order: 8;
-}
-
-.w=site {
-  max-width: 37.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.w=viewport {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-
-.w=full {
-  width: 100%;
-}
-
-.h=full {
-  min-height: 100%;
-}
-
-.h=viewport {
-  min-height: 100vh;
-}
-
-.w=1/2 {
-  width: 50%;
-}
-
-.w=1/3 {
-  width: 33.33333%;
-}
-
-.w=1/4 {
-  width: 25%;
-}
-
-.w=1/6 {
-  width: 16.66667%;
-}
-
-.w=1/8 {
-  width: 12.5%;
-}
-
-.w=1/12 {
-  width: 8.33333%;
-}
-
-.w=2/3 {
-  width: 66.66667%;
-}
-
-.w=3/4 {
-  width: 75%;
-}
-
-.w=5/6 {
-  width: 83.33333%;
-}
-
-.w=11/12 {
-  width: 91.66667%;
-}
-</pre>
-    <p>For multi column grid layouts, wrapp the columns in an element with the <code>flex-grid</code> class. This takes care of gutter widths, breaks and such. The gutter width is set to one unit, but can be overriden with the <code>$grid-gap</code> variable.
-
-<textarea data-target="flex-grid-example-1" class="prototype p=1"><div class="flex-grid text-align=c">
-    <div class="c=prim w=1/3">Foo</div>
-    <div class="c=prim w=1/3">Bar</div>
-    <div class="c=prim w=1/3">Baz</div>
-
-    <div class="c=text-alt w=2/3">Foo</div>
-    <div class="c=text-alt w=1/3">Baz</div>
-
-    <div class="c=prim w=1/3 offset-r=1/3">use offsets</div>
-    <div class="c=prim w=1/3">for empty rows</div>
-
-    <div class="c=text-alt w=1/4 offset-l=1/4">1/4</div>
-    <div class="c=text-alt w=1/4">1/4</div>
-    <div class="c=text-alt w=1/4">1/4</div>
-
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/12">1/12</div>
-    <div class="c=prim w=1/6">1/6</div>
-    <div class="c=prim w=1/6">1/6</div>
-    <div class="c=prim w=1/3">1/3</div>
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="flex-grid-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='flex-grid text-align=c'>
+ <div class='c=prim w=1/3'>Foo</div>
+ <div class='c=prim w=1/3'>Bar</div>
+ <div class='c=prim w=1/3'>Baz</div>
+ <div class='c=text-alt w=2/3'>Foo</div>
+ <div class='c=text-alt w=1/3'>Baz</div>
+ <div class='c=prim w=1/3 offset-r=1/3'>use offsets</div>
+ <div class='c=prim w=1/3'>for empty rows</div>
+ <div class='c=text-alt w=1/4 offset-l=1/4'>1/4</div>
+ <div class='c=text-alt w=1/4'>1/4</div>
+ <div class='c=text-alt w=1/4'>1/4</div>
+ <div class='c=prim w=1/12'>1/12</div>
+ <div class='c=prim w=1/12'>1/12</div>
+ <div class='c=prim w=1/12'>1/12</div>
+ <div class='c=prim w=1/12'>1/12</div>
+ <div class='c=prim w=1/6'>1/6</div>
+ <div class='c=prim w=1/6'>1/6</div>
+ <div class='c=prim w=1/3'>1/3</div>
 </div></textarea>
-  <div id="flex-grid-example-1" class=" my=1"></div>
-    <p>Offsets are available with the left and right modifier and for all the widths fractions.
-
-    <p>All these classes are prefixed for the different size classes, see <a href="#responsive_design">responsive design.</a>
+                <div class="py=1" id="flex-grid-example"></div>
 
 
+              <a name="borders"></a>
+              <h3 class="pb=1 mt=2">Borders</h3>
+                <p>The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.</p>
 
-    <div class="text-align=c">✯</div>
-
-
-    <a name="borders"></a>
-    <h3>Borders</h3>
-    <p>Borders are set with the following utility classes:
-    <figure class="table">
-        <table>
-            <tr>
-                <td><code><&zwj;div class="b">...</code></td>
-                <td>borders on all sides</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="bx">...</code></td>
-                <td>left and right borders</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="by">...</code></td>
-                <td>top and bottom borders borders</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="bt">...</code></td>
-                <td>top border</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="bb">...</code></td>
-                <td>bottom border</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="bl">...</code></td>
-                <td>left border</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="br">...</code></td>
-                <td>right border</td>
-            </tr>
-        </table>
-    </figure>
-    <p class="mt=1">Corners can be rounded with these classes:
-
-    <figure class="table">
-        <table>
-            <tr>
-                <td><code><&zwj;div class="r">...</code></td>
-                <td>rounded on all sides</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="rl">...</code></td>
-                <td>rounded on the left side</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="rr">...</code></td>
-                <td>rounded on the left side</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="rt">...</code></td>
-                <td>rounded on the top side</td>
-            </tr>
-            <tr>
-                <td><code><&zwj;div class="rb">...</code></td>
-                <td>rounded on the bottom side</td>
-            </tr>
-        </table>
-    </figure>
-
-    <p class="mt=1">Big radii to create circles or pill like shapes can be created with `r-circle`. Of course, die modified classes `rl-circle`, `rr-circle`, `rt-circle` and `rb-circle` to restrict the radius to the left, right, top or bottom are also avaiable.
-
-    <p class="mt=1">For example, a button group could look like this:</p>
-    <textarea data-target="button-group-example" class="p=1 prototype" rows="3"><button class="px=1 rl c=sec-alt">Foo</button>
-<button class="px=1 rr c=sec-alt">Bar</button>
-<button class="r-circle px=4 c=prim">baz</button></textarea>
-    <div class="py=1" id="button-group-example"></div>
-
-    The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables.
-    <div class="text-align=c">✯</div>
-    <a name="arrows"></a>
-    <h3>Arrows</h3>
-    <p>Elements can be decorated with arrows on the right side like so:
-
-<textarea data-target="arrows-example" class="p=1 prototype" rows="3"><span class="px=3 arrow-left">foo</span>
-<span class="px=3 c=text-alt arrow-down">bar</span>
-<span class="px=3 c=prim arrow-right">baz</span>
-<span class="px=3 c=sec arrow-up">qux</span></textarea>
-    <div class="py=1" id="arrows-example"></div>
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;b&#39;&gt;...</code></td>
+                        <td>borders on all sides
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;bx&#39;&gt;...</code></td>
+                        <td>left and right borders
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;by&#39;&gt;...</code></td>
+                        <td>top and bottom borders
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;bt&#39;&gt;...</code></td>
+                        <td>top border
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;bb&#39;&gt;...</code></td>
+                        <td>bottom border
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;bl&#39;&gt;...</code></td>
+                        <td>left border
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;div class&#x3D;&#39;br&#39;&gt;...</code></td>
+                        <td>right border
+                      </tr>
+                  </table>
+                </figure>
 
 
-    <div class="text-align=c">✯</div>
+                <a name="border-radius"></a>
+                <h4 class="pb=1 mt=2">Radius</h4>
+                  <p>Big radii to create circles or pill like shapes can be created with `r-circle`. Of course, die modified classes `rl-circle`, `rr-circle`, `rt-circle` and `rb-circle` to restrict the radius to the left, right, top or bottom are also avaiable.</p>
+                  <p>Corners can be rounded with the following classes</p>
 
-    <a name="tables"></a>
-    <h3>Tables</h3>
-    <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.
-    <p>For example,
-    <textarea data-target="table-example-1" class="py=1 prototype p=1">
-<figure class="table">
-  <table>
-    <thead>
-      <tr>
-        <th>Foo</th>
-        <th>Bar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>baz</td>
-        <td>qux</td>
-      </tr>
-    </tbody>
-  </table>
+                  <p class="mt=2">Further examples:
+                  <figure class="table">
+                    <table class="w=full">
+                        <tr class="bb">
+                          <td><code>&lt;div class&#x3D;&#39;r&#39;&gt;...</code></td>
+                          <td>rounded on all sides</td>
+                        </tr>
+                        <tr class="bb">
+                          <td><code>&lt;div class&#x3D;&#39;rl&#39;&gt;...</code></td>
+                          <td>rounded on the left side</td>
+                        </tr>
+                        <tr class="bb">
+                          <td><code>&lt;div class&#x3D;&#39;rr&#39;&gt;...</code></td>
+                          <td>rounded on the right side</td>
+                        </tr>
+                        <tr class="bb">
+                          <td><code>&lt;div class&#x3D;&#39;rt&#39;&gt;...</code></td>
+                          <td>rounded on the top side</td>
+                        </tr>
+                        <tr class="bb">
+                          <td><code>&lt;div class&#x3D;&#39;rb&#39;&gt;...</code></td>
+                          <td>rounded on the bottom side</td>
+                        </tr>
+                    </table>
+                  </figure>
+
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="border-radius-example" class="py=1 prototype px=1 mx=-1" rows="4"><button class='px=1 rl c=sec-alt'>Foo</button>
+<button class='px=1 rr c=sec-alt'>Bar</button>
+<button class='r-circle px=4 c=prim'>baz</button></textarea>
+                  <div class="py=1" id="border-radius-example"></div>
+
+              <a name="arrows"></a>
+              <h3 class="pb=1 mt=2">Arrows</h3>
+                <p>Elements can be decorated with arrows on the right side like so:</p>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="arrows-example" class="py=1 prototype px=1 mx=-1" rows="4"><span class='px=3 arrow-left'>foo</span>
+<span class='px=3 c=text-alt arrow-down'>bar</span>
+<span class='px=3 c=prim arrow-right'>baz</span>
+<span class='px=3 c=sec arrow-up'>qux</span></textarea>
+                <div class="py=1" id="arrows-example"></div>
+
+
+              <a name="tables"></a>
+              <h3 class="pb=1 mt=2">Tables</h3>
+                <p>To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>.</p>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="tables-example" class="py=1 prototype px=1 mx=-1" rows="4"><figure class='table'>
+ <table>
+   <thead>
+     <tr>
+       <th>Foo</th>
+       <th>Bar</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>baz</td>
+       <td>qux</td>
+     </tr>
+   </tbody>
+ </table>
 </figure></textarea>
-renders to
-  <div id="table-example-1" class=" my=1"></div>
+                <div class="py=1" id="tables-example"></div>
 
-<p>If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.
-<p>Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>.
-<p class="mt=1">Example:
-    <textarea data-target="table-example-2" class="prototype"><figure class="table">
-  <table>
-    <thead>
-      <tr>
-        <th class="numeric">No</th>
-        <th>Name</th>
-        <th class="numeric">Weight</th>
-        <th>Symbol</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="numeric">1</td>
-        <td>Hydrogen</td>
-        <td class="numeric">1.<span class="dec-pos-align-wide">0079</span></td>
-        <td>H</td>
-      </tr>
-      <tr>
-        <td class="numeric">2</td>
-        <td>Helium</td>
-        <td class="numeric">4.<span class="dec-pos-align-wide">0026</span></td>
-        <td>He</td>
-      </tr>
-      <tr>
-        <td class="numeric">3</td>
-        <td>Lithium</td>
-        <td class="numeric">6.<span class="dec-pos-align-wide">941</span></td>
-        <td>Li</td>
-      </tr>
-      <tr>
-        <td class="numeric">4</td>
-        <td>Beryllium</td>
-        <td class="numeric">9.<span class="dec-pos-align-wide">0122</span></td>
-        <td>Be</td>
-      </tr>
-      <tr>
-        <td class="numeric">5</td>
-        <td>Boron</td>
-        <td class="numeric">10.<span class="dec-pos-align-wide">811</span></td>
-        <td>B</td>
-      </tr>
-    </tbody>
-  </table>
-</figure></textarea>
-
-    <div class="py=1" id="table-example-2"></div>
-
-    <a name="placeholder"></a>
-    <h2 class="head-xl text-align=c  mt=4">Placeholder</h2>
-    <p>This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.
-    <p class="mt=1">Examples:
-    <figure class="code"><pre><&zwj;span class="head-l placeholder" wordcount="5"><&zwj;/span></pre></figure>
-    <span class="head-xl placeholder" wordcount="5"></span>
-    <figure class="code"><pre><&zwj;span class="placeholder" wordcount="20"><&zwj;/span></pre></figure>
-    <span class="placeholder" wordcount="20"></span>
-
-    <a name="interactive"></a>
-    <h2 class="head-xl text-align=c mt=2">Interactive Elements</h2>
-    <h3 class="head-l text-align=c">Accordion</h3>
-
-    The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>.
-
-    <p class="pt=1">Example:
-
-    <figure class="code">
-      <pre>
-<div class="accordion my=2 b r">
-    <details>
-        <div class="placeholder p=1" wordcount=4></summary>
-        <div class="placeholder p=1" wordcount=4></div>
-    </details>
-    <details>
-        <summary class="p=1 bt">Click here b</summary>
-        <div class="placeholder px=1 pb=1" wordcount=30></div>
-    </details>
-</div></pre>
-    </figure>
-
-    <div class="accordion my=2">
-        <details class="b rt">
-            <summary class="placeholder p=1" wordcount=4></summary>
-            <div class="placeholder px=1 pb=1" wordcount=50></div>
-        </details>
-        <details class="bb bx rb">
-            <summary class="placeholder p=1" wordcount=3></summary>
-            <div class="placeholder px=1 pb=1" wordcount=30></div>
-        </details>
-    </div>
-
-    <a name="responsive_design"></a>
-    <h3>Responsive Design</h3>
-    <p>Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).
-    Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).
-
-    <p class="pt=1">For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.
-    <p>In general, everything that has to do with layout and spacing is prefixed.
-    <div class="text-align=c">✯</div>
-
-    <a name="flex-grid"></a>
-    <h3>Flexbox utils and the Flex Grid</h3>
-    <p>
-
-    <div class="text-align=c">✯</div>
+                <a name="advanced-tables"></a>
+                <h4 class="pb=1 mt=2">Advanced</h4>
+                  <p>If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.</p>
+                  <p>Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>.</p>
 
 
-    <a name="forms"></a>
-    <h3>Forms</h3>
-    <textarea data-target="form-example-1" class="py=1 prototype p=1"><form id="person">
-    <label for="first_name">First Name</label>
-    <input type="text" name="first_name" id="first_name" maxlength="30">
-
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" maxlength="30">
-
-    <div class="floating-label mt=1">
-        <input type="text" placeholder=" " />
-        <label>floaty labels</label>
-    </div>
-    <div class="floating-label mt=1">
-        <input type="text" placeholder=" " />
-        <label>for more tightly stacked forms</label>
-    </div>
-    <button type="reset" class="c=err mt=1">Eingaben zurücksetzen</button>
-    <button type="submit" class="c=prim mt=1">Eingaben absenden</button>
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="advanced-tables-example" class="py=1 prototype px=1 mx=-1" rows="4"><figure class='table'> <table>
+   <thead>
+     <tr>
+       <th class='numeric'>No</th>
+       <th>Name</th>
+       <th class='numeric'>Weight</th>
+       <th>Symbol</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td class='numeric'>1</td>
+       <td>Hydrogen</td>
+       <td class='numeric'>1.<span class='dec-pos-align-wide'>0079</span></td>
+       <td>H</td>
+     </tr>
+     <tr>
+       <td class='numeric'>2</td>
+       <td>Helium</td>
+       <td class='numeric'>4.<span class='dec-pos-align-wide'>0026</span></td>
+       <td>He</td>
+     </tr>
+     <tr>
+       <td class='numeric'>3</td>
+       <td>Lithium</td>
+       <td class='numeric'>6.<span class='dec-pos-align-wide'>941</span></td>
+       <td>Li</td>
+     </tr>
+     <tr>       <td class='numeric'>4</td>
+       <td>Beryllium</td>
+       <td class='numeric'>9.<span class='dec-pos-align-wide'>0122</span></td>
+       <td>Be</td>
+     </tr>
+     <tr>
+       <td class='numeric'>5</td>
+       <td>Boron</td>
+       <td class='numeric'>10.<span class='dec-pos-align-wide'>811</span></td>
+       <td>B</td>
+     </tr>
+   </tbody>
+ </table>
+</figure>
 </textarea>
-renders to
-  <div id="form-example-1" class=" my=1"></div>
-  <p>One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations.
-<textarea data-target="form-example-2" class="py=1 prototype p=1">
-<select>
-    <option value="">-- without arrow --</option>
-    <option value="foo">Foo</option>
-    <option value="bar">Bar</option>
+                  <div class="py=1" id="advanced-tables-example"></div>
+
+              <a name="placeholder"></a>
+              <h3 class="pb=1 mt=2">Placeholder</h3>
+                <p>This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.</p>
+
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                      <tr class="bb">
+                        <td><code>&lt;span class&#x3D;&#39;head-l placeholder&#39; wordcount&#x3D;&#39;5&#39;&gt;&lt;&#x2F;span&gt;</code></td>
+                        <td><span class='head-l placeholder' wordcount='5'></span>
+                      </tr>
+                      <tr class="bb">
+                        <td><code>&lt;span class&#x3D;&#39;placeholder&#39; wordcount&#x3D;&#39;20&#39;&gt;&lt;&#x2F;span&gt;</code></td>
+                        <td><span class='placeholder' wordcount='20'></span>
+                      </tr>
+                  </table>
+                </figure>
+
+
+
+              <a name="interactive"></a>
+              <h3 class="pb=1 mt=2">Interactive Elements</h3>
+
+
+
+                <a name="accordion"></a>
+                <h4 class="pb=1 mt=2">Accordion</h4>
+                  <p>The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>.</p>
+
+                  <p class="mt=2">Further examples:
+                  <figure class="table">
+                    <table class="w=full">
+                        <tr class="bb">
+                          <td><code></code></td>
+                          <td><div class='accordion my=2 b r w=site'>
+<details>
+<summary class='p=1'><div class='placeholder p=1 inline' wordcount=4></summary>
+    <div class='placeholder p=1' wordcount=4></div>
+</details>
+<details>
+    <summary class='p=1 bt'>Click here b</summary>
+    <div class='placeholder px=1 pb=1' wordcount=30></div>
+</details>
+</div></td>
+                        </tr>
+                    </table>
+                  </figure>
+
+
+              <a name="responsive"></a>
+              <h3 class="pb=1 mt=2">Responsive Design</h3>
+                <p>Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).</p>
+                <p>Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).</p>
+                <p><br />For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.</p>
+                <p>In general, everything that has to do with layout and spacing is prefixed.</p>
+
+
+
+
+              <a name="forms"></a>
+              <h3 class="pb=1 mt=2">Forms</h3>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="forms-example" class="py=1 prototype px=1 mx=-1" rows="4"><form id='person'>
+<label for='first_name'>First Name</label>
+<input type='text' name='first_name' id='first_name' maxlength='30'>
+<label for='name'>Name</label>
+<input type='text' name='name' id='name' maxlength='30'>
+<div class='floating-label mt=1'>
+    <input type='text' placeholder=' ' />
+    <label>floaty labels</label>
+</div>
+<div class='floating-label mt=1'>
+    <input type='text' placeholder=' ' />
+    <label>for more tightly stacked forms</label>
+</div>
+<button type='reset' class='c=err mt=1'>Eingaben zurücksetzen</button>
+<button type='submit' class='c=prim mt=1'>Eingaben absenden</button></textarea>
+                <div class="py=1" id="forms-example"></div>
+
+                <a name="select"></a>
+                <h4 class="pb=1 mt=2">Select</h4>
+                  <p>One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations.</p>
+
+
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="select-example" class="py=1 prototype px=1 mx=-1" rows="4"><select>
+<option value=''>-- without arrow --</option>
+<option value='foo'>Foo</option>
+<option value='bar'>Bar</option>
 </select>
-<select class="arrow-down">
-    <option value="">-- with arrow --</option>
-    <option value="foo">Foo</option>
-    <option value="bar">Bar</option>
+<select class='arrow-down'>
+<option value=''>-- with arrow --</option>
+<option value='foo'>Foo</option>
+<option value='bar'>Bar</option>
 </select>
-<select class="c=prim arrow-down">
-    <option value="">-- with arrow and other color --</option>
-    <option value="foo">Foo</option>
-    <option value="bar">Bar</option>
+<select class='c=prim arrow-down'>
+<option value=''>-- with arrow and other color --</option>
+<option value='foo'>Foo</option>
+<option value='bar'>Bar</option>
 </select>
-<select class="c=sec hover:c=text-alt arrow-down">
-    <option value="">-- and hover effect --</option>
-    <option value="foo">Foo</option>
-    <option value="bar">Bar</option>
+<select class='c=sec hover:c=text-alt arrow-down'>
+<option value=''>-- and hover effect --</option>
+<option value='foo'>Foo</option>
+<option value='bar'>Bar</option>
 </select></textarea>
-  <div id="form-example-2" class=" my=1"></div>
-    <p>Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.
-    <p>Its important to <em>not</em> use a radio input with the toggle styling, since the behaviour would be surprising for the user.
-    <textarea data-target="switch-example-1" class="py=1 prototype p=1"><label class="check p=1 c=prim">
-  <input type="checkbox">
-  <span></span>
-  Label
+                  <div class="py=1" id="select-example"></div>
+                <a name="check-radio"></a>
+                <h4 class="pb=1 mt=2">Check- and Radiobuttons</h4>
+                  <p>Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.</p>
+                  <p>Its important to <em>not</em> use a radio input with the toggle styling, since the behaviour would be surprising for the user.</p>
+                  <p></p>
+                  <p>Addional styling can be added to the embedded span</p>
+
+
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="check-radio-example" class="py=1 prototype px=1 mx=-1" rows="4"><label class='check p=1 c=prim'>
+<input type='checkbox'>
+<span></span>
+Label
 </label>
-<label class="check p=1">
-  <input type="radio" name="radio-example">
-  <span></span>
-  Foo
+<label class='check p=1'>
+<input type='radio' name='radio-example'>
+<span></span>
+Foo
 </label>
-<label class="check p=1 pt=0">
-  <input type="radio" name="radio-example">
-  <span></span>
-  Bar
+<label class='check p=1 pt=0'>
+<input type='radio' name='radio-example'>
+<span></span>
+Bar
 </label>
-<label class="toggle p=1 c=sec">
-  <input type="checkbox">
-  <span></span>
-  Label
+<label class='toggle p=1 c=sec'>
+<input type='checkbox'>
+<span></span>
+Label
 </label>
-<label class="toggle p=1 c=text-alt">
-  <input type="checkbox">
-  <span></span>
-  Label
+<label class='toggle p=1 c=text-alt'>
+<input type='checkbox'>
+<span></span>
+Label
+</label>
+<label class='toggle p=1 c=sec'>
+<input type='checkbox'>
+<span class='elevated'></span>
+Label
 </label></textarea>
-  <div id="switch-example-1" class=" my=1"></div>
+                  <div class="py=1" id="check-radio-example"></div>
 
-  <p>Addional styling can be added to the embedded span element like so:
+              <a name="contextual"></a>
+              <h3 class="pb=1 mt=2">Contextual variations</h3>
+                <p>To create contextual variations, the color utility classes and the <code>elevated</code> class can be prefixed with <code>hover:</code> or <code>focus:</code></p>
 
-    <textarea data-target="switch-example-2" class="py=1 prototype p=1"><label class="toggle p=1 c=sec">
-  <input type="checkbox">
-  <span class="elevated"></span>
-  Label
-</label></textarea>
-  <div id="switch-example-2" class=" my=1"></div>
 
-    <div class="text-align=c">✯</div>
-
-    <a name="hover_and_focus"></a>
-    <h3>Contextual variations</h3>
-    <p>To create contextual variations, the color utility classes and the <code>elevated</code> class can be prefixed with <code>hover:</code> or <code>focus:</code>
-
-    <textarea data-target="contextual-color-example-1" class="py=1 prototype p=1"><div class="c=prim hover:c=sec">
-    Foo
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="contextual-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='c=prim hover:c=sec'>
+Foo
 </div>
-<div class="hover:c=text-alt">
-    Bar
+<div class='hover:c=text-alt'>
+Bar
 </div>
-<div class="c=text-alt hover:c=text">
-    Baz
+<div class='c=text-alt hover:c=text'>
+Baz
 </div>
 <div>
-    <input class="r mt=1 focus:elevated focus:c=text"/>
-</div>
-</textarea>
-    <div id="contextual-color-example-1" class=" my=1"></div>
-
-
-    <div class="text-align=c">✯</div>
-
-    <a name="aspect-ratio"></a>
-    <h3>Aspect Ratio</h3>
-    <p>To apply aspect ratio to an element. The element must be wrapped in a container with the class <code>ar=1/1 ar=16/9 ar=4/3</code>
-    <p>Also a mixin called <code>ar($width, $height)</code> is available to create custom ratios.
-
-    <textarea data-target="aspect-ratio-example-1" class="py=1 prototype p=1">
-        <div class="ar=16/9">
-            <div class="c=sec"></div>
-        </div>
-    </textarea>
-    <div id="aspect-ratio-example-1" class=" my=1"></div>
-
-    <a name="visibility"></a>
-    <h3>Visibility</h3>
-    <p>To hide or show an element, the visibility utility classes <code>visible</code> and <code>hidden</code> can be used. They can also be prefixed with the responsive prefixes
-
-    <textarea data-target="visibility-example-1" class="py=1 prototype p=1">
-        <div class="c=prim flex hidden md:visible lg:hidden xl:visible p=2"></div>
-    </textarea>
-    <div id="visibility-example-1" class=" my=1"></div>
-
-
-    <div class="text-align=c">✯</div>
-
-    <a name="icons"></a>
-    <h3>Icons</h3>
-    <p>We make use of inline SVGs for icons. Every SVG iconset can be integrated.
-
-    <a name="icon-sizes"></a>
-    <h4>Icon Sizes</h4>
-    <p>We defined Utility Classes for icon sizes analog to the headline sizes. <code>.icon, .icon-l, .icon-xl, .icon-2xl, .icon-3xl, .icon-4xl</code>. Those classes can be prefixed with our responsive prefixes
-
-    <div class="text-align=c">✯</div>
-
-    <a name="background-img"></a>
-    <h3>Background images</h3>
-    <p>If you want to use a big background image, for example for a hero banner, you can use the <code>bg-img</code> class. You can set the image url with the <code>data-url</code> attribute.
-    <p>The image is loaded after the page itself and will ease in. The idea is that non functional parts of the - site like a hero image - shouldn't impact the inital page load. So make sure that the background color of that element is set so that the page looks good even if the image never loads, which might happen to users on very bad connections.
-
-    <textarea class="py=1 prototype p=1">
-<div class="ar=4/3 w=1/2 c=text-alt bg-img" data-url="cat.jpg"></div></textarea>
-<p>(the interactive code preview does not work with this functionality)
-<div class="ar=4/3 w=1/2 c=text-alt bg-img" data-url="cat.jpg"></div>
-
-    <p>Per default, the image is centered. If there is a focal point in the image that is not the center, it can be specified with the <code>data-focal</code> attribute like so:
-    <textarea class="py=1 prototype p=1" rows="5"><div class="c=text-alt bg-img"
-  style="height: 300px; width: 200px;"
-  data-url="cat.jpg"
-  data-focal="15% 40%">
+<input class='r mt=1 focus:elevated focus:c=text'/>
 </div></textarea>
-<div class="c=text-alt bg-img mt=1" style="height: 300px; width: 200px;" data-url="cat.jpg" data-focal="15% 40%"></div>
+                <div class="py=1" id="contextual-example"></div>
 
-    <a name="tabs"></a>
 
-    <textarea data-target="tabs-example-1" class="py=1 prototype p=1">
-      <div class="tabs">
-        <div role="tablist" aria-label="Entertainment">
-          <button role="tab"
-                  aria-selected="true"
-                  aria-controls="nils-tab"
-                  id="nils">
-            Nils Frahm
-          </button>
-          <button role="tab"
-                  aria-selected="false"
-                  aria-controls="agnes-tab"
-                  id="agnes"
-                  tabindex="-1">
-            Agnes Obel
-          </button>
-          <button role="tab"
-                  aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
-                  tabindex="-1"
-                  data-deletable="">
-            Joke
-          </button>
+              <a name="utilities"></a>
+              <h3 class="pb=1 mt=2">Aspect Ratio</h3>
+                <p>To apply aspect ratio to an element. The element must be wrapped in a container with the class <code>ar=1/1 ar=16/9 ar=4/3</code></p>
+                <p>Also a mixin called <code>ar($width, $height)</code> is available to create custom ratios.</p>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="utilities-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='ar=16/9'>
+<div class='c=sec'></div>
+</div></textarea>
+                <div class="py=1" id="utilities-example"></div>
+
+
+              <a name="utilities"></a>
+              <h3 class="pb=1 mt=2">Visibility</h3>
+                <p>To hide or show an element, the visibility utility classes <code>visible</code> and <code>hidden</code> can be used. They can also be prefixed with the responsive prefixes</p>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="utilities-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='c=prim flex hidden md:visible lg:hidden xl:visible p=2'></div></textarea>
+                <div class="py=1" id="utilities-example"></div>
+
+
+              <a name="utilities"></a>
+              <h3 class="pb=1 mt=2">Icons</h3>
+                <p>We make use of inline SVGs for icons. Every SVG iconset can be integrated.</p>
+
+
+
+                <a name="icon-sizes"></a>
+                <h4 class="pb=1 mt=2">Icon Sizes</h4>
+                  <p>We defined Utility Classes for icon sizes analog to the headline sizes. <code>.icon, .icon-l, .icon-xl, .icon-2xl, .icon-3xl, .icon-4xl</code>. Those classes can be prefixed with our responsive prefixes</p>
+
+
+
+              <a name="background-images"></a>
+              <h3 class="pb=1 mt=2">Background images</h3>
+                <p>If you want to use a big background image, for example for a hero banner, you can use the <code>bg-img</code> class. You can set the image url with the <code>data-url</code> attribute.</p>
+                <p>The image is loaded after the page itself and will ease in. The idea is that non functional parts of the - site like a hero image - shouldn't impact the inital page load. So make sure that the background color of that element is set so that the page looks good even if the image never loads, which might happen to users on very bad connections.</p>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="background-images-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='ar=4/3 w=1/2 c=text-alt bg-img' data-url='cat.jpg'></div></textarea>
+                <div class="py=1" id="background-images-example"></div>
+
+                <a name="focal-point"></a>
+                <h4 class="pb=1 mt=2">Focal Point</h4>
+                  <p>Per default, the image is centered. If there is a focal point in the image that is not the center, it can be specified with the <code>data-focal</code> attribute like so:</p>
+
+
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="focal-point-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='c=text-alt bg-img'
+style='height: 300px; width: 200px;'
+data-url='cat.jpg'
+data-focal='15% 40%'></div></textarea>
+                  <div class="py=1" id="focal-point-example"></div>
+
+
+            
+          </div>
         </div>
-        <div tabindex="0"
-            role="tabpanel"
-            id="nils-tab"
-            aria-labelledby="nils">
-          <p>
-            Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.
-          </p>
+        <div class="flex-grid row-reverse mt=2 align-start">
+          <aside class="w=full md:w=1/4 sticky top">
+            <a name="components"></a>
+            <h2>Components</h2>
+              <p>Tabs</p>
+              <p>print.css</p>
+          </aside>
+          <div class="w=full md:w=3/4">
+              <a name="tabs"></a>
+              <h3 class="pb=1 mt=2">Tabs</h3>
+
+
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="tabs-example" class="py=1 prototype px=1 mx=-1" rows="4"><div class='tabs'>
+<div role='tablist' aria-label='Entertainment'>
+  <button role='tab'
+          aria-selected='true'
+          aria-controls='nils-tab'
+          id='nils'>
+    Nils Frahm
+  </button>
+  <button role='tab'
+          aria-selected='false'
+          aria-controls='agnes-tab'
+          id='agnes'
+          tabindex='-1'>
+    Agnes Obel
+  </button>
+  <button role='tab'
+          aria-selected='false'
+          aria-controls='complexcomplex'
+          id='complex'
+          tabindex='-1'
+          data-deletable=''>
+    Joke
+  </button>
+</div>
+<div tabindex='0'
+    role='tabpanel'
+    id='nils-tab'
+    aria-labelledby='nils'>
+  <p>
+    Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.
+  </p>
+</div>
+<div tabindex='0'
+    role='tabpanel'
+    id='agnes-tab'
+    aria-labelledby='agnes'
+    hidden=''>
+  <p>
+    Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.
+  </p>
+</div>
+<div tabindex='0'
+    role='tabpanel'
+    id='complexcomplex'
+    aria-labelledby='complex'
+    hidden=''>
+  <p>
+    Fear of complicated buildings:
+  </p>
+  <p>
+    A complex complex complex.
+  </p>
+</div>
+</div></textarea>
+                <div class="py=1" id="tabs-example"></div>
+
+
+              <a name="print"></a>
+              <h3 class="pb=1 mt=2">print.css</h3>
+                <p>When you put <code><link rel='stylesheet' media='print' href='path/to/print.min.css'></code> in your html header, you get a print friendly restyling. Headers and footers are automaticly hidden, the page width class is a full site and all colors are set to black and white (can be modifed with the <code>$print-color</code> variable). The page margins are set with the <code>$print-margin</code> variable.</p>
+                <p>All layout and aspect ratio classes get an addional prefix <code>print:</code> to add print specific styling and you can hide and show elements with the <code>print-only</code> and <code>screen-only</code> utility classes.</p>
+                <p>Also, external links will show their target in parenthesis after the link text.</p>
+
+
+
+
+
+            
+          </div>
         </div>
-        <div tabindex="0"
-            role="tabpanel"
-            id="agnes-tab"
-            aria-labelledby="agnes"
-            hidden="">
-          <p>
-            Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.
-          </p>
-        </div>
-        <div tabindex="0"
-            role="tabpanel"
-            id="complexcomplex"
-            aria-labelledby="complex"
-            hidden="">
-          <p>
-            Fear of complicated buildings:
-          </p>
-          <p>
-            A complex complex complex.
-          </p>
-        </div>
-      </div>
-    </textarea>
-    <div id="tabs-example-1" class=" my=1"></div>
-
-
-
-
-    <a name="print_styles"></a>
-    <h3>print.css</h3>
-    <p>When you put <code><link rel="stylesheet" media="print" href="path/to/print.min.css"></code> in your html header, you get a print friendly restyling. Headers and footers are automaticly hidden, the page width class is a full site and all colors are set to black and white (can be modifed with the <code>$print-color</code> variable). The page margins are set with the <code>$print-margin</code> variable.
-    <p>All layout and aspect ratio classes get an addional prefix <code>print:</code> to add print specific styling and you can hide and show elements with the <code>print-only</code> and <code>screen-only</code> utility classes.
-    <p>Also, external links will show their target in parenthesis after the link text.
-
+  </div>
 </main>
 
 </body>

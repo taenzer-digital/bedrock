@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<title>Bedrock Doc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/bedrock.css">
+<link rel="stylesheet" media="print" href="./css/print.css">
+<script src="./js/bundle.js"></script>
+
+
+<body class="flex wrap">
+    <header class="w=full elevated align-stretch justify-between">
+        <div class="w=full py=1 c=prim">
+          <div class="w=site">
+            <img class="logo absolute" src="./img/bedrocks-logo.svg">
+            <h1 class="head-4">{{ title }}</h1>
+          </div>
+        </div>
+        <div class="w=full py=1 c=text">
+          <nav class="w=site nav flex sticky top bottom">
+            <button
+            class="js-menu-toggle menu-toggle fixed lg:hidden top right"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menubar">
+                <span class="menu-toggle__burger"></span>
+            </button>
+            {{#chapters.length}}
+              <ul
+              id ="menubar"
+              role="menubar"
+              class="menubar"
+              aria-label="Bedrock">
+                {{#chapters}}
+                  <li role="none" class="mr=2">
+                      <a role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="#{{ slug }}"
+                      id="link-1"
+                      tabindex="0"
+                      class="pr=2 head-4 arrow-down">
+                          {{ name }}
+                      </a>
+                      {{#level-2.length}}
+                        <ul
+                        class="c=sec"
+                        role="menu"
+                        aria-label="{{ name }}">
+                          {{#level-2}}
+                            <li role="none">
+                                <a role="menuitem" tabindex="-1" class="px=1 {{#level-3.length}}arrow-right{{/level-3.length}}" href="#{{slug}}">{{ name }}</a>
+                                  {{#level-3.length}}
+                                    <ul
+                                    class="c=sec"
+                                    role="menu"
+                                    aria-label="Utilities">
+                                      {{#level-3}}
+                                        <li role="none">
+                                            <a role="menuitem" tabindex="-1" class="px=1" href="#{{slug}}">{{ name }}</a>
+
+                                        </li>
+                                      {{/level-3}}
+                                    </ul>
+                                  {{/level-3.length}}
+                            </li>
+                          {{/level-2}}
+                        </ul>
+                      {{/level-2.length}}
+                  </li>
+                {{/chapters}}
+              </ul>
+            {{/chapters.length}}            
+        </nav>
+      </div>
+    </header>
+
+<main class="w=full mx">
+  <div class="w=full py=6 c=sec flex column justify-center">
+    <h1 class="w=site head-14">{{ slogan }}</h1>
+  </div>
+  <div class="w=site pt=6">
+      {{#chapters}}
+        <div class="flex-grid row-reverse mt=2 align-start">
+          <aside class="w=full md:w=1/4 sticky top">
+            <a name="{{slug}}"></a>
+            <h2>{{name}}</h2>
+            {{#level-2}}
+              <p>{{name}}</p>
+            {{/level-2}}
+          </aside>
+          <div class="w=full md:w=3/4">
+            {{#level-2}}
+              <a name="{{slug}}"></a>
+              <h3 class="pb=1 mt=2">{{name}}</h3>
+              {{#description}}
+                <p>{{{.}}}</p>
+              {{/description}}
+
+              {{#examples.length}}
+                <p class="mt=2">Further examples:
+                <figure class="table">
+                  <table class="w=full">
+                    {{#examples}}
+                      <tr class="bb">
+                        <td><code>{{code}}</code></td>
+                        <td>{{{description}}}
+                      </tr>
+                    {{/examples}}
+                  </table>
+                </figure>
+              {{/examples.length}}
+
+              {{#code.length}}
+                <p class="mt=2">Try it out yourself:
+                <textarea data-target="{{ slug }}-example" class="py=1 prototype px=1 mx=-1" rows="4">{{#code}}{{{.}}}{{/code}}</textarea>
+                <div class="py=1" id="{{ slug }}-example"></div>
+              {{/code.length}}
+
+              {{#level-3}}
+                <a name="{{slug}}"></a>
+                <h4 class="pb=1 mt=2">{{name}}</h4>
+                {{#description}}
+                  <p>{{{.}}}</p>
+                {{/description}}
+
+                {{#examples.length}}
+                  <p class="mt=2">Further examples:
+                  <figure class="table">
+                    <table class="w=full">
+                      {{#examples}}
+                        <tr class="bb">
+                          <td><code>{{code}}</code></td>
+                          <td>{{{description}}}</td>
+                        </tr>
+                      {{/examples}}
+                    </table>
+                  </figure>
+                {{/examples.length}}
+
+                {{#code.length}}
+                  <p class="mt=2">Try it out yourself:
+                  <textarea data-target="{{ slug }}-example" class="py=1 prototype px=1 mx=-1" rows="4">{{#code}}{{{.}}}{{/code}}</textarea>
+                  <div class="py=1" id="{{ slug }}-example"></div>
+                {{/code.length}}
+            {{/level-3}}
+
+            {{/level-2}}
+
+            
+          </div>
+        </div>
+      {{/chapters}}
+  </div>
+</main>
+
+</body>
