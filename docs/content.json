@@ -1,0 +1,865 @@
+{
+  "title": "bedrockcss",
+  "slogan": "The most advanced responsive front-end framework in the world",
+  "chapters": [
+    {
+      "name": "Basics",
+      "slug": "basics",
+      "level-2": [
+        {
+          "name": "The Base Unit",
+          "description": [
+            "The spacing system is based on the <code>$unit</code> value. Its length is half of the line height (or the text line height is defined as two units).",
+            "Vertical distances are a multiple of the unit value.",
+            "Horizontal distances are less rigid since variable display sizes require more flexibility and they have a lesser influence on the perception of rythm. But where applicable, they are also a multiple of the unit value.",
+            "This value is dependent on the screen size and the variables <code>$text-size-lower-bound-px</code>, <code>$text-size-upper-bound-px</code>, <code>$rem-grow-start-px</code> and <code>$rem-grow-end-px</code>. Note: These values are in css px, but have to be stated unitless for technical reasons."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Typography",
+      "slug": "typography",
+      "level-2": [
+        {
+          "name": "Fonts",
+          "description": [
+            "Fonts can be set with the <code>$text-font</code> and the <code>$head-font</code> variables. Per default, both are set to the system font. If you only set <code>$text-font</code>,  <code>$head-font</code> is set to the same value.",
+            "The leading of the text can be set with the <code>$text-leading</code> variable (1.5 default). It determinates the ratio of font size and line height. The same can be done for the headline font with <code>$head-leading</code> if the two different fonts needs optical finetuning. Its recommended to stay near the default."
+          ]
+        },
+        {
+          "name": "Font Sizes",
+          "description": [
+            "Font sizes are driven by the modular scale. The scale can be customized by setting the variables $type-ratio and $type-base (without unit). Furthermore there is $cascade-limit (default 12) to set the limit of the cascade. The variable $head-nodes is a list defining the sizes of the default headlines in the modular scale beginning with h1.",
+            "The headline utility classes are <code>head-</code> following the position in the cascade.",
+            "There are two text sizes that can be selected with the utility classes <code>.text</code> and  <code>text-s</code>. These classes set the size and the font itself. Since <code>.text</code> is the default for nearly all elements and footnote sized text is not meant to be used often, these classes should not come that much."
+          ],
+          "examples": [
+            {
+              "code": ".text-s",
+              "description": "<div class='text-s'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".text",
+              "description": "<div class='text'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-1",
+              "description": "<div class='head-1'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-2",
+              "description": "<div class='head-2'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-3",
+              "description": "<div class='head-3'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-4",
+              "description": "<div class='head-4'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-5",
+              "description": "<div class='head-5'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-6",
+              "description": "<div class='head-6'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-7",
+              "description": "<div class='head-7'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-8",
+              "description": "<div class='head-8'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-9",
+              "description": "<div class='head-9'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-10",
+              "description": "<div class='head-10'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-11",
+              "description": "<div class='head-11'>Lorum Ipsum</div>"
+            },
+            {
+              "code": ".head-12",
+              "description": "<div class='head-12'>Lorum Ipsum</div>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "slug": "utilities",
+      "level-2": [
+        {
+          "name": "Margins and Paddings",
+          "slug": "margins_and_paddings",
+          "description": [
+            "Margins and and paddings are set with the utility class",
+            "<code>.[m/p][side]=size</code>.",
+            "For example, to set the right padding to 3 units, we use the class <code>pr=3</code> and to set the bottom margin to -1 unit, <code>mb=-1</code>.",
+            "Side can be left out completly to set all sides at once or it can be set to <code>x</code> or <code>y</code> to set the left and right side or the top and bottom sides respectively to the same value."
+          ],
+          "examples": [
+            {
+              "code": "<‍div class='mt=1'>...",
+              "description": "margin top is set to 1 unit"
+            },
+            {
+              "code": "<‍div class='px=2'>...",
+              "description": "left and right padding is set to 2 units"
+            },
+            {
+              "code": "<‍div class='m=5'>...",
+              "description": "all margins are 5 units"
+            },
+            {
+              "code": "<‍div class='py=3'>...",
+              "description": "bottom and top padding is set to 3 units"
+            }
+          ],
+          "code": [
+            "<div>\n",
+            "<div class='c=prim p=1'>Foo</div>\n",
+            "<div class='c=sec px=5'>Bar</div>\n",
+            "<div class='c=prim mt=2 ml=4'>Baz</div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Layout and flex utilities",
+          "slug": "flex",
+          "description": [
+            "CSS flexbox is more or less exposed as is. In combination with a few other utilities classes these are strong bulding blocks for layouting. Here is a list with all the utilites with the associated css rules."
+          ],
+          "examples": [
+            {
+              "code": ".fixed",
+              "description": "position: fixed;"
+            },
+            {
+              "code": ".sticky",
+              "description": "position: sticky;"
+            },
+            {
+              "code": ".block",
+              "description": "position: block;"
+            },
+            {
+              "code": ".inline-block",
+              "description": "position: inline-block;"
+            },
+            {
+              "code": ".inline",
+              "description": "position: inline;"
+            },
+            {
+              "code": ".flex",
+              "description": "position: flex;"
+            },
+            {
+              "code": ".inline-flex",
+              "description": "position: inline-flex;"
+            },
+            {
+              "code": ".row",
+              "description": "position: row;"
+            },
+            {
+              "code": ".row-reverse",
+              "description": "position: row-reverse;"
+            },
+            {
+              "code": ".column-reverse",
+              "description": "position: column-reverse;"
+            },
+            {
+              "code": ".wrap",
+              "description": "position: wrap;"
+            },
+            {
+              "code": ".no-wrap",
+              "description": "position: no-wrap;"
+            },
+            {
+              "code": ".wrap-reverse",
+              "description": "position: wrap-reverse;"
+            },
+            {
+              "code": ".justify-start",
+              "description": "position: justify-start;"
+            },
+            {
+              "code": ".align-start",
+              "description": "position: align-start;"
+            },
+            {
+              "code": ".justify-end",
+              "description": "position: justify-end;"
+            },
+            {
+              "code": ".align-end",
+              "description": "position: align-end;"
+            },
+            {
+              "code": ".justify-center",
+              "description": "position: justify-center;"
+            },
+            {
+              "code": ".align-center",
+              "description": "position: align-center;"
+            },
+            {
+              "code": ".space-between",
+              "description": "position: space-between;"
+            },
+            {
+              "code": ".space-around",
+              "description": "position: space-around;"
+            },
+            {
+              "code": ".space-evenly",
+              "description": "position: space-evenly;"
+            },
+            {
+              "code": ".align-baseline",
+              "description": "position: align-baseline;"
+            },
+            {
+              "code": ".justify-stretch",
+              "description": "position: justify-center;"
+            },
+            {
+              "code": ".align-stretch",
+              "description": "position: align-center;"
+            },
+            {
+              "code": ".grow=1",
+              "description": "flex-grow: 1;"
+            },
+            {
+              "code": ".grow=2",
+              "description": "flex-grow: 2;"
+            },
+            {
+              "code": ".grow=3",
+              "description": "flex-grow: 3;"
+            },
+            {
+              "code": ".shrink=1",
+              "description": "flex-shrink: 1;"
+            },
+            {
+              "code": ".shrink=2",
+              "description": "flex-shrink: 2;"
+            },
+            {
+              "code": ".shrink=3",
+              "description": "flex-shrink: 3;"
+            },
+            {
+              "code": ".ordir=1",
+              "description": "order: 1;"
+            },
+            {
+              "code": ".ordir=2",
+              "description": "order: 2;"
+            },
+            {
+              "code": ".ordir=3",
+              "description": "order: 3;"
+            },
+            {
+              "code": ".ordir=4",
+              "description": "order: 4;"
+            },
+            {
+              "code": ".ordir=5",
+              "description": "order: 5;"
+            },
+            {
+              "code": ".ordir=6",
+              "description": "order: 6;"
+            },
+            {
+              "code": ".ordir=7",
+              "description": "order: 7;"
+            },
+            {
+              "code": ".ordir=8",
+              "description": "order: 8;"
+            }
+          ]
+        },
+        {
+          "name": "Flex grid",
+          "slug": "flex-grid",
+          "description": [
+            "For multi column grid layouts, wrapp the columns in an element with the flex-grid class. This takes care of gutter widths, breaks and such. The gutter width is set to one unit, but can be overriden with the <code>$grid-gap</code> variable.",
+            "Offsets are available with the left and right modifier and for all the widths fractions.",
+            "All these classes are prefixed for the different size classes, see <a href='#responsive_design'>responsive design.</a>"
+          ],
+          "examples": [
+            {
+              "code": ".w=site",
+              "description": "max-width: 37.5rem;<br>margin-left: auto;<br>margin-right: auto;"
+            },
+            {
+              "code": ".w=viewport",
+              "description": "width: 100vw;<br />margin-left: 50%;<br />transform: translateX(-50%);"
+            },
+            {
+              "code": ".w=full",
+              "description": "width: 100%;"
+            },
+            {
+              "code": ".h=full",
+              "description": "min-height: 100%;"
+            },
+            {
+              "code": ".h=viewport",
+              "description": "min-height: 100vh;"
+            },
+            {
+              "code": ".w=1/2",
+              "description": "width: 50%;"
+            },
+            {
+              "code": ".w=1/3",
+              "description": "width: 33.33333%;"
+            },
+            {
+              "code": ".w=1/4",
+              "description": "width: 25%;"
+            },
+            {
+              "code": ".w=1/6",
+              "description": "width: 16.66667%;"
+            },
+            {
+              "code": ".w=1/8",
+              "description": "width: 12.5%;"
+            },
+            {
+              "code": ".w=1/12",
+              "description": "width: 8.33333%;"
+            },
+            {
+              "code": ".w=2/3",
+              "description": "width: 66.66667%;"
+            },
+            {
+              "code": ".w=3/4",
+              "description": "width: 75%;"
+            },
+            {
+              "code": ".w=5/6",
+              "description": "width: 83.33333%;"
+            },
+            {
+              "code": ".w=11/12",
+              "description": "width: 91.66667%;"
+            }
+          ],
+          "code": [
+            "<div class='flex-grid text-align=c'>\n",
+            " <div class='c=prim w=1/3'>Foo</div>\n",
+            " <div class='c=prim w=1/3'>Bar</div>\n",
+            " <div class='c=prim w=1/3'>Baz</div>\n",
+            " <div class='c=text-alt w=2/3'>Foo</div>\n",
+            " <div class='c=text-alt w=1/3'>Baz</div>\n",
+            " <div class='c=prim w=1/3 offset-r=1/3'>use offsets</div>\n",
+            " <div class='c=prim w=1/3'>for empty rows</div>\n",
+            " <div class='c=text-alt w=1/4 offset-l=1/4'>1/4</div>\n",
+            " <div class='c=text-alt w=1/4'>1/4</div>\n",
+            " <div class='c=text-alt w=1/4'>1/4</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/12'>1/12</div>\n",
+            " <div class='c=prim w=1/6'>1/6</div>\n",
+            " <div class='c=prim w=1/6'>1/6</div>\n",
+            " <div class='c=prim w=1/3'>1/3</div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Borders",
+          "slug": "borders",
+          "description": [
+            "The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables."
+          ],
+          "examples": [
+            {
+              "code": "<div class='b'>...",
+              "description": "borders on all sides"
+            },
+            {
+              "code": "<div class='bx'>...",
+              "description": "left and right borders"
+            },
+            {
+              "code": "<div class='by'>...",
+              "description": "top and bottom borders"
+            },
+            {
+              "code": "<div class='bt'>...",
+              "description": "top border"
+            },
+            {
+              "code": "<div class='bb'>...",
+              "description": "bottom border"
+            },
+            {
+              "code": "<div class='bl'>...",
+              "description": "left border"
+            },
+            {
+              "code": "<div class='br'>...",
+              "description": "right border"
+            }
+          ],
+          "level-3": [
+            {
+              "name": "Radius",
+              "slug": "border-radius",
+              "description": [
+                "Big radii to create circles or pill like shapes can be created with `r-circle`. Of course, die modified classes `rl-circle`, `rr-circle`, `rt-circle` and `rb-circle` to restrict the radius to the left, right, top or bottom are also avaiable.",
+                "Corners can be rounded with the following classes"
+              ],
+              "examples": [
+                {
+                  "code": "<div class='r'>...",
+                  "description": "rounded on all sides"
+                },
+                {
+                  "code": "<div class='rl'>...",
+                  "description": "rounded on the left side"
+                },
+                {
+                  "code": "<div class='rr'>...",
+                  "description": "rounded on the right side"
+                },
+                {
+                  "code": "<div class='rt'>...",
+                  "description": "rounded on the top side"
+                },
+                {
+                  "code": "<div class='rb'>...",
+                  "description": "rounded on the bottom side"
+                }
+              ],
+              "code": [
+                "<button class='px=1 rl c=sec-alt'>Foo</button>\n",
+                "<button class='px=1 rr c=sec-alt'>Bar</button>\n",
+                "<button class='r-circle px=4 c=prim'>baz</button>"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Arrows",
+          "slug": "arrows",
+          "description": [
+            "Elements can be decorated with arrows on the right side like so:"
+          ],
+          "code": [
+            "<span class='px=3 arrow-left'>foo</span>\n",
+            "<span class='px=3 c=text-alt arrow-down'>bar</span>\n",
+            "<span class='px=3 c=prim arrow-right'>baz</span>\n",
+            "<span class='px=3 c=sec arrow-up'>qux</span>"
+          ]
+        },
+        {
+          "name": "Tables",
+          "slug": "tables",
+          "description": [
+            "To apply the bedrock table styling, just wrap the table in a figure with the class <code>table</code>."
+          ],
+          "code": [
+            "<figure class='table'>\n",
+            " <table>\n",
+            "   <thead>\n",
+            "     <tr>\n",
+            "       <th>Foo</th>\n",
+            "       <th>Bar</th>\n",
+            "     </tr>\n",
+            "   </thead>\n",
+            "   <tbody>\n",
+            "     <tr>\n",
+            "       <td>baz</td>\n",
+            "       <td>qux</td>\n",
+            "     </tr>\n",
+            "   </tbody>\n",
+            " </table>\n",
+            "</figure>"
+          ],
+          "level-3": [
+            {
+              "name": "Advanced",
+              "slug": "advanced-tables",
+              "description": [
+                "If the display is to small for the table, it's set to scroll. <code>td</code>s with numeric data (and the <code>th</code> of the column) should get the class <code>numeric</code>. This enables tabular numbers and appropriate alignment.",
+                "Its consired good style to align numbers on the decimal point. Since there is no build in solution for that in the css spec, bedrock provides a few helper classes. To use them, the positions after the dot have be wrapped in a span with the class <code>dec-pos-align</code> or <code>dec-pos-align-wide</code>."
+              ],
+              "code": [
+                "<figure class='table'>",
+                " <table>\n",
+                "   <thead>\n",
+                "     <tr>\n",
+                "       <th class='numeric'>No</th>\n",
+                "       <th>Name</th>\n",
+                "       <th class='numeric'>Weight</th>\n",
+                "       <th>Symbol</th>\n",
+                "     </tr>\n",
+                "   </thead>\n",
+                "   <tbody>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>1</td>\n",
+                "       <td>Hydrogen</td>\n",
+                "       <td class='numeric'>1.<span class='dec-pos-align-wide'>0079</span></td>\n",
+                "       <td>H</td>\n",
+                "     </tr>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>2</td>\n",
+                "       <td>Helium</td>\n",
+                "       <td class='numeric'>4.<span class='dec-pos-align-wide'>0026</span></td>\n",
+                "       <td>He</td>\n",
+                "     </tr>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>3</td>\n",
+                "       <td>Lithium</td>\n",
+                "       <td class='numeric'>6.<span class='dec-pos-align-wide'>941</span></td>\n",
+                "       <td>Li</td>\n",
+                "     </tr>\n",
+                "     <tr>",
+                "       <td class='numeric'>4</td>\n",
+                "       <td>Beryllium</td>\n",
+                "       <td class='numeric'>9.<span class='dec-pos-align-wide'>0122</span></td>\n",
+                "       <td>Be</td>\n",
+                "     </tr>\n",
+                "     <tr>\n",
+                "       <td class='numeric'>5</td>\n",
+                "       <td>Boron</td>\n",
+                "       <td class='numeric'>10.<span class='dec-pos-align-wide'>811</span></td>\n",
+                "       <td>B</td>\n",
+                "     </tr>\n",
+                "   </tbody>\n",
+                " </table>\n",
+                "</figure>\n"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Placeholder",
+          "slug": "placeholder",
+          "description": "This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.",
+          "examples": [
+            {
+              "code": "<span class='head-l placeholder' wordcount='5'></span>",
+              "description": "<span class='head-l placeholder' wordcount='5'></span>"
+            },
+            {
+              "code": "<span class='placeholder' wordcount='20'></span>",
+              "description": "<span class='placeholder' wordcount='20'></span>"
+            }
+          ]
+        },
+        {
+          "name": "Interactive Elements",
+          "slug": "interactive",
+          "level-3": [
+            {
+              "name": "Accordion",
+              "slug": "accordion",
+              "description": [
+                "The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>."
+              ],
+              "examples": [
+                {
+                  "description": "<div class='accordion my=2 b r w=site'>\n<details>\n<summary class='p=1'><div class='placeholder p=1 inline' wordcount=4></summary>\n    <div class='placeholder p=1' wordcount=4></div>\n</details>\n<details>\n    <summary class='p=1 bt'>Click here b</summary>\n    <div class='placeholder px=1 pb=1' wordcount=30></div>\n</details>\n</div>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Responsive Design",
+          "slug": "responsive",
+          "description": [
+            "Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).",
+            "Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).",
+            "<br />For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.",
+            "In general, everything that has to do with layout and spacing is prefixed."
+          ]
+        },
+        {
+          "name": "Forms",
+          "slug": "forms",
+          "code": [
+            "<form id='person'>\n",
+            "<label for='first_name'>First Name</label>\n",
+            "<input type='text' name='first_name' id='first_name' maxlength='30'>\n",
+            "<label for='name'>Name</label>\n",
+            "<input type='text' name='name' id='name' maxlength='30'>\n",
+            "<div class='floating-label mt=1'>\n",
+            "    <input type='text' placeholder=' ' />\n",
+            "    <label>floaty labels</label>\n",
+            "</div>\n",
+            "<div class='floating-label mt=1'>\n",
+            "    <input type='text' placeholder=' ' />\n",
+            "    <label>for more tightly stacked forms</label>\n",
+            "</div>\n",
+            "<button type='reset' class='c=err mt=1'>Eingaben zurücksetzen</button>\n",
+            "<button type='submit' class='c=prim mt=1'>Eingaben absenden</button>"
+          ],
+          "level-3": [
+            {
+              "name": "Select",
+              "slug": "select",
+              "description": [
+                "One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations."
+              ],
+              "code": [
+                "<select>\n",
+                "<option value=''>-- without arrow --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>\n",
+                "<select class='arrow-down'>\n",
+                "<option value=''>-- with arrow --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>\n",
+                "<select class='c=prim arrow-down'>\n",
+                "<option value=''>-- with arrow and other color --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>\n",
+                "<select class='c=sec hover:c=text-alt arrow-down'>\n",
+                "<option value=''>-- and hover effect --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>"
+              ]
+            },
+            {
+              "name": "Check- and Radiobuttons",
+              "slug": "check-radio",
+              "description": [
+                "Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.",
+                "Its important to <em>not</em> use a radio input with the toggle styling, since the behaviour would be surprising for the user.",
+                "",
+                "Addional styling can be added to the embedded span"
+              ],
+              "code": [
+                "<label class='check p=1 c=prim'>\n",
+                "<input type='checkbox'>\n",
+                "<span></span>\n",
+                "Label\n",
+                "</label>\n",
+                "<label class='check p=1'>\n",
+                "<input type='radio' name='radio-example'>\n",
+                "<span></span>\n",
+                "Foo\n",
+                "</label>\n",
+                "<label class='check p=1 pt=0'>\n",
+                "<input type='radio' name='radio-example'>\n",
+                "<span></span>\n",
+                "Bar\n",
+                "</label>\n",
+                "<label class='toggle p=1 c=sec'>\n",
+                "<input type='checkbox'>\n",
+                "<span></span>\n",
+                "Label\n",
+                "</label>\n",
+                "<label class='toggle p=1 c=text-alt'>\n",
+                "<input type='checkbox'>\n",
+                "<span></span>\n",
+                "Label\n",
+                "</label>\n",
+                "<label class='toggle p=1 c=sec'>\n",
+                "<input type='checkbox'>\n",
+                "<span class='elevated'></span>\n",
+                "Label\n",
+                "</label>"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Contextual variations",
+          "slug": "contextual",
+          "description": [
+            "To create contextual variations, the color utility classes and the <code>elevated</code> class can be prefixed with <code>hover:</code> or <code>focus:</code>"
+          ],
+          "code": [
+            "<div class='c=prim hover:c=sec'>\n",
+            "Foo\n",
+            "</div>\n",
+            "<div class='hover:c=text-alt'>\n",
+            "Bar\n",
+            "</div>\n",
+            "<div class='c=text-alt hover:c=text'>\n",
+            "Baz\n",
+            "</div>\n",
+            "<div>\n",
+            "<input class='r mt=1 focus:elevated focus:c=text'/>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Aspect Ratio",
+          "slug:": "aspect-ratio",
+          "description": [
+            "To apply aspect ratio to an element. The element must be wrapped in a container with the class <code>ar=1/1 ar=16/9 ar=4/3</code>",
+            "Also a mixin called <code>ar($width, $height)</code> is available to create custom ratios."
+          ],
+          "code": [
+            "<div class='ar=16/9'>\n",
+            "<div class='c=sec'></div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Visibility",
+          "slug:": "visibility",
+          "description": [
+            "To hide or show an element, the visibility utility classes <code>visible</code> and <code>hidden</code> can be used. They can also be prefixed with the responsive prefixes"
+          ],
+          "code": [
+            "<div class='c=prim flex hidden md:visible lg:hidden xl:visible p=2'></div>"
+          ]
+        },
+        {
+          "name": "Icons",
+          "slug:": "icons",
+          "description": [
+            "We make use of inline SVGs for icons. Every SVG iconset can be integrated."
+          ],
+          "level-3": [
+            {
+              "name": "Icon Sizes",
+              "slug": "icon-sizes",
+              "description": [
+                "We defined Utility Classes for icon sizes analog to the headline sizes. <code>.icon, .icon-l, .icon-xl, .icon-2xl, .icon-3xl, .icon-4xl</code>. Those classes can be prefixed with our responsive prefixes"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Background images",
+          "slug": "background-images",
+          "description": [
+            "If you want to use a big background image, for example for a hero banner, you can use the <code>bg-img</code> class. You can set the image url with the <code>data-url</code> attribute.",
+            "The image is loaded after the page itself and will ease in. The idea is that non functional parts of the - site like a hero image - shouldn't impact the inital page load. So make sure that the background color of that element is set so that the page looks good even if the image never loads, which might happen to users on very bad connections."
+          ],
+          "code": [
+            "<div class='ar=4/3 w=1/2 c=text-alt bg-img' data-url='cat.jpg'></div>"
+          ],
+          "level-3": [
+            {
+              "name": "Focal Point",
+              "slug": "focal-point",
+              "description": [
+                "Per default, the image is centered. If there is a focal point in the image that is not the center, it can be specified with the <code>data-focal</code> attribute like so:"
+              ],
+              "code": [
+                "<div class='c=text-alt bg-img'\n",
+                "style='height: 300px; width: 200px;'\n",
+                "data-url='cat.jpg'\n",
+                "data-focal='15% 40%'>",
+                "</div>"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Components",
+      "slug": "components",
+      "level-2": [
+        {
+          "name": "Tabs",
+          "slug": "tabs",
+          "code": [
+            "<div class='tabs'>\n",
+            "<div role='tablist' aria-label='Entertainment'>\n",
+            "  <button role='tab'\n",
+            "          aria-selected='true'\n",
+            "          aria-controls='nils-tab'\n",
+            "          id='nils'>\n",
+            "    Nils Frahm\n",
+            "  </button>\n",
+            "  <button role='tab'\n",
+            "          aria-selected='false'\n",
+            "          aria-controls='agnes-tab'\n",
+            "          id='agnes'\n",
+            "          tabindex='-1'>\n",
+            "    Agnes Obel\n",
+            "  </button>\n",
+            "  <button role='tab'\n",
+            "          aria-selected='false'\n",
+            "          aria-controls='complexcomplex'\n",
+            "          id='complex'\n",
+            "          tabindex='-1'\n",
+            "          data-deletable=''>\n",
+            "    Joke\n",
+            "  </button>\n",
+            "</div>\n",
+            "<div tabindex='0'\n",
+            "    role='tabpanel'\n",
+            "    id='nils-tab'\n",
+            "    aria-labelledby='nils'>\n",
+            "  <p>\n",
+            "    Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.\n",
+            "  </p>\n",
+            "</div>\n",
+            "<div tabindex='0'\n",
+            "    role='tabpanel'\n",
+            "    id='agnes-tab'\n",
+            "    aria-labelledby='agnes'\n",
+            "    hidden=''>\n",
+            "  <p>\n",
+            "    Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.\n",
+            "  </p>\n",
+            "</div>\n",
+            "<div tabindex='0'\n",
+            "    role='tabpanel'\n",
+            "    id='complexcomplex'\n",
+            "    aria-labelledby='complex'\n",
+            "    hidden=''>\n",
+            "  <p>\n",
+            "    Fear of complicated buildings:\n",
+            "  </p>\n",
+            "  <p>\n",
+            "    A complex complex complex.\n",
+            "  </p>\n",
+            "</div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "print.css",
+          "slug": "print",
+          "description": [
+            "When you put <code><link rel='stylesheet' media='print' href='path/to/print.min.css'></code> in your html header, you get a print friendly restyling. Headers and footers are automaticly hidden, the page width class is a full site and all colors are set to black and white (can be modifed with the <code>$print-color</code> variable). The page margins are set with the <code>$print-margin</code> variable.",
+            "All layout and aspect ratio classes get an addional prefix <code>print:</code> to add print specific styling and you can hide and show elements with the <code>print-only</code> and <code>screen-only</code> utility classes.",
+            "Also, external links will show their target in parenthesis after the link text."
+          ]
+        }
+      ]
+    }
+  ]
+}
