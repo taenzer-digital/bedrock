@@ -396,7 +396,74 @@
           "name": "Borders",
           "slug": "borders",
           "description": [
-            ""
+            "The style of the border can be controlled with the <code>$border-radius</code> and <code>$border-width</code> variables."
+          ],
+          "examples": [
+            {
+              "code": "<div class='b'>...",
+              "description": "borders on all sides"
+            },
+            {
+              "code": "<div class='bx'>...",
+              "description": "left and right borders"
+            },
+            {
+              "code": "<div class='by'>...",
+              "description": "top and bottom borders"
+            },
+            {
+              "code": "<div class='bt'>...",
+              "description": "top border"
+            },
+            {
+              "code": "<div class='bb'>...",
+              "description": "bottom border"
+            },
+            {
+              "code": "<div class='bl'>...",
+              "description": "left border"
+            },
+            {
+              "code": "<div class='br'>...",
+              "description": "right border"
+            }
+          ],
+          "level-3": [
+            {
+              "name": "Radius",
+              "slug": "border-radius",
+              "description": [
+                "Big radii to create circles or pill like shapes can be created with `r-circle`. Of course, die modified classes `rl-circle`, `rr-circle`, `rt-circle` and `rb-circle` to restrict the radius to the left, right, top or bottom are also avaiable.",
+                "Corners can be rounded with the following classes"
+              ],
+              "examples": [
+                {
+                  "code": "<div class='r'>...",
+                  "description": "rounded on all sides"
+                },
+                {
+                  "code": "<div class='rl'>...",
+                  "description": "rounded on the left side"
+                },
+                {
+                  "code": "<div class='rr'>...",
+                  "description": "rounded on the right side"
+                },
+                {
+                  "code": "<div class='rt'>...",
+                  "description": "rounded on the top side"
+                },
+                {
+                  "code": "<div class='rb'>...",
+                  "description": "rounded on the bottom side"
+                }
+              ],
+              "code": [
+                "<button class='px=1 rl c=sec-alt'>Foo</button>\n",
+                "<button class='px=1 rr c=sec-alt'>Bar</button>\n",
+                "<button class='r-circle px=4 c=prim'>baz</button>"
+              ]
+            }
           ]
         },
         {
@@ -491,6 +558,305 @@
                 "</figure>\n"
               ]
             }
+          ]
+        },
+        {
+          "name": "Placeholder",
+          "slug": "placeholder",
+          "description": "This is just a small utility that fills up html elements with word-like shapes. This enables quick tests how different content flows. Also, it is more distinct from actual content than the typical lorum ipsum placeholders and less likely to be overlooked in the final product.",
+          "examples": [
+            {
+              "code": "<span class='head-l placeholder' wordcount='5'></span>",
+              "description": "<span class='head-l placeholder' wordcount='5'></span>"
+            },
+            {
+              "code": "<span class='placeholder' wordcount='20'></span>",
+              "description": "<span class='placeholder' wordcount='20'></span>"
+            }
+          ]
+        },
+        {
+          "name": "Interactive Elements",
+          "slug": "interactive",
+          "level-3": [
+            {
+              "name": "Accordion",
+              "slug": "accordion",
+              "description": [
+                "The Accordion element is based on the html details element. Multiple details must be wrapped in a container with class <code>accordion</code>."
+              ],
+              "examples": [
+                {
+                  "description": "<div class='accordion my=2 b r w=site'>\n<details>\n<summary class='p=1'><div class='placeholder p=1 inline' wordcount=4></summary>\n    <div class='placeholder p=1' wordcount=4></div>\n</details>\n<details>\n    <summary class='p=1 bt'>Click here b</summary>\n    <div class='placeholder px=1 pb=1' wordcount=30></div>\n</details>\n</div>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Responsive Design",
+          "slug": "responsive",
+          "description": [
+            "Bedrocks tools for responsive design are build upon the mobile first principle. Per default, there are four device classes, sm(phones), md(tablets, phones in landscape), lg(laptop, small desktops), xl(normal desktop, external screens).",
+            "Mobile first means that we start with the mobile styling and add more rules as the screen size grows. To do that there are modified versions of a lot of utility classes (mostly everything that has to do with layout and size).",
+            "<br />For example, a element with the classes <code>mt=1 lg:mt=2 xl:mt=3</code> has one unit margin on all phones and tablets, margin two on screens classed as lg and margin three on screens classed xl.",
+            "In general, everything that has to do with layout and spacing is prefixed."
+          ]
+        },
+        {
+          "name": "Forms",
+          "slug": "forms",
+          "code": [
+            "<form id='person'>\n",
+            "<label for='first_name'>First Name</label>\n",
+            "<input type='text' name='first_name' id='first_name' maxlength='30'>\n",
+            "<label for='name'>Name</label>\n",
+            "<input type='text' name='name' id='name' maxlength='30'>\n",
+            "<div class='floating-label mt=1'>\n",
+            "    <input type='text' placeholder=' ' />\n",
+            "    <label>floaty labels</label>\n",
+            "</div>\n",
+            "<div class='floating-label mt=1'>\n",
+            "    <input type='text' placeholder=' ' />\n",
+            "    <label>for more tightly stacked forms</label>\n",
+            "</div>\n",
+            "<button type='reset' class='c=err mt=1'>Eingaben zurücksetzen</button>\n",
+            "<button type='submit' class='c=prim mt=1'>Eingaben absenden</button>"
+          ],
+          "level-3": [
+            {
+              "name": "Select",
+              "slug": "select",
+              "description": [
+                "One important note for selects: The class <code>arrow-down</code> has to be set explictly. In return, this decorator class can be used everywhere (for example in drop down buttons) and is compatible with all colors schemes, contextual variations and animations."
+              ],
+              "code": [
+                "<select>\n",
+                "<option value=''>-- without arrow --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>\n",
+                "<select class='arrow-down'>\n",
+                "<option value=''>-- with arrow --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>\n",
+                "<select class='c=prim arrow-down'>\n",
+                "<option value=''>-- with arrow and other color --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>\n",
+                "<select class='c=sec hover:c=text-alt arrow-down'>\n",
+                "<option value=''>-- and hover effect --</option>\n",
+                "<option value='foo'>Foo</option>\n",
+                "<option value='bar'>Bar</option>\n",
+                "</select>"
+              ]
+            },
+            {
+              "name": "Check- and Radiobuttons",
+              "slug": "check-radio",
+              "description": [
+                "Checkboxes and radiobuttons must be wrapped in a label and must contain an empty sibling element for technical reasons.",
+                "Its important to <em>not</em> use a radio input with the toggle styling, since the behaviour would be surprising for the user.",
+                "",
+                "Addional styling can be added to the embedded span"
+              ],
+              "code": [
+                "<label class='check p=1 c=prim'>\n",
+                "<input type='checkbox'>\n",
+                "<span></span>\n",
+                "Label\n",
+                "</label>\n",
+                "<label class='check p=1'>\n",
+                "<input type='radio' name='radio-example'>\n",
+                "<span></span>\n",
+                "Foo\n",
+                "</label>\n",
+                "<label class='check p=1 pt=0'>\n",
+                "<input type='radio' name='radio-example'>\n",
+                "<span></span>\n",
+                "Bar\n",
+                "</label>\n",
+                "<label class='toggle p=1 c=sec'>\n",
+                "<input type='checkbox'>\n",
+                "<span></span>\n",
+                "Label\n",
+                "</label>\n",
+                "<label class='toggle p=1 c=text-alt'>\n",
+                "<input type='checkbox'>\n",
+                "<span></span>\n",
+                "Label\n",
+                "</label>\n",
+                "<label class='toggle p=1 c=sec'>\n",
+                "<input type='checkbox'>\n",
+                "<span class='elevated'></span>\n",
+                "Label\n",
+                "</label>"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Contextual variations",
+          "slug": "contextual",
+          "description": [
+            "To create contextual variations, the color utility classes and the <code>elevated</code> class can be prefixed with <code>hover:</code> or <code>focus:</code>"
+          ],
+          "code": [
+            "<div class='c=prim hover:c=sec'>\n",
+            "Foo\n",
+            "</div>\n",
+            "<div class='hover:c=text-alt'>\n",
+            "Bar\n",
+            "</div>\n",
+            "<div class='c=text-alt hover:c=text'>\n",
+            "Baz\n",
+            "</div>\n",
+            "<div>\n",
+            "<input class='r mt=1 focus:elevated focus:c=text'/>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Aspect Ratio",
+          "slug:": "aspect-ratio",
+          "description": [
+            "To apply aspect ratio to an element. The element must be wrapped in a container with the class <code>ar=1/1 ar=16/9 ar=4/3</code>",
+            "Also a mixin called <code>ar($width, $height)</code> is available to create custom ratios."
+          ],
+          "code": [
+            "<div class='ar=16/9'>\n",
+            "<div class='c=sec'></div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "Visibility",
+          "slug:": "visibility",
+          "description": [
+            "To hide or show an element, the visibility utility classes <code>visible</code> and <code>hidden</code> can be used. They can also be prefixed with the responsive prefixes"
+          ],
+          "code": [
+            "<div class='c=prim flex hidden md:visible lg:hidden xl:visible p=2'></div>"
+          ]
+        },
+        {
+          "name": "Icons",
+          "slug:": "icons",
+          "description": [
+            "We make use of inline SVGs for icons. Every SVG iconset can be integrated."
+          ],
+          "level-3": [
+            {
+              "name": "Icon Sizes",
+              "slug": "icon-sizes",
+              "description": [
+                "We defined Utility Classes for icon sizes analog to the headline sizes. <code>.icon, .icon-l, .icon-xl, .icon-2xl, .icon-3xl, .icon-4xl</code>. Those classes can be prefixed with our responsive prefixes"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Background images",
+          "slug": "background-images",
+          "description": [
+            "If you want to use a big background image, for example for a hero banner, you can use the <code>bg-img</code> class. You can set the image url with the <code>data-url</code> attribute.",
+            "The image is loaded after the page itself and will ease in. The idea is that non functional parts of the - site like a hero image - shouldn't impact the inital page load. So make sure that the background color of that element is set so that the page looks good even if the image never loads, which might happen to users on very bad connections."
+          ],
+          "code": [
+            "<div class='ar=4/3 w=1/2 c=text-alt bg-img' data-url='cat.jpg'></div>"
+          ],
+          "level-3": [
+            {
+              "name": "Focal Point",
+              "slug": "focal-point",
+              "description": [
+                "Per default, the image is centered. If there is a focal point in the image that is not the center, it can be specified with the <code>data-focal</code> attribute like so:"
+              ],
+              "code": [
+                "<div class='c=text-alt bg-img'\n",
+                "style='height: 300px; width: 200px;'\n",
+                "data-url='cat.jpg'\n",
+                "data-focal='15% 40%'>",
+                "</div>"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Components",
+      "slug": "components",
+      "level-2": [
+        {
+          "name": "Tabs",
+          "slug": "tabs",
+          "code": [
+            "<div class='tabs'>\n",
+            "<div role='tablist' aria-label='Entertainment'>\n",
+            "  <button role='tab'\n",
+            "          aria-selected='true'\n",
+            "          aria-controls='nils-tab'\n",
+            "          id='nils'>\n",
+            "    Nils Frahm\n",
+            "  </button>\n",
+            "  <button role='tab'\n",
+            "          aria-selected='false'\n",
+            "          aria-controls='agnes-tab'\n",
+            "          id='agnes'\n",
+            "          tabindex='-1'>\n",
+            "    Agnes Obel\n",
+            "  </button>\n",
+            "  <button role='tab'\n",
+            "          aria-selected='false'\n",
+            "          aria-controls='complexcomplex'\n",
+            "          id='complex'\n",
+            "          tabindex='-1'\n",
+            "          data-deletable=''>\n",
+            "    Joke\n",
+            "  </button>\n",
+            "</div>\n",
+            "<div tabindex='0'\n",
+            "    role='tabpanel'\n",
+            "    id='nils-tab'\n",
+            "    aria-labelledby='nils'>\n",
+            "  <p>\n",
+            "    Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.\n",
+            "  </p>\n",
+            "</div>\n",
+            "<div tabindex='0'\n",
+            "    role='tabpanel'\n",
+            "    id='agnes-tab'\n",
+            "    aria-labelledby='agnes'\n",
+            "    hidden=''>\n",
+            "  <p>\n",
+            "    Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.\n",
+            "  </p>\n",
+            "</div>\n",
+            "<div tabindex='0'\n",
+            "    role='tabpanel'\n",
+            "    id='complexcomplex'\n",
+            "    aria-labelledby='complex'\n",
+            "    hidden=''>\n",
+            "  <p>\n",
+            "    Fear of complicated buildings:\n",
+            "  </p>\n",
+            "  <p>\n",
+            "    A complex complex complex.\n",
+            "  </p>\n",
+            "</div>\n",
+            "</div>"
+          ]
+        },
+        {
+          "name": "print.css",
+          "slug": "print",
+          "description": [
+            "When you put <code><link rel='stylesheet' media='print' href='path/to/print.min.css'></code> in your html header, you get a print friendly restyling. Headers and footers are automaticly hidden, the page width class is a full site and all colors are set to black and white (can be modifed with the <code>$print-color</code> variable). The page margins are set with the <code>$print-margin</code> variable.",
+            "All layout and aspect ratio classes get an addional prefix <code>print:</code> to add print specific styling and you can hide and show elements with the <code>print-only</code> and <code>screen-only</code> utility classes.",
+            "Also, external links will show their target in parenthesis after the link text."
           ]
         }
       ]
