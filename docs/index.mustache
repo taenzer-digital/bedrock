@@ -81,11 +81,11 @@
   <div class="w=site pt=6">
       {{#chapters}}
         <div class="flex-grid row-reverse mt=2 align-start">
-          <aside class="w=full md:w=1/4 sticky top">
-            <a name="{{slug}}"></a>
-            <h2>{{name}}</h2>
+          <a name="{{slug}}"></a>
+          <aside class="w=full md:w=1/4 pt=3 sticky top">
+            <a href="#{{slug}}"><h2>{{name}}</h2></a>
             {{#level-2}}
-              <p>{{name}}</p>
+              <p><a href="#{{slug}}">{{name}}</a></p>
             {{/level-2}}
           </aside>
           <div class="w=full md:w=3/4">
