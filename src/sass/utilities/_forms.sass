@@ -13,21 +13,22 @@ input, textarea, select
 // floating labels
 .floating-label
   position: relative
-  label
+  
+  input:placeholder-shown + label,
+  textarea:placeholder-shown + label
     pointer-events: none
     color: lighten(map-get($text-color, 'fg'), 10%)
-    position: absolute
     font-size: 1em
     top: 0
     left: $hunit / 4
     padding: 0 $hunit / 4
     transition-duration: 0.2s
+    text-shadow: none
 
-  textarea:focus + label,
-  textarea:not(:placeholder-shown) + label,
-  input:focus + label,
-  input:not(:placeholder-shown) + label,
-  input:-webkit-autofill + label
+  label,
+  textarea:placeholder-shown:focus + label,
+  input:placeholder-shown:focus + label
+    position: absolute
     top: -$unit*1.25
     left: $hunit / 4
     font-size: 0.75em
