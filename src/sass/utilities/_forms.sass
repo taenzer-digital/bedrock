@@ -138,10 +138,13 @@ label.toggle > input[type='checkbox']
 select
   height: 2 * $unit
   box-sizing: border-box
-  appearance: none
   -moz-appearance: none
+  appearance: none
   -webkit-appearance: none
-  box-sizing: content-box
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: middle
+  position: relative
   option
     font-size: $text-base-fontsize
 
