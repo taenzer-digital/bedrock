@@ -92,6 +92,8 @@ select.arrow-down
 =color_combination($name, $palette, $variant, $selector, $check-colors: false)
   $bg: create_variant(map-get($palette, 'bg'), $variant)
   $fg: map-get($palette, 'fg')
+  
+
   @if $check-colors
     $contrast-fg-bg: contrast(map-get($palette, 'fg'), $bg)
     $contrast-accent-bg: contrast(map-get($palette, 'accent'), $bg)
@@ -106,7 +108,11 @@ select.arrow-down
   .c\=#{$name}
     color: $fg
     background-color: $bg
-    border-color: $fg
+    @if map-has-key($palette, 'border')
+      border-color: map-get($palette, 'border')
+    @else
+      border-color: $fg
+      
     transition: color $color-transition-delay ease, background-color $color-transition-delay ease, border-color $color-transition-delay ease
     & *:focus
       // outline: rgba($fg, .3) solid $focus-outline-width
